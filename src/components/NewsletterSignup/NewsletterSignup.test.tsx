@@ -42,27 +42,27 @@ describe('NewsletterSignup', () => {
       message: 'ok',
       data: {
         id: 'signup-1',
-        email: 'ada@stern.nyu.edu',
-        firstName: 'Ada',
-        lastName: 'Lovelace',
+        email: 'member.one@nyu.edu',
+        firstName: 'Member',
+        lastName: 'One',
         createdAt: '2026-01-01T00:00:00.000Z',
       },
     });
 
     render(<NewsletterSignup />);
 
-    fireEvent.change(screen.getByLabelText(/first name/i), { target: { value: ' Ada ' } });
-    fireEvent.change(screen.getByLabelText(/last name/i), { target: { value: ' Lovelace ' } });
+    fireEvent.change(screen.getByLabelText(/first name/i), { target: { value: ' Member ' } });
+    fireEvent.change(screen.getByLabelText(/last name/i), { target: { value: ' One ' } });
     fireEvent.change(screen.getByLabelText(/email address/i), {
-      target: { value: 'ADA@STERN.NYU.EDU' },
+      target: { value: 'MEMBER.ONE@NYU.EDU' },
     });
     await userEvent.click(screen.getByRole('button', { name: /join the list/i }));
 
     await waitFor(() => {
       expect(newsletterSignupMock).toHaveBeenCalledWith({
-        firstName: 'Ada',
-        lastName: 'Lovelace',
-        email: 'ada@stern.nyu.edu',
+        firstName: 'Member',
+        lastName: 'One',
+        email: 'member.one@nyu.edu',
       });
     });
   });

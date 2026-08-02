@@ -26,22 +26,22 @@ const ALUMNI_LOGOS: Logo[] = [
 
 const MISSION_STORIES: ZigzagViewItem[] = [
   {
-    key: 'leadership-pipeline',
-    eyebrow: 'Community',
-    title: 'A bridge between generations.',
+    key: 'four-programs',
+    eyebrow: 'Programs',
+    title: 'Four programs, one hands-on experience.',
     description:
-      'Our goal is to bridge generations – allowing students to learn directly from those who have built, led, and given back, while creating a pipeline of future leaders equipped to do the same. Our community consists of hundreds of students across all schools within NYU.',
+      'TAMID members build real professional skills across four programs. Education delivers an experiential business curriculum and exposure to the Israeli startup ecosystem. Consulting places students on pro-bono engagements with Israeli startups. The Investment Fund runs equity research and a national simulated-fund competition. And the Israel Fellowship sends members to a summer program in Israel.',
     image: '/mission-gallery/networking-blurb.png',
-    alt: 'SJBA members networking',
+    alt: 'TAMID Group at NYU members collaborating',
   },
   {
-    key: 'speaker-series',
-    eyebrow: 'Spotlight',
-    title: 'Leadership and impact, up close.',
+    key: 'israeli-economy',
+    eyebrow: 'Israel Focus',
+    title: 'Learning through the Israeli economy.',
     description:
-      "Reflecting our strong focus on leadership and impact, our speaker series – SJBA Spotlight – has included Fortune 500 CEOs, partners at distinguished firms like Goldman Sachs and Blackstone, U.S. ambassadors, professional athletes, and notable entrepreneurs. Despite our large following, our conversations feel intimate and engaging. We want our members to hear from those who've stood where they stand now and know what it takes to go further.",
+      'We develop undergraduates’ professional skills through hands-on work with the Israeli economy — from consulting for early-stage startups to researching public companies. Members gain practical experience, work directly with founders and companies, and build relationships that carry into their careers.',
     image: '/mission-gallery/speakers-blurb.png',
-    alt: 'SJBA speaker event',
+    alt: 'TAMID Group at NYU members at an event',
   },
 ];
 
@@ -64,9 +64,9 @@ export const OurMission = () => {
           ref={heroAnimation.elementRef}
           visible={heroAnimation.isVisible}
           backgroundImageSrc="/mission-gallery/stern-building.jpg"
-          backgroundImageAlt="NYU Stern building"
+          backgroundImageAlt="NYU building"
           title="Our Mission"
-          lead="The Stern Jewish Business Association is one of the most active and substantive student organizations at the NYU Stern School of Business, open to all who are supportive of the Jewish community and values, regardless of faith."
+          lead="TAMID Group at NYU is a nonprofit, apolitical, and areligious student organization that develops undergraduates’ professional skills through hands-on work with the Israeli economy."
         />
 
         <section
@@ -74,14 +74,14 @@ export const OurMission = () => {
           className={`our-mission-overview ${overviewAnimation.isVisible ? 'visible' : ''}`}
         >
           <div className="our-mission-overview__intro">
-            <h2>Stern's value-driven Jewish community.</h2>
+            <h2>Building professional skills, hands-on.</h2>
           </div>
 
           <div className="our-mission-overview__detail">
             <p className="our-mission-overview__lead">
-              SJBA was founded in the wake of the October 7th terrorist attacks in Israel to combat
-              the surge of antisemitism on campus. Since then, we have connected with industry
-              leaders, intellectuals, and value creators to inspire students on campus.
+              TAMID Group at NYU is part of a national, nonprofit network of student chapters. We
+              are apolitical and areligious, and open to any undergraduate who wants to develop real
+              professional skills through direct, hands-on work with the Israeli economy.
             </p>
           </div>
         </section>
@@ -98,13 +98,13 @@ export const OurMission = () => {
             visible={logoCloudAnimation.isVisible}
             logos={ALUMNI_LOGOS}
             title="Where Our Members End Up"
-            body="Our members move into leading firms across finance, consulting, technology, and investing, carrying forward the values cultivated at SJBA."
+            body="Our members move into leading firms across finance, consulting, technology, and investing, carrying forward the skills they build at TAMID."
           />
         </div>
 
         <CallToAction
-          title="Join Our Community"
-          bodyText="SJBA is open to all students who are supportive of the Jewish community and values. Connect with like-minded peers, attend our speaker series, and build meaningful relationships that last beyond graduation."
+          title="Join TAMID"
+          bodyText="TAMID Group at NYU is open to any undergraduate who wants hands-on professional experience with the Israeli economy. Join our programs, work directly with startups and companies, and build skills and relationships that last beyond graduation."
           primaryButtonText="Contact Us"
           primaryButtonHref="/contact"
           secondaryButtonText="Attend Our Events"

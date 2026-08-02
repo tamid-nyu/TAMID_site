@@ -25,8 +25,8 @@ interface ContactSocialLink {
 const CONTACT_CHANNELS: ContactChannel[] = [
   {
     label: 'Email',
-    value: 'sjba@stern.nyu.edu',
-    href: 'mailto:sjba@stern.nyu.edu',
+    value: 'tamid@nyu.edu',
+    href: 'mailto:tamid@nyu.edu',
   },
   {
     label: 'Visit',
@@ -36,18 +36,18 @@ const CONTACT_CHANNELS: ContactChannel[] = [
 
 const SOCIAL_LINKS: ContactSocialLink[] = [
   {
-    href: 'https://www.linkedin.com/company/sjba/',
+    href: 'https://www.linkedin.com/company/tamidgroup/',
     platform: 'linkedin' as const,
     name: 'LinkedIn',
-    handle: '@sjba',
+    handle: '@tamid',
     iconSrc: '/icons/linkedin-logo.png',
     alt: 'LinkedIn',
   },
   {
-    href: 'https://www.instagram.com/nyusjba/',
+    href: 'https://www.instagram.com/nyutamid/',
     platform: 'instagram' as const,
     name: 'Instagram',
-    handle: '@nyusjba',
+    handle: '@nyutamid',
     iconSrc: '/icons/instagram-logo.png',
     alt: 'Instagram',
   },
@@ -167,7 +167,7 @@ export const Contact = () => {
         >
           <div className="contact-intro">
             <div className="contact-intro__content">
-              <h1 className="contact-title">Contact SJBA.</h1>
+              <h1 className="contact-title">Contact TAMID.</h1>
               <p className="contact-intro__copy">
                 Reach out about partnerships, speakers, events, or general questions.
               </p>
@@ -177,8 +177,8 @@ export const Contact = () => {
           <div className="contact-sidebar__details">
             <div className="contact-sidebar__section">
               <span className="contact-section__eyebrow">Email</span>
-              <a href="mailto:sjba@stern.nyu.edu" className="contact-channel__link">
-                sjba@stern.nyu.edu
+              <a href="mailto:tamid@nyu.edu" className="contact-channel__link">
+                tamid@nyu.edu
               </a>
             </div>
 

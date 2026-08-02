@@ -42,10 +42,10 @@ describe('Contact', () => {
 
     render(<Contact />);
 
-    fireEvent.change(screen.getByLabelText(/first name/i), { target: { value: ' Ada ' } });
-    fireEvent.change(screen.getByLabelText(/last name/i), { target: { value: ' Lovelace ' } });
+    fireEvent.change(screen.getByLabelText(/first name/i), { target: { value: ' Member ' } });
+    fireEvent.change(screen.getByLabelText(/last name/i), { target: { value: ' One ' } });
     fireEvent.change(screen.getByLabelText(/^email/i), {
-      target: { value: ' ada@example.com ' },
+      target: { value: ' member.one@example.com ' },
     });
     fireEvent.change(screen.getByLabelText(/company or organization/i), {
       target: { value: '   ' },
@@ -58,9 +58,9 @@ describe('Contact', () => {
 
     await waitFor(() => {
       expect(contactSubmitMock).toHaveBeenCalledWith({
-        firstName: 'Ada',
-        lastName: 'Lovelace',
-        email: 'ada@example.com',
+        firstName: 'Member',
+        lastName: 'One',
+        email: 'member.one@example.com',
         company: undefined,
         message: 'Interested in speaking.',
       });

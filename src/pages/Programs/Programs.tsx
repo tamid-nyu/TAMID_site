@@ -15,7 +15,7 @@ import {
 } from '@constants';
 import { useScrollAnimation } from '@hooks';
 import type { BoardMember } from '@types';
-import './Mentorship.css';
+import './Programs.css';
 
 type ApplicationConfig = {
   applicationUrl: string;
@@ -56,7 +56,7 @@ const readPersistedApplicationConfig = (): PersistedApplicationConfig | null => 
       applicationUrl: parsedValue.applicationUrl,
     };
   } catch (error) {
-    console.error('Failed to read mentorship application config cache:', error);
+    console.error('Failed to read programs application config cache:', error);
     return null;
   }
 };
@@ -69,7 +69,7 @@ const writePersistedApplicationConfig = (config: PersistedApplicationConfig) => 
   try {
     window.localStorage.setItem(MENTORSHIP_APPLICATION_CONFIG_STORAGE_KEY, JSON.stringify(config));
   } catch (error) {
-    console.error('Failed to write mentorship application config cache:', error);
+    console.error('Failed to write programs application config cache:', error);
   }
 };
 
@@ -90,22 +90,36 @@ const getCachedApplicationConfig = () => {
   return null;
 };
 
-const MENTORSHIP_TRACKS = [
+const PROGRAM_PILLARS = [
   {
-    eyebrow: 'Cross-Degree Pairings',
-    title: 'Undergraduate & Graduate Pairings',
+    eyebrow: 'Education',
+    title: 'Education',
     description:
-      'In partnership with the Jewish Student Association (JSA), undergraduate students are paired with MBA and JD mentors, creating opportunities to learn directly from those with advanced academic and professional experience.',
+      'An experiential business curriculum paired with exposure to the Israeli startup ecosystem.',
     image: '/mentorship-gallery/mentorship-gallery-1.jpeg',
-    alt: 'Graduate mentorship pairing',
+    alt: 'TAMID Group at NYU Education program',
   },
   {
-    eyebrow: 'Peer Guidance',
-    title: 'Underclassmen & Upperclassmen',
-    description:
-      'Guidance is available at every stage of the undergraduate journey. Freshmen are matched with sophomores, and sophomores with juniors or seniors – ensuring that every student has a peer who recently navigated the same challenges and can offer first-hand advice.',
+    eyebrow: 'Consulting',
+    title: 'Consulting',
+    description: 'Pro-bono consulting for Israeli startups.',
     image: '/mentorship-gallery/mentorship-gallery-2.jpeg',
-    alt: 'Undergraduate mentorship pairing',
+    alt: 'TAMID Group at NYU Consulting program',
+  },
+  {
+    eyebrow: 'Investment Fund',
+    title: 'Investment Fund',
+    description:
+      'Equity research through a Seeking Alpha partnership and a national simulated-fund competition.',
+    image: '/mentorship-gallery/mentorship-gallery-1.jpeg',
+    alt: 'TAMID Group at NYU Investment Fund program',
+  },
+  {
+    eyebrow: 'Israel Fellowship',
+    title: 'Israel Fellowship',
+    description: 'A summer program in Israel.',
+    image: '/mentorship-gallery/mentorship-gallery-2.jpeg',
+    alt: 'TAMID Group at NYU Israel Fellowship program',
   },
 ];
 
@@ -125,11 +139,11 @@ const PROCESS_STEPS = [
   {
     number: '03',
     title: 'Match',
-    description: 'Pairs are matched thoughtfully to maximize value for both mentors and mentees.',
+    description: 'Members are placed thoughtfully to maximize value across our four programs.',
   },
 ];
 
-export const Mentorship = () => {
+export const Programs = () => {
   const heroAnim = useScrollAnimation({ threshold: 0.05, rootMargin: '0px 0px -20px 0px' });
   const overviewAnim = useScrollAnimation({ threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
   const tracksAnim = useScrollAnimation({ threshold: 0.08, rootMargin: '0px 0px -60px 0px' });
@@ -138,7 +152,7 @@ export const Mentorship = () => {
   const applyHeadingRef = useRef<HTMLHeadingElement | null>(null);
   const initialApplicationConfig = getCachedApplicationConfig();
 
-  const [mentorshipChair, setMentorshipChair] = useState<BoardMember | null>(null);
+  const [programsChair, setProgramsChair] = useState<BoardMember | null>(null);
   const [isApplicationOpen, setIsApplicationOpen] = useState<boolean | null>(
     initialApplicationConfig?.isApplicationOpen ?? null
   );
@@ -150,6 +164,8 @@ export const Mentorship = () => {
   useEffect(() => {
     const resolveApplicationConfig = async (): Promise<ApplicationConfig> => {
       if (!applicationConfigPromise) {
+        // NOTE: 'mentorship_application_open' / 'mentorship_application_url' are
+        // backend WIRE-contract config key literals — do NOT rename them (INV3).
         applicationConfigPromise = dataService.siteConfig
           .getByKeys(['mentorship_application_open', 'mentorship_application_url'])
           .then((config) => ({
@@ -196,13 +212,13 @@ export const Mentorship = () => {
 
       if (membersResult.status === 'fulfilled') {
         const chair = membersResult.value.find((member) =>
-          member.position.toLowerCase().includes('mentor')
+          member.position.toLowerCase().includes('program')
         );
         if (chair) {
-          setMentorshipChair(chair);
+          setProgramsChair(chair);
         }
       } else {
-        console.error('Failed to fetch mentorship chair:', membersResult.reason);
+        console.error('Failed to fetch programs chair:', membersResult.reason);
       }
     };
 
@@ -216,14 +232,14 @@ export const Mentorship = () => {
 
   return (
     <>
-      <div className="page-container mentorship-page">
+      <div className="page-container programs-page">
         <SubpageHero
           ref={heroAnim.elementRef}
           visible={heroAnim.isVisible}
           backgroundImageSrc="/mentorship-gallery/mentorship-gallery-3.jpeg"
-          eyebrow="Programs / Mentorship"
-          title="Mentorship"
-          lead="Participants in our mentorship programs foster lasting relationships, exchange career guidance, and strengthen the Jewish community at NYU Stern across class years and degree levels."
+          eyebrow="Programs"
+          title="Programs"
+          lead="TAMID Group at NYU runs four programs — Education, Consulting, Investment Fund, and Israel Fellowship — that build professional skills through hands-on work with the Israeli economy."
           actions={
             <>
               <LinkButtonSecondary
@@ -264,15 +280,15 @@ export const Mentorship = () => {
 
         <section
           ref={overviewAnim.elementRef}
-          className={`mentorship-overview ${overviewAnim.isVisible ? 'visible' : ''}`}
+          className={`programs-overview ${overviewAnim.isVisible ? 'visible' : ''}`}
         >
-          <div className="mentorship-overview-grid">
-            <div className="mentorship-overview-intro">
-              <span className="mentorship-section-label">Mentorship Program Overview</span>
-              <h2>One program, two mentorship paths.</h2>
-              <p className="mentorship-overview-lead">
-                SJBA offers two distinct mentorship tracks, each designed to foster meaningful
-                connections and provide tailored guidance to our members.
+          <div className="programs-overview-grid">
+            <div className="programs-overview-intro">
+              <span className="programs-section-label">Programs Overview</span>
+              <h2>One club, four programs.</h2>
+              <p className="programs-overview-lead">
+                TAMID Group at NYU offers four programs, each giving members a different, hands-on
+                way to engage with the Israeli economy and build professional skills.
               </p>
             </div>
           </div>
@@ -280,18 +296,18 @@ export const Mentorship = () => {
 
         <ZigzagView
           ref={tracksAnim.elementRef}
-          className="mentorship-tracks"
+          className="programs-tracks"
           visible={tracksAnim.isVisible}
-          items={MENTORSHIP_TRACKS}
+          items={PROGRAM_PILLARS}
         />
 
         <section
           ref={processAnim.elementRef}
-          className={`mentorship-process ${processAnim.isVisible ? 'visible' : ''}`}
+          className={`programs-process ${processAnim.isVisible ? 'visible' : ''}`}
         >
-          <div className="mentorship-process-header">
-            <span className="mentorship-section-label">How It Works</span>
-            <h2>A simple and deliberate matching process.</h2>
+          <div className="programs-process-header">
+            <span className="programs-section-label">How It Works</span>
+            <h2>A simple and deliberate application process.</h2>
           </div>
 
           <NumberedList items={PROCESS_STEPS} />
@@ -300,27 +316,27 @@ export const Mentorship = () => {
         <section
           id="apply-section"
           ref={applyAnim.elementRef}
-          className={`mentorship-apply ${applyAnim.isVisible ? 'visible' : ''}`}
+          className={`programs-apply ${applyAnim.isVisible ? 'visible' : ''}`}
         >
-          <div className="mentorship-apply-copy">
-            <span className="mentorship-section-label">Next Step</span>
+          <div className="programs-apply-copy">
+            <span className="programs-section-label">Next Step</span>
             <h2 ref={applyHeadingRef}>
               {isApplicationOpen ? (
                 <>
                   <InlineLink href={applicationUrl} target="_blank" rel="noopener noreferrer">
                     Apply
                   </InlineLink>{' '}
-                  to join the next mentorship cohort.
+                  to join a TAMID program.
                 </>
               ) : (
                 'Applications are closed for the current cycle.'
               )}
             </h2>
-            {mentorshipChair && (
-              <p className="mentorship-contact mentorship-contact--intro">
+            {programsChair && (
+              <p className="programs-contact programs-contact--intro">
                 Questions can be directed to{' '}
-                <a href={`mailto:${mentorshipChair.email}`}>{mentorshipChair.fullName}</a>,{' '}
-                {mentorshipChair.position}.
+                <a href={`mailto:${programsChair.email}`}>{programsChair.fullName}</a>,{' '}
+                {programsChair.position}.
               </p>
             )}
           </div>

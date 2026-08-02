@@ -91,10 +91,10 @@ export const NewsletterSignup = () => {
       <div className="newsletter-content">
         <div className="newsletter-layout">
           <div className="newsletter-heading-group">
-            <span className="newsletter-eyebrow">SJBA Newsletter</span>
+            <span className="newsletter-eyebrow">TAMID Newsletter</span>
             <h2>Receive the next invitation before it circulates.</h2>
             <p className="newsletter-description">
-              Updates on speakers, programs, and SJBA at Stern.
+              Updates on speakers, programs, and TAMID Group at NYU.
             </p>
           </div>
           <div className="newsletter-form-column">

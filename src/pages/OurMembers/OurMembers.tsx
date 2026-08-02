@@ -148,10 +148,10 @@ export const OurMembers = () => {
           ref={heroAnimation.elementRef}
           visible={heroAnimation.isVisible}
           backgroundImageSrc="/members-gallery/members-gallery-1.jpeg"
-          backgroundImageAlt="SJBA members at a community event"
+          backgroundImageAlt="TAMID Group at NYU members at an event"
           imagePosition="center 42%"
           title="General Members"
-          lead="Membership reflects sustained involvement in the SJBA community. Every event remains open to all students, while recognition is reserved for those who show up consistently across the semester."
+          lead="Membership reflects sustained involvement in TAMID Group at NYU. Every event remains open to all students, while recognition is reserved for those who show up consistently across the semester."
         />
 
         <section
@@ -162,7 +162,7 @@ export const OurMembers = () => {
             <span className="members-section-label">Membership Criteria</span>
             <h2>Recognition is earned through steady participation.</h2>
             <p className="members-overview__lead">
-              Official membership acknowledges students who consistently invest in SJBA's
+              Official membership acknowledges students who consistently invest in TAMID's
               programming, conversations, and broader community life.
             </p>
           </div>
@@ -201,7 +201,7 @@ export const OurMembers = () => {
             </div>
 
             <p className="members-overview__body">
-              Membership recognition helps SJBA direct funding and priority access toward students
+              Membership recognition helps TAMID direct funding and priority access toward students
               who actively contribute to resume reviews, mock interviews, speaker programming, and
               the club's long-term professional community.
             </p>
@@ -217,7 +217,7 @@ export const OurMembers = () => {
               Recognized members by semester
             </h2>
             <p className="members-directory__intro">
-              Individuals listed below met the attendance threshold and earned official SJBA
+              Individuals listed below met the attendance threshold and earned official TAMID
               membership.
             </p>
           </div>

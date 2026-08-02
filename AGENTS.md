@@ -1,10 +1,10 @@
 # AGENTS.md
 
 ## Project Overview
-- React + Vite + TypeScript frontend for the Stern Jewish Business Association website
-- Production site: `https://nyu-sjba.org`
+- React + Vite + TypeScript frontend for the TAMID Group at NYU website
+- Production site: `https://nyu-tamid.org`
 - Backend API
-     - Production URL: `https://api.nyu-sjba.org`
+     - Production URL: `https://api.nyu-tamid.org`
      - Development URL: `http://localhost:3000`
 - Backend API docs: `http://localhost:3000/docs.json`
      - Fetch up-to-date backend docs with: `curl -L http://localhost:3000/docs.json`

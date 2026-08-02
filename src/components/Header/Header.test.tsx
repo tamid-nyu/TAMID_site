@@ -36,7 +36,7 @@ describe('Header', () => {
     renderHeader();
 
     expect(screen.getByRole('link', { name: /events/i })).toHaveAttribute('href', '/events');
-    expect(screen.getByRole('link', { name: /programs/i })).toHaveAttribute('href', '/mentorship');
+    expect(screen.getByRole('link', { name: /programs/i })).toHaveAttribute('href', '/programs');
     expect(screen.getByRole('link', { name: /contact/i })).toHaveAttribute('href', '/contact');
     expect(screen.getByRole('button', { name: /about/i })).toBeInTheDocument();
   });

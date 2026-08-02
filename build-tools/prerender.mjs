@@ -18,17 +18,17 @@ const escapeHtml = (value) =>
 
 const normalizePath = (routePath) =>
   routePath === '/' ? routePath : routePath.replace(/\/+$/, '');
-const canonicalUrl = (routePath) => `https://nyu-sjba.org${routePath === '/' ? '/' : routePath}`;
+const canonicalUrl = (routePath) => `https://nyu-tamid.org${routePath === '/' ? '/' : routePath}`;
 const socialImage = (route) =>
-  route.image ?? 'https://nyu-sjba.org/home-gallery/sjba-gallery-1.JPG';
+  route.image ?? 'https://nyu-tamid.org/home-gallery/tamid-gallery-1.JPG';
 
 const organizationJsonLd = {
   '@context': 'https://schema.org',
   '@type': 'Organization',
-  name: 'NYU Stern Jewish Business Association',
-  alternateName: ['NYU SJBA', 'SJBA', 'Stern Jewish Business Association'],
-  url: 'https://nyu-sjba.org',
-  logo: 'https://nyu-sjba.org/sjba/sjba-logo-full.png',
+  name: 'TAMID Group at NYU',
+  alternateName: ['NYU TAMID', 'TAMID', 'TAMID Group at NYU'],
+  url: 'https://nyu-tamid.org',
+  logo: 'https://nyu-tamid.org/tamid/tamid-logo-full.png',
   address: {
     '@type': 'PostalAddress',
     streetAddress: '44 West 4th Street',
@@ -37,15 +37,15 @@ const organizationJsonLd = {
     postalCode: '10012',
     addressCountry: 'US',
   },
-  sameAs: ['https://www.linkedin.com/company/sjba/', 'https://www.instagram.com/nyusjba/'],
+  sameAs: ['https://www.linkedin.com/company/tamidgroup/', 'https://www.instagram.com/nyutamid/'],
 };
 
 const websiteJsonLd = {
   '@context': 'https://schema.org',
   '@type': 'WebSite',
-  name: 'NYU Stern Jewish Business Association',
-  alternateName: ['NYU SJBA', 'SJBA', 'Stern Jewish Business Association'],
-  url: 'https://nyu-sjba.org/',
+  name: 'TAMID Group at NYU',
+  alternateName: ['NYU TAMID', 'TAMID', 'TAMID Group at NYU'],
+  url: 'https://nyu-tamid.org/',
 };
 
 const buildPageJsonLd = (route) => ({
@@ -56,15 +56,15 @@ const buildPageJsonLd = (route) => ({
   url: canonicalUrl(route.path),
   isPartOf: {
     '@type': 'WebSite',
-    name: 'NYU Stern Jewish Business Association',
-    url: 'https://nyu-sjba.org/',
+    name: 'TAMID Group at NYU',
+    url: 'https://nyu-tamid.org/',
   },
 });
 
 const buildHead = (route) => {
   const url = canonicalUrl(route.path);
   const image = socialImage(route);
-  const imageAlt = route.imageAlt ?? 'NYU Stern Jewish Business Association';
+  const imageAlt = route.imageAlt ?? 'TAMID Group at NYU';
   const robots = route.noindex ? 'noindex, nofollow' : 'index, follow';
 
   return [
@@ -72,7 +72,7 @@ const buildHead = (route) => {
     `<meta name="description" content="${escapeHtml(route.description)}" />`,
     `<meta name="robots" content="${robots}" />`,
     `<link rel="canonical" href="${escapeHtml(url)}" />`,
-    '<meta property="og:site_name" content="NYU Stern Jewish Business Association" />',
+    '<meta property="og:site_name" content="TAMID Group at NYU" />',
     `<meta property="og:type" content="${route.type ?? 'website'}" />`,
     `<meta property="og:url" content="${escapeHtml(url)}" />`,
     `<meta property="og:title" content="${escapeHtml(route.title)}" />`,

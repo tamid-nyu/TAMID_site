@@ -25,15 +25,15 @@ describe('dataService', () => {
     });
 
     await dataService.newsletter.signup({
-      firstName: 'Ada',
-      lastName: 'Lovelace',
-      email: 'ada@stern.nyu.edu',
+      firstName: 'Member',
+      lastName: 'One',
+      email: 'member.one@nyu.edu',
     });
 
     expect(apiClientMocks.post).toHaveBeenCalledWith('/newsletter-sign-ups', {
-      first_name: 'Ada',
-      last_name: 'Lovelace',
-      email: 'ada@stern.nyu.edu',
+      first_name: 'Member',
+      last_name: 'One',
+      email: 'member.one@nyu.edu',
     });
   });
 

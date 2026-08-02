@@ -167,10 +167,10 @@ export const OurBoard = () => {
           ref={heroAnimation.elementRef}
           visible={heroAnimation.isVisible}
           backgroundImageSrc="/board-gallery/board-gallery-1.jpg"
-          backgroundImageAlt="SJBA members gathered at an event"
+          backgroundImageAlt="TAMID Group at NYU members gathered at an event"
           imagePosition="center 42%"
           title="Executive Board"
-          lead="Meet the students leading SJBA this academic year."
+          lead="Meet the students leading TAMID Group at NYU this academic year."
         />
 
         <section
@@ -186,6 +186,12 @@ export const OurBoard = () => {
           ) : error ? (
             <div className="board-directory__status">
               <ErrorDisplay error={error} onRetry={() => void fetchBoardMembers()} />
+            </div>
+          ) : boardMembers.filter((member) => member && member.fullName).length === 0 ? (
+            <div className="board-directory__status">
+              <p className="board-empty">
+                Board member profiles are coming soon. Check back later.
+              </p>
             </div>
           ) : (
             <div
@@ -281,10 +287,10 @@ export const OurBoard = () => {
 
         <CallToAction
           title="Interested in Joining Our Board?"
-          bodyText="SJBA is always looking for passionate students who want to make a difference in the Jewish community at NYU Stern. Board positions become available each academic year through our application process."
+          bodyText="TAMID Group at NYU is always looking for passionate students who want to build professional skills and lead. Board positions become available each academic year through our application process."
           primaryButtonText="Get Involved"
           primaryButtonHref="/contact"
-          secondaryButtonText="Attend SJBA Events"
+          secondaryButtonText="Attend TAMID Events"
           secondaryButtonHref="/events"
         />
       </div>

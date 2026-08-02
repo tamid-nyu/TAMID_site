@@ -1,9 +1,9 @@
-export const SITE_URL = 'https://nyu-sjba.org';
-export const SITE_NAME = 'NYU Stern Jewish Business Association';
-export const SITE_SHORT_NAME = 'SJBA';
+export const SITE_URL = 'https://nyu-tamid.org';
+export const SITE_NAME = 'TAMID Group at NYU';
+export const SITE_SHORT_NAME = 'TAMID';
 export const SITE_DESCRIPTION =
-  'The NYU Stern Jewish Business Association connects Jewish students at NYU Stern School of Business through professional development, networking, and community events.';
-export const DEFAULT_SOCIAL_IMAGE = `${SITE_URL}/home-gallery/sjba-gallery-1.JPG`;
+  'TAMID Group at NYU is a nonprofit, apolitical, and areligious student organization that develops undergraduates’ professional skills through hands-on work with the Israeli economy.';
+export const DEFAULT_SOCIAL_IMAGE = `${SITE_URL}/home-gallery/tamid-gallery-1.JPG`;
 
 export interface SeoRoute {
   path: string;
@@ -20,50 +20,51 @@ export const PUBLIC_SEO_ROUTES: SeoRoute[] = [
     path: '/',
     title: SITE_NAME,
     description: SITE_DESCRIPTION,
-    imageAlt: 'NYU Stern Jewish Business Association logo',
+    imageAlt: 'TAMID Group at NYU logo',
   },
   {
     path: '/our-mission',
     title: `Our Mission | ${SITE_SHORT_NAME}`,
     description:
-      'Learn how and why SJBA builds a value-driven Jewish business community at NYU Stern.',
+      'Learn how TAMID Group at NYU develops students’ professional skills through hands-on work with the Israeli economy across four programs: Education, Consulting, Investment Fund, and Israel Fellowship.',
     image: `${SITE_URL}/mission-gallery/stern-building.jpg`,
-    imageAlt: 'NYU Stern building',
+    imageAlt: 'NYU building',
   },
   {
     path: '/our-board',
     title: `Executive Board | ${SITE_SHORT_NAME}`,
-    description: 'Meet the student leaders powering the Stern Jewish Business Association.',
+    description: 'Meet the student leaders powering TAMID Group at NYU.',
     image: `${SITE_URL}/board-gallery/board-gallery-1.jpg`,
-    imageAlt: 'SJBA executive board members gathered at an event',
+    imageAlt: 'TAMID Group at NYU executive board members gathered at an event',
   },
   {
     path: '/our-members',
     title: `General Members | ${SITE_SHORT_NAME}`,
-    description: "Meet SJBA's recognized members.",
+    description: "Meet TAMID Group at NYU's members.",
     image: `${SITE_URL}/members-gallery/members-gallery-1.jpeg`,
-    imageAlt: 'SJBA members at a community event',
+    imageAlt: 'TAMID Group at NYU members at an event',
   },
   {
-    path: '/mentorship',
-    title: `Mentorship | ${SITE_SHORT_NAME}`,
+    path: '/programs',
+    title: `Programs | ${SITE_SHORT_NAME}`,
     description:
-      'Explore SJBA mentorship programs connecting undergraduate, graduate, underclass, and upperclass students.',
+      'Explore TAMID Group at NYU’s four programs: Education, Consulting, Investment Fund, and Israel Fellowship.',
     image: `${SITE_URL}/mentorship-gallery/mentorship-gallery-3.jpeg`,
-    imageAlt: 'SJBA mentorship program participants',
+    imageAlt: 'TAMID Group at NYU program participants',
   },
   {
     path: '/events',
     title: `Events | ${SITE_SHORT_NAME}`,
-    description: 'Explore upcoming SJBA speaker sessions and professional networking events.',
+    description:
+      'Explore upcoming TAMID Group at NYU speaker sessions and professional networking events.',
     image: `${SITE_URL}/events-gallery/events-gallery-1.jpeg`,
-    imageAlt: 'SJBA members at an event',
+    imageAlt: 'TAMID Group at NYU members at an event',
   },
   {
     path: '/contact',
     title: `Contact | ${SITE_SHORT_NAME}`,
-    description: 'Contact NYU SJBA.',
-    imageAlt: 'NYU Stern Jewish Business Association logo',
+    description: 'Contact TAMID Group at NYU.',
+    imageAlt: 'TAMID Group at NYU logo',
   },
 ];
 
@@ -71,7 +72,7 @@ export const NOT_FOUND_SEO: SeoRoute = {
   path: '/404',
   title: `Page Not Found | ${SITE_SHORT_NAME}`,
   description: 'The requested page could not be found.',
-  imageAlt: 'NYU Stern Jewish Business Association logo',
+  imageAlt: 'TAMID Group at NYU logo',
   noindex: true,
 };
 
@@ -99,9 +100,9 @@ export const getOrganizationJsonLd = () => ({
   '@context': 'https://schema.org',
   '@type': 'Organization',
   name: SITE_NAME,
-  alternateName: ['NYU SJBA', 'SJBA', 'Stern Jewish Business Association'],
+  alternateName: ['TAMID', 'TAMID at NYU', 'TAMID Group at NYU'],
   url: SITE_URL,
-  logo: `${SITE_URL}/sjba/sjba-logo-full.png`,
+  logo: `${SITE_URL}/tamid/tamid-logo-full.png`,
   address: {
     '@type': 'PostalAddress',
     streetAddress: '44 West 4th Street',
@@ -110,14 +111,14 @@ export const getOrganizationJsonLd = () => ({
     postalCode: '10012',
     addressCountry: 'US',
   },
-  sameAs: ['https://www.linkedin.com/company/sjba/', 'https://www.instagram.com/nyusjba/'],
+  sameAs: ['https://www.linkedin.com/company/tamidgroup/', 'https://www.instagram.com/nyutamid/'],
 });
 
 export const getWebsiteJsonLd = () => ({
   '@context': 'https://schema.org',
   '@type': 'WebSite',
   name: SITE_NAME,
-  alternateName: ['NYU SJBA', 'SJBA', 'Stern Jewish Business Association'],
+  alternateName: ['TAMID', 'TAMID at NYU', 'TAMID Group at NYU'],
   url: `${SITE_URL}/`,
 });
 

@@ -1253,10 +1253,10 @@ export const Events = () => {
           visible={heroAnimation.isVisible}
           className="events-hero"
           backgroundImageSrc="/events-gallery/events-gallery-1.jpeg"
-          backgroundImageAlt="SJBA members at an event"
+          backgroundImageAlt="TAMID Group at NYU members at an event"
           imagePosition="center 72%"
           title="Events"
-          lead="Explore upcoming speaker sessions, archive highlights, and the programming that shapes SJBA each semester."
+          lead="Explore upcoming speaker sessions, archive highlights, and the programming that shapes TAMID Group at NYU each semester."
         />
 
         <section className="events-shell">

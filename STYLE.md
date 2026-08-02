@@ -1,10 +1,10 @@
-# SJBA Frontend Style System
+# TAMID Frontend Style System
 
-This document defines the current visual system for the SJBA site.
+This document defines the current visual system for the TAMID site.
 
 The goal is consistency. New pages and components should feel like part of the same site, not isolated redesigns.
 
-The SJBA visual language should feel:
+The TAMID visual language should feel:
 
 - editorial rather than app-like
 - professional rather than playful
@@ -168,7 +168,7 @@ Rules:
 - Keep the resting state as a solid branded purple with light text and no ambient shadow.
 - Hover and focus should use the simpler brightened purple button state with a slight lift.
 - Keep sizing contextual to the component, but preserve the same surface language, border, and focus treatment.
-- When a button includes the arrow icon, that arrow is a navigation signifier: it tells users the CTA will take them to another SJBA page or to an external website.
+- When a button includes the arrow icon, that arrow is a navigation signifier: it tells users the CTA will take them to another TAMID page or to an external website.
 
 ## Typography Rules
 
@@ -539,7 +539,7 @@ Before shipping a new subpage, verify:
 - there is one clear primary action
 - mobile layout collapses cleanly into stacked sections
 - motion is restrained and reduced-motion safe
-- the page still feels like SJBA, not a microsite or campaign landing page
+- the page still feels like TAMID, not a microsite or campaign landing page
 
 ## Component Patterns
 
@@ -724,7 +724,7 @@ If a value is truly local and not reusable, keep it local to the component/page 
 
 A new page or section should pass these checks:
 
-- Does it immediately look like SJBA?
+- Does it immediately look like TAMID?
 - Is the headline clearly readable?
 - Does the section have one dominant idea?
 - Is the palette restrained?

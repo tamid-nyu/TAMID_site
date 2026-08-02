@@ -8,15 +8,15 @@ import { BoardMemberModal } from './BoardMemberModal';
 const member: BoardMember = {
   id: 'member-1',
   headshotUpdatedAt: '2026-07-22T18:42:00.000Z',
-  fullName: 'Ada Lovelace',
+  fullName: 'Jane Doe',
   position: 'President',
   bio: 'Builds bridges.\nHosts events.',
   major: 'Finance',
   year: 'Class of 2026',
   hometown: 'New York, NY',
-  linkedinUrl: 'https://linkedin.com/in/ada',
-  email: 'ada@stern.nyu.edu',
-  headshotFile: 'ada.jpg',
+  linkedinUrl: 'https://linkedin.com/in/jane-doe-placeholder',
+  email: 'jane.doe@nyu.edu',
+  headshotFile: 'placeholder.jpg',
   orderIndex: 1,
 };
 
@@ -44,21 +44,21 @@ describe('BoardMemberModal', () => {
   it('renders member details and contact links', () => {
     renderModal();
 
-    expect(screen.getByRole('dialog', { name: /ada lovelace/i })).toBeInTheDocument();
-    expect(screen.getByRole('heading', { name: /ada lovelace/i })).toBeInTheDocument();
+    expect(screen.getByRole('dialog', { name: /jane doe/i })).toBeInTheDocument();
+    expect(screen.getByRole('heading', { name: /jane doe/i })).toBeInTheDocument();
     expect(screen.getByText('President')).toBeInTheDocument();
     expect(screen.getByText(/builds bridges/i)).toBeInTheDocument();
-    expect(screen.getByRole('link', { name: /email ada lovelace/i })).toHaveAttribute(
+    expect(screen.getByRole('link', { name: /email jane doe/i })).toHaveAttribute(
       'href',
-      'mailto:ada@stern.nyu.edu'
+      'mailto:jane.doe@nyu.edu'
     );
-    expect(screen.getByRole('link', { name: /view ada lovelace on linkedin/i })).toHaveAttribute(
+    expect(screen.getByRole('link', { name: /view jane doe on linkedin/i })).toHaveAttribute(
       'href',
-      'https://linkedin.com/in/ada'
+      'https://linkedin.com/in/jane-doe-placeholder'
     );
-    expect(screen.getByAltText('Ada Lovelace headshot')).toHaveAttribute(
+    expect(screen.getByAltText('Jane Doe headshot')).toHaveAttribute(
       'src',
-      `${BOARD_IMAGES_BUCKET}ada.jpg?v=2026-07-22T18%3A42%3A00.000Z`
+      `${BOARD_IMAGES_BUCKET}placeholder.jpg?v=2026-07-22T18%3A42%3A00.000Z`
     );
   });
 
@@ -85,7 +85,7 @@ describe('BoardMemberModal', () => {
       />
     );
 
-    expect(screen.getByText('AL')).toBeInTheDocument();
+    expect(screen.getByText('JD')).toBeInTheDocument();
 
     rerender(
       <BoardMemberModal
@@ -97,8 +97,8 @@ describe('BoardMemberModal', () => {
       />
     );
 
-    fireEvent.error(screen.getByAltText('Ada Lovelace headshot'));
+    fireEvent.error(screen.getByAltText('Jane Doe headshot'));
 
-    expect(onImageError).toHaveBeenCalledWith('Ada Lovelace');
+    expect(onImageError).toHaveBeenCalledWith('Jane Doe');
   });
 });

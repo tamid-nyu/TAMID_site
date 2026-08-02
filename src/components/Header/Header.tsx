@@ -7,14 +7,14 @@ import './Header.css';
 const SETTLED_SCROLL_THRESHOLD = 36;
 const OVERLAY_HEADER_ROUTES = new Set([
   '/',
-  '/mentorship',
+  '/programs',
   '/our-mission',
   '/our-members',
   '/our-board',
   '/events',
 ]);
 const ABOUT_DROPDOWN_ITEMS = [
-  { label: 'The SJBA Mission', to: '/our-mission' },
+  { label: 'The TAMID Mission', to: '/our-mission' },
   { label: 'Executive Board', to: '/our-board' },
   { label: 'General Members', to: '/our-members' },
 ];
@@ -28,8 +28,8 @@ export const Header = () => {
   const usesOverlayHeader = OVERLAY_HEADER_ROUTES.has(location.pathname);
   const isSettled = !usesOverlayHeader || isScrolled || isMenuOpen;
   const mobileLogoSrc = isSettled
-    ? '/sjba/sjba-logo-clear-no-text.png'
-    : '/sjba/sjba-logo-clear-inverted.png';
+    ? '/tamid/tamid-logo-clear-no-text.png'
+    : '/tamid/tamid-logo-clear-inverted.png';
 
   useEffect(() => {
     const syncScrollState = () => {
@@ -76,18 +76,22 @@ export const Header = () => {
     >
       <nav className="nav-container" aria-label="Primary">
         <div className="logo">
-          <Link to="/" onClick={closeMenu} className="logo-link" aria-label="SJBA home">
+          <Link to="/" onClick={closeMenu} className="logo-link" aria-label="TAMID home">
             <img
-              src="/sjba/sjba-logo-full-inverted.png"
-              alt="SJBA Logo"
+              src="/tamid/tamid-logo-full-inverted.png"
+              alt="TAMID Group at NYU Logo"
               className="logo-image logo-image--overlay"
             />
             <img
-              src="/sjba/sjba-logo-full.png"
-              alt="SJBA Logo"
+              src="/tamid/tamid-logo-full.png"
+              alt="TAMID Group at NYU Logo"
               className="logo-image logo-image--settled"
             />
-            <img src={mobileLogoSrc} alt="SJBA Logo" className="logo-image logo-image--mobile" />
+            <img
+              src={mobileLogoSrc}
+              alt="TAMID Group at NYU Logo"
+              className="logo-image logo-image--mobile"
+            />
           </Link>
         </div>
 
@@ -106,7 +110,7 @@ export const Header = () => {
           <NavButton to="/events" onClick={closeMenu}>
             Events
           </NavButton>
-          <NavButton to="/mentorship" onClick={closeMenu}>
+          <NavButton to="/programs" onClick={closeMenu}>
             Programs
           </NavButton>
           <Dropdown

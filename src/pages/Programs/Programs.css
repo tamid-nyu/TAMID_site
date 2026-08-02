@@ -1,13 +1,13 @@
-.mentorship-page {
+.programs-page {
   --subpage-hero-photo-offset: 15.2rem;
   padding-bottom: clamp(1rem, 2.5vw, 2rem);
 }
 
-.mentorship-hero,
-.mentorship-overview,
-.mentorship-tracks,
-.mentorship-process,
-.mentorship-apply {
+.programs-hero,
+.programs-overview,
+.programs-tracks,
+.programs-process,
+.programs-apply {
   opacity: 0;
   transform: translateY(2rem);
   transition:
@@ -15,18 +15,18 @@
     transform 560ms ease;
 }
 
-.mentorship-hero.visible,
-.mentorship-overview.visible,
-.mentorship-tracks.visible,
-.mentorship-process.visible,
-.mentorship-apply.visible {
+.programs-hero.visible,
+.programs-overview.visible,
+.programs-tracks.visible,
+.programs-process.visible,
+.programs-apply.visible {
   opacity: 1;
   transform: translateY(0);
 }
 
-.mentorship-hero {
+.programs-hero {
   position: relative;
-  min-height: calc(100svh - 1.5rem - var(--mentorship-hero-photo-offset));
+  min-height: calc(100svh - 1.5rem - var(--programs-hero-photo-offset));
   margin-inline: calc(var(--page-gutter) * -1);
   margin-top: calc(var(--header-offset) * -1);
   overflow: hidden;
@@ -34,15 +34,15 @@
   color: var(--color-white);
 }
 
-.mentorship-hero-background,
-.mentorship-hero-background::before,
-.mentorship-hero-background::after,
-.mentorship-hero-image {
+.programs-hero-background,
+.programs-hero-background::before,
+.programs-hero-background::after,
+.programs-hero-image {
   position: absolute;
   inset: 0;
 }
 
-.mentorship-hero-background::before {
+.programs-hero-background::before {
   content: '';
   background:
     linear-gradient(
@@ -56,7 +56,7 @@
   z-index: 2;
 }
 
-.mentorship-hero-background::after {
+.programs-hero-background::after {
   content: '';
   inset: auto auto -16% -6%;
   width: min(38rem, 56vw);
@@ -66,7 +66,7 @@
   z-index: 1;
 }
 
-.mentorship-hero-image {
+.programs-hero-image {
   width: 100%;
   height: 100%;
   object-fit: cover;
@@ -75,10 +75,10 @@
   transform: scale(1.04);
 }
 
-.mentorship-hero-shell {
+.programs-hero-shell {
   position: relative;
   z-index: 3;
-  min-height: calc(100svh - 1.5rem - var(--mentorship-hero-photo-offset));
+  min-height: calc(100svh - 1.5rem - var(--programs-hero-photo-offset));
   width: min(100%, var(--content-max-width));
   margin: 0 auto;
   padding-inline: var(--page-gutter);
@@ -88,12 +88,12 @@
   align-items: flex-end;
 }
 
-.mentorship-hero-copy {
+.programs-hero-copy {
   max-width: min(36rem, 100%);
 }
 
-.mentorship-eyebrow,
-.mentorship-section-label {
+.programs-eyebrow,
+.programs-section-label {
   display: inline-block;
   font-family: var(--font-sans);
   font-size: 0.76rem;
@@ -102,11 +102,11 @@
   text-transform: uppercase;
 }
 
-.mentorship-eyebrow {
+.programs-eyebrow {
   color: rgba(251, 248, 243, 0.72);
 }
 
-.mentorship-title {
+.programs-title {
   margin: 0.9rem 0 0;
   font-family: var(--font-display);
   font-size: clamp(3.3rem, 7vw, 6.4rem);
@@ -116,7 +116,7 @@
   text-wrap: balance;
 }
 
-.mentorship-lead {
+.programs-lead {
   max-width: 33rem;
   margin: 2rem 0 0.5rem;
   font-size: clamp(1.03rem, 1.95vw, 1.18rem);
@@ -124,15 +124,15 @@
   color: rgba(251, 248, 243, 0.82);
 }
 
-.mentorship-hero-actions {
+.programs-hero-actions {
   display: flex;
   flex-wrap: wrap;
   gap: 1rem;
   margin-top: 2rem;
 }
 
-.mentorship-status-pill,
-.mentorship-link-button {
+.programs-status-pill,
+.programs-link-button {
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -152,25 +152,25 @@
     box-shadow var(--transition-medium);
 }
 
-.mentorship-status-pill {
+.programs-status-pill {
   border: 1px solid transparent;
   background: rgba(255, 255, 255, 0.1);
   color: var(--color-white);
   backdrop-filter: blur(10px);
 }
 
-.mentorship-status-pill.open {
+.programs-status-pill.open {
   border-color: rgba(196, 168, 106, 0.34);
   background: rgba(196, 168, 106, 0.16);
 }
 
-.mentorship-status-pill.closed {
+.programs-status-pill.closed {
   border-color: rgba(255, 255, 255, 0.18);
   background: rgba(255, 255, 255, 0.08);
 }
 
-.mentorship-link-button,
-.mentorship-link-button {
+.programs-link-button,
+.programs-link-button {
   border: 1px solid var(--cta-primary-border);
   background: var(--cta-primary-background);
   color: var(--cta-primary-text);
@@ -178,56 +178,56 @@
   text-decoration: none;
 }
 
-.mentorship-status-pill:hover,
-.mentorship-status-pill:focus-visible,
-.mentorship-link-button:hover,
-.mentorship-link-button:focus-visible {
+.programs-status-pill:hover,
+.programs-status-pill:focus-visible,
+.programs-link-button:hover,
+.programs-link-button:focus-visible {
   transform: translateY(-1px);
 }
 
-.mentorship-link-button:hover,
-.mentorship-link-button:focus-visible {
+.programs-link-button:hover,
+.programs-link-button:focus-visible {
   background: var(--cta-primary-background-hover);
   color: var(--cta-primary-text);
   box-shadow: none;
 }
 
-.mentorship-status-pill:focus-visible,
-.mentorship-link-button:focus-visible {
+.programs-status-pill:focus-visible,
+.programs-link-button:focus-visible {
   outline: none;
   box-shadow: var(--cta-primary-focus-ring);
 }
 
-.mentorship-link-arrow {
+.programs-link-arrow {
   width: 0.75rem;
   height: 0.75rem;
   filter: brightness(0) invert(1);
   transition: transform var(--transition-medium);
 }
 
-.mentorship-link-button:hover .mentorship-link-arrow,
-.mentorship-link-button:focus-visible .mentorship-link-arrow {
+.programs-link-button:hover .programs-link-arrow,
+.programs-link-button:focus-visible .programs-link-arrow {
   transform: translate(2px, -2px);
 }
 
-.mentorship-status-dot {
+.programs-status-dot {
   width: 0.52rem;
   height: 0.52rem;
   border-radius: 999px;
   flex-shrink: 0;
 }
 
-.mentorship-status-dot.open-dot {
+.programs-status-dot.open-dot {
   background: var(--color-accent);
   box-shadow: 0 0 0 0 rgba(196, 168, 106, 0.4);
-  animation: mentorshipPulse 1.9s ease-in-out infinite;
+  animation: programsPulse 1.9s ease-in-out infinite;
 }
 
-.mentorship-status-dot.closed-dot {
+.programs-status-dot.closed-dot {
   background: rgba(251, 248, 243, 0.56);
 }
 
-@keyframes mentorshipPulse {
+@keyframes programsPulse {
   0%,
   100% {
     box-shadow: 0 0 0 0 rgba(196, 168, 106, 0.36);
@@ -240,18 +240,18 @@
   }
 }
 
-.mentorship-overview,
-.mentorship-process,
-.mentorship-apply {
+.programs-overview,
+.programs-process,
+.programs-apply {
   width: min(100%, var(--content-max-width));
   margin: 0 auto;
 }
 
-.mentorship-overview {
+.programs-overview {
   padding: clamp(3.25rem, 6vw, 5.5rem) 0 0;
 }
 
-.mentorship-overview-grid {
+.programs-overview-grid {
   display: grid;
   grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr);
   gap: clamp(1.2rem, 2.4vw, 2rem);
@@ -260,13 +260,13 @@
   border-bottom: 1px solid var(--border-subtle);
 }
 
-.mentorship-section-label {
+.programs-section-label {
   display: block;
   width: 100%;
   color: var(--color-brand);
 }
 
-.mentorship-overview-intro {
+.programs-overview-intro {
   display: grid;
   grid-column: 1 / -1;
   gap: 0.9rem;
@@ -275,9 +275,9 @@
   max-width: none;
 }
 
-.mentorship-overview-intro h2,
-.mentorship-process-header h2,
-.mentorship-apply-copy h2 {
+.programs-overview-intro h2,
+.programs-process-header h2,
+.programs-apply-copy h2 {
   margin: 0;
   font-family: var(--font-display);
   font-size: clamp(2rem, 3.4vw, 3.1rem);
@@ -302,11 +302,11 @@
   transform: none;
 }
 
-.mentorship-apply-copy p {
+.programs-apply-copy p {
   margin: 0;
 }
 
-.mentorship-overview-lead {
+.programs-overview-lead {
   margin: 0;
   font-size: clamp(0.96rem, 1.45vw, 1.08rem);
   line-height: 1.8;
@@ -316,14 +316,14 @@
   overflow-wrap: anywhere;
 }
 
-.mentorship-apply-copy p {
+.programs-apply-copy p {
   font-size: 1.02rem;
   line-height: 1.82;
   margin: 0.8rem 0 0;
   color: var(--color-muted);
 }
 
-.mentorship-tracks {
+.programs-tracks {
   width: min(100%, var(--content-max-width));
   margin: 0 auto;
   padding: clamp(2.5rem, 5vw, 4rem) 0 0;
@@ -332,36 +332,36 @@
   gap: clamp(3rem, 6vw, 5rem);
 }
 
-.mentorship-track {
+.programs-track {
   display: grid;
   grid-template-columns: minmax(0, 1.05fr) minmax(0, 0.95fr);
   gap: clamp(1.6rem, 4vw, 3.5rem);
   align-items: center;
 }
 
-.mentorship-track--reverse {
+.programs-track--reverse {
   grid-template-columns: minmax(0, 0.95fr) minmax(0, 1.05fr);
 }
 
-.mentorship-track--reverse .mentorship-track-media {
+.programs-track--reverse .programs-track-media {
   order: 2;
 }
 
-.mentorship-track--reverse .mentorship-track-copy {
+.programs-track--reverse .programs-track-copy {
   order: 1;
 }
 
-.mentorship-track-media {
+.programs-track-media {
   position: relative;
   overflow: hidden;
   box-shadow: var(--shadow-soft);
 }
 
-.mentorship-track-media::after {
+.programs-track-media::after {
   content: none;
 }
 
-.mentorship-track-media img {
+.programs-track-media img {
   display: block;
   width: 100%;
   height: auto;
@@ -370,16 +370,16 @@
     filter 700ms ease;
 }
 
-.mentorship-track:hover .mentorship-track-media img {
+.programs-track:hover .programs-track-media img {
   transform: scale(1.03);
   filter: saturate(1.02);
 }
 
-.mentorship-track-copy {
+.programs-track-copy {
   max-width: 31rem;
 }
 
-.mentorship-track-copy h3 {
+.programs-track-copy h3 {
   margin: 0.85rem 0 0;
   font-family: var(--font-display);
   font-size: clamp(1.75rem, 2.8vw, 2.7rem);
@@ -389,29 +389,29 @@
   text-wrap: balance;
 }
 
-.mentorship-track-copy p,
-.mentorship-process-step p,
-.mentorship-contact {
+.programs-track-copy p,
+.programs-process-step p,
+.programs-contact {
   margin-top: 1rem;
   font-size: 1rem;
   line-height: 1.82;
   color: var(--color-muted);
 }
 
-.mentorship-process {
+.programs-process {
   padding: clamp(4rem, 7vw, 6.25rem) 0 0;
 }
 
-.mentorship-process-header {
+.programs-process-header {
   max-width: 48rem;
 }
 
-.mentorship-process-list {
+.programs-process-list {
   margin-top: clamp(2rem, 4vw, 2.8rem);
   border-top: 1px solid var(--border-subtle);
 }
 
-.mentorship-process-step {
+.programs-process-step {
   display: grid;
   grid-template-columns: 5.5rem minmax(0, 1fr);
   gap: clamp(1rem, 3vw, 2rem);
@@ -419,7 +419,7 @@
   border-bottom: 1px solid var(--border-subtle);
 }
 
-.mentorship-process-number {
+.programs-process-number {
   font-family: var(--font-display);
   font-size: clamp(2rem, 4vw, 3rem);
   line-height: 1;
@@ -427,7 +427,7 @@
   color: var(--color-brand);
 }
 
-.mentorship-process-step h3 {
+.programs-process-step h3 {
   font-family: var(--font-sans);
   font-size: 1.12rem;
   font-weight: 600;
@@ -436,12 +436,12 @@
   color: var(--color-ink);
 }
 
-.mentorship-apply {
+.programs-apply {
   padding: clamp(4rem, 7vw, 6rem) 0 0;
   display: block;
 }
 
-.mentorship-inline-apply-link {
+.programs-inline-apply-link {
   display: inline-flex;
   align-items: center;
   gap: 0.34rem;
@@ -451,7 +451,7 @@
   white-space: nowrap;
 }
 
-.mentorship-inline-apply-link span {
+.programs-inline-apply-link span {
   text-decoration: underline;
   text-decoration-color: currentColor;
   text-underline-offset: 0.14em;
@@ -461,7 +461,7 @@
     color var(--transition-medium);
 }
 
-.mentorship-inline-apply-link-arrow {
+.programs-inline-apply-link-arrow {
   width: 0.7em;
   height: 0.7em;
   flex-shrink: 0;
@@ -469,104 +469,104 @@
   transition: transform var(--transition-medium);
 }
 
-.mentorship-inline-apply-link:hover span,
-.mentorship-inline-apply-link:focus-visible span {
+.programs-inline-apply-link:hover span,
+.programs-inline-apply-link:focus-visible span {
   text-decoration-color: currentColor;
 }
 
-.mentorship-inline-apply-link:hover .mentorship-inline-apply-link-arrow,
-.mentorship-inline-apply-link:focus-visible .mentorship-inline-apply-link-arrow {
+.programs-inline-apply-link:hover .programs-inline-apply-link-arrow,
+.programs-inline-apply-link:focus-visible .programs-inline-apply-link-arrow {
   transform: translateX(8px);
 }
 
-.mentorship-inline-apply-link:focus-visible {
+.programs-inline-apply-link:focus-visible {
   outline: none;
   box-shadow: var(--cta-primary-focus-ring);
   border-radius: 0.2rem;
 }
 
-.mentorship-contact {
+.programs-contact {
   margin-top: 0.2rem;
 }
 
-.mentorship-contact--intro {
+.programs-contact--intro {
   max-width: 38rem;
   margin-top: 1rem;
 }
 
-.mentorship-contact a {
+.programs-contact a {
   color: var(--color-brand);
   text-decoration: none;
 }
 
-.mentorship-contact a:hover,
-.mentorship-contact a:focus-visible {
+.programs-contact a:hover,
+.programs-contact a:focus-visible {
   text-decoration: underline;
 }
 
 @media (max-width: 980px) {
-  .mentorship-overview-grid,
-  .mentorship-track,
-  .mentorship-track--reverse,
-  .mentorship-apply {
+  .programs-overview-grid,
+  .programs-track,
+  .programs-track--reverse,
+  .programs-apply {
     grid-template-columns: 1fr;
   }
 
-  .mentorship-track--reverse .mentorship-track-media,
-  .mentorship-track--reverse .mentorship-track-copy {
+  .programs-track--reverse .programs-track-media,
+  .programs-track--reverse .programs-track-copy {
     order: initial;
   }
 
-  .mentorship-track-copy {
+  .programs-track-copy {
     max-width: none;
   }
 }
 
 @media (max-width: 768px) {
-  .mentorship-hero,
-  .mentorship-hero-shell {
+  .programs-hero,
+  .programs-hero-shell {
     min-height: auto;
   }
 
-  .mentorship-hero-shell {
+  .programs-hero-shell {
     padding-top: clamp(6.75rem, 18vw, 8rem);
   }
 
-  .mentorship-hero-actions {
+  .programs-hero-actions {
     flex-direction: column;
     align-items: stretch;
   }
 
-  .mentorship-status-pill,
-  .mentorship-link-button {
+  .programs-status-pill,
+  .programs-link-button {
     width: 100%;
   }
 
-  .mentorship-process-step {
+  .programs-process-step {
     grid-template-columns: 1fr;
     gap: 0.8rem;
   }
 }
 
 @media (max-width: 560px) {
-  .mentorship-title {
+  .programs-title {
     font-size: clamp(2.7rem, 16vw, 4rem);
   }
 
-  .mentorship-track-media {
+  .programs-track-media {
     min-height: 16.5rem;
   }
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .mentorship-hero,
-  .mentorship-overview,
-  .mentorship-tracks,
-  .mentorship-process,
-  .mentorship-apply,
-  .mentorship-track-media img,
-  .mentorship-status-dot.open-dot,
-  .mentorship-link-arrow {
+  .programs-hero,
+  .programs-overview,
+  .programs-tracks,
+  .programs-process,
+  .programs-apply,
+  .programs-track-media img,
+  .programs-status-dot.open-dot,
+  .programs-link-arrow {
     animation: none !important;
     transition: none !important;
     transform: none !important;

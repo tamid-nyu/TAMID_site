@@ -16,25 +16,25 @@ export const Footer = () => {
         <div className="footer-content">
           <div className="footer-lead">
             <div className="footer-intro">
-              <h2>Connect with the Stern Jewish Business Association.</h2>
+              <h2>Connect with TAMID Group at NYU.</h2>
               <p>Follow club updates and keep the conversation going.</p>
             </div>
 
             <div className="footer-social">
               <div className="footer-social-links">
                 <SocialLink
-                  href="https://www.linkedin.com/company/sjba/"
+                  href="https://www.linkedin.com/company/tamidgroup/"
                   platform="linkedin"
                   name="LinkedIn"
-                  handle="@sjba"
+                  handle="@tamid"
                   iconSrc="/icons/linkedin-logo.png"
                   alt="LinkedIn"
                 />
                 <SocialLink
-                  href="https://www.instagram.com/nyusjba/"
+                  href="https://www.instagram.com/nyutamid/"
                   platform="instagram"
                   name="Instagram"
-                  handle="@nyusjba"
+                  handle="@nyutamid"
                   iconSrc="/icons/instagram-logo.png"
                   alt="Instagram"
                 />
@@ -45,7 +45,7 @@ export const Footer = () => {
           <div className="footer-links">
             <div className="footer-column">
               <h3>Programs</h3>
-              <Link to="/mentorship">Mentorship</Link>
+              <Link to="/programs">Programs</Link>
             </div>
 
             <div className="footer-column">
@@ -55,7 +55,7 @@ export const Footer = () => {
 
             <div className="footer-column">
               <h3>About Us</h3>
-              <Link to="/our-mission">The SJBA Mission</Link>
+              <Link to="/our-mission">The TAMID Mission</Link>
               <Link to="/our-board">Executive Board</Link>
               <Link to="/our-members">General Members</Link>
             </div>
@@ -71,17 +71,18 @@ export const Footer = () => {
           <div className="footer-address">
             <span className="footer-meta-label">New York, NY</span>
             <p>
-              Stern Jewish Business Association
+              TAMID Group at NYU
               <br />
-              44 West 4th Street
+              {/* TODO(human): TAMID physical address placeholder */}
+              [Address placeholder]
               <br />
-              New York, NY 10012 USA
+              New York, NY USA
             </p>
           </div>
 
           <div className="footer-copyright">
             <p>
-              Copyright © {new Date().getFullYear()} Stern Jewish Business Association.
+              Copyright © {new Date().getFullYear()} TAMID Group at NYU.
               <br />
               All rights reserved.
             </p>

@@ -7,7 +7,7 @@ import {
   OurMission,
   OurBoard,
   OurMembers,
-  Mentorship,
+  Programs,
   Events,
   Contact,
   NotFound,
@@ -71,7 +71,7 @@ export const AppContent = () => (
           <Route path="/our-mission" element={<OurMission />} />
           <Route path="/our-board" element={<OurBoard />} />
           <Route path="/our-members" element={<OurMembers />} />
-          <Route path="/mentorship" element={<Mentorship />} />
+          <Route path="/programs" element={<Programs />} />
           <Route path="/events" element={<Events />} />
           <Route path="/contact" element={<Contact />} />
           <Route path="*" element={<NotFound />} />

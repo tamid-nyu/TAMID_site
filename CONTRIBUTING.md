@@ -13,8 +13,8 @@
 1. **Clone the repository**
 
    ```bash
-   git clone https://github.com/ohortig/SJBA_site.git
-   cd SJBA_site
+   git clone https://github.com/ohortig/TAMID_site.git
+   cd TAMID_site
    ```
 
 2. **Install dependencies**
@@ -32,16 +32,16 @@
    ```
 
    **Backend URL options:**
-   - **Production**: `https://api.nyu-sjba.org/v1`
+   - **Production**: `https://api.nyu-tamid.org/v1`
    - **Local Development**: `/v1`
 
    Local development requests to `/v1` are proxied to `http://localhost:3000` by Vite.
 
    For local database data, start local Supabase and the backend API from
-   `SJBA_site_backend`. The backend repository owns Supabase CLI usage, migrations,
+   `TAMID_site_backend`. The backend repository owns Supabase CLI usage, migrations,
    local database reset/seed workflows, and backend Supabase environment values.
 
-   > See: [SJBA Backend Repository](https://github.com/ohortig/SJBA_site_backend)
+   > See: [TAMID Backend Repository](https://github.com/ohortig/TAMID_site_backend)
 
 4. **Start development server**
 
@@ -92,7 +92,7 @@ CI runs linting, Prettier checks, tests, and a production build on pushes and pu
 
 ### Code ownership
 
-Code ownership is controlled by SJBA's Director of Technology.
+Code ownership is controlled by TAMID's Director of Technology.
 
 To propose a change, create a new Git branch based on `main`:
 

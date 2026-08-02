@@ -11,7 +11,7 @@ describe('ErrorDisplay', () => {
     render(<ErrorDisplay error="Could not load events." onRetry={onRetry} />);
 
     expect(screen.getByRole('alert')).toHaveTextContent('Could not load events.');
-    expect(screen.getByRole('link', { name: /sjba service status/i })).toHaveAttribute(
+    expect(screen.getByRole('link', { name: /tamid service status/i })).toHaveAttribute(
       'href',
       STATUS_PAGE_URL
     );
@@ -24,6 +24,6 @@ describe('ErrorDisplay', () => {
   it('does not repeat the status link when the message already references status', () => {
     render(<ErrorDisplay error="Please check service status before retrying." />);
 
-    expect(screen.queryByRole('link', { name: /sjba service status/i })).not.toBeInTheDocument();
+    expect(screen.queryByRole('link', { name: /tamid service status/i })).not.toBeInTheDocument();
   });
 });

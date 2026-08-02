@@ -11,8 +11,8 @@ interface ErrorDisplayProps {
 export const ErrorDisplay = ({ error, onRetry, showStatusLink = true }: ErrorDisplayProps) => {
   const normalizedError = error.toLowerCase();
   const containsStatusReference =
-    normalizedError.includes('status.nyu-sjba.org') ||
-    normalizedError.includes('sjba service status') ||
+    normalizedError.includes('status.nyu-tamid.org') ||
+    normalizedError.includes('tamid service status') ||
     normalizedError.includes('service status') ||
     normalizedError.includes('platform status');
 
@@ -35,7 +35,7 @@ export const ErrorDisplay = ({ error, onRetry, showStatusLink = true }: ErrorDis
                 rel="noreferrer"
                 useArrow={false}
               >
-                SJBA Service Status
+                TAMID Service Status
               </InlineLink>
               &nbsp;for real-time updates.
             </p>

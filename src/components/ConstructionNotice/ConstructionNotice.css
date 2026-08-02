@@ -1,0 +1,94 @@
+/* Construction Notice Component Styles */
+
+.construction-container {
+  background: linear-gradient(135deg, rgba(76, 13, 127, 0.05), rgba(139, 92, 246, 0.08));
+  border: 1px solid rgba(76, 13, 127, 0.15);
+  padding: 3rem;
+  text-align: center;
+  margin: 4rem auto 0 auto;
+  max-width: 800px;
+  box-shadow: 0 4px 20px rgba(76, 13, 127, 0.1);
+}
+
+.construction-container h2 {
+  font-size: 1.3rem;
+  font-weight: 600;
+  color: #374151;
+  margin-bottom: 1.5rem;
+  line-height: 1.4;
+}
+
+.construction-container p {
+  font-size: 1rem;
+  color: #64748b;
+  line-height: 1.6;
+  margin-bottom: 2rem;
+}
+
+.construction-buttons {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.construction-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.75rem;
+  text-decoration: none;
+  padding: 1rem 2rem;
+  font-size: 1.1rem;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  min-width: 160px;
+  justify-content: center;
+  background: linear-gradient(135deg, #4c0d7f, #8b5cf6);
+  color: white;
+  box-shadow: 0 4px 12px rgba(76, 13, 127, 0.2);
+}
+
+.construction-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(76, 13, 127, 0.3);
+  background: linear-gradient(135deg, #5a1a8a, #9f7aea);
+  text-decoration: none;
+  color: white;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .construction-container {
+    padding: 2rem;
+    margin: 3rem auto 0 auto;
+  }
+
+  .construction-container h2 {
+    font-size: 1.2rem;
+  }
+
+  .construction-buttons {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .construction-btn {
+    width: 100%;
+    max-width: 280px;
+  }
+}
+
+@media (max-width: 480px) {
+  .construction-container {
+    padding: 1.5rem;
+  }
+
+  .construction-container h2 {
+    font-size: 1.1rem;
+  }
+
+  .construction-btn {
+    width: 100%;
+    max-width: 280px;
+  }
+}

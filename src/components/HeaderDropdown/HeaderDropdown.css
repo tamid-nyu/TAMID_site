@@ -1,0 +1,106 @@
+.dropdown {
+  position: relative;
+}
+
+.dropdown-trigger {
+  gap: 0.5rem;
+  border: none;
+  background: transparent;
+}
+
+.dropdown-arrow {
+  font-size: 0.66rem;
+}
+
+.dropdown-menu-shell {
+  position: absolute;
+  top: calc(100% + 1rem);
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.dropdown-menu {
+  width: max-content;
+  padding: 0.85rem;
+  border: 1px solid rgba(76, 13, 127, 0.12);
+  background: rgba(251, 248, 243, 0.98);
+  color: var(--color-ink);
+  box-shadow: var(--header-menu-shadow);
+  transform-origin: top center;
+  will-change: transform, opacity;
+}
+
+.dropdown-menu.is-open {
+  opacity: 1;
+  visibility: visible;
+}
+
+.dropdown-item {
+  position: relative;
+  display: block;
+  white-space: nowrap;
+  padding: 0.8rem 0.9rem;
+  color: var(--color-ink);
+  font-family: var(--font-sans);
+  font-size: 0.94rem;
+  font-weight: 500;
+  line-height: 1.2;
+  text-decoration: none;
+  transition:
+    background-color var(--transition-medium),
+    color var(--transition-medium),
+    transform var(--transition-medium);
+}
+
+.dropdown-item::after {
+  content: '';
+  position: absolute;
+  left: 0.9rem;
+  right: 0.9rem;
+  bottom: 0.45rem;
+  height: 1px;
+  background: currentColor;
+  opacity: 0.55;
+  transform: scaleX(0);
+  transform-origin: left;
+  transition:
+    transform var(--transition-medium),
+    opacity var(--transition-medium);
+}
+
+.dropdown-item:hover,
+.dropdown-item:focus-visible {
+  color: var(--color-brand-deep);
+  text-decoration: none;
+  transform: translateY(-1px);
+}
+
+.dropdown-item:hover::after,
+.dropdown-item:focus-visible::after,
+.dropdown-item.is-active::after {
+  transform: scaleX(1);
+}
+
+.dropdown-item.is-active {
+  color: var(--color-brand-deep);
+  text-decoration: none;
+}
+
+.dropdown-item:focus-visible {
+  outline: none;
+  box-shadow: var(--header-focus-ring);
+}
+
+@media (max-width: 1024px) {
+  .dropdown {
+    display: contents;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .dropdown-arrow,
+  .dropdown-item,
+  .dropdown-item::after {
+    transition: none !important;
+  }
+}

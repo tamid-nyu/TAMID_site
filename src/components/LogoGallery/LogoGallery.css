@@ -1,0 +1,123 @@
+.logo-gallery-container {
+  width: 100%;
+  padding: 1.1rem 0 1.3rem;
+  position: relative;
+  background: rgba(247, 242, 233, 0.88);
+}
+
+.logo-gallery-viewport {
+  overflow: hidden;
+}
+
+.logo-gallery {
+  display: flex;
+  width: max-content;
+  will-change: transform;
+}
+
+.logo-gallery-set {
+  display: flex;
+  gap: 1.5rem;
+}
+
+.logo-item {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  min-width: 132px;
+  height: 62px;
+}
+
+.company-logo {
+  max-width: 112px;
+  max-height: 42px;
+  width: auto;
+  height: auto;
+  object-fit: contain;
+  filter: grayscale(1) saturate(0) opacity(0.52);
+  transition:
+    filter var(--transition-medium),
+    transform var(--transition-medium),
+    opacity var(--transition-medium);
+}
+
+.logo-item:hover .company-logo,
+.logo-item:focus-within .company-logo {
+  filter: grayscale(0) saturate(1) opacity(1);
+  transform: translateY(-1px);
+}
+
+.logo-fallback,
+.logo-text {
+  font-family: var(--font-sans);
+  font-weight: 600;
+  color: var(--color-muted);
+  font-size: 0.82rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  opacity: 0.78;
+}
+
+.logo-gallery-eyebrow {
+  margin: 0 0 0.95rem;
+  padding-inline: var(--page-gutter);
+  font-family: var(--font-sans);
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: rgba(76, 13, 127, 0.72);
+}
+
+.logo-gallery-container-default {
+  margin-top: 1rem;
+  border-top: 1px solid rgba(76, 13, 127, 0.08);
+  border-bottom: 1px solid rgba(76, 13, 127, 0.08);
+}
+
+.logo-gallery-container-hero-ribbon {
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.64) 0%, rgba(247, 242, 233, 0.92) 100%);
+}
+
+.logo-gallery-container-hero-ribbon .logo-gallery-eyebrow {
+  color: rgba(32, 25, 46, 0.66);
+}
+
+@media (max-width: 768px) {
+  .logo-gallery-set {
+    gap: 1.1rem;
+  }
+
+  .logo-item {
+    min-width: 112px;
+    height: 54px;
+  }
+
+  .company-logo {
+    max-width: 92px;
+    max-height: 34px;
+  }
+}
+
+@media (max-width: 480px) {
+  .logo-gallery-set {
+    gap: 0.9rem;
+  }
+
+  .logo-item {
+    min-width: 96px;
+    height: 48px;
+  }
+
+  .company-logo {
+    max-width: 78px;
+    max-height: 30px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .company-logo {
+    transition: none !important;
+  }
+}

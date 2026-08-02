@@ -1,0 +1,121 @@
+.error-display {
+  display: flex;
+  justify-content: center;
+  padding: clamp(1.25rem, 3vw, 2.25rem) 0;
+}
+
+.error-display__shell {
+  width: min(100%, 40rem);
+  padding: clamp(1.6rem, 3vw, 2.5rem);
+  background: var(--color-surface);
+  box-shadow: var(--surface-highlight);
+}
+
+.error-display__mark img {
+  width: 1.6rem;
+  height: 1.6rem;
+  opacity: 0.92;
+}
+
+.error-display__content {
+  text-align: center;
+}
+
+.error-display__eyebrow {
+  margin: 0 0 0.85rem;
+  color: var(--color-brand);
+  font-family: var(--font-sans);
+  font-size: 0.74rem;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+}
+
+.error-display__title {
+  margin: 0;
+  color: var(--color-brand-deep);
+  font-family: var(--font-display);
+  font-size: clamp(2rem, 4vw, 3rem);
+  line-height: 0.98;
+  letter-spacing: -0.04em;
+  text-wrap: balance;
+}
+
+.error-display__message {
+  max-width: 34rem;
+  margin: 1rem auto 0;
+  color: var(--color-muted);
+  font-family: var(--font-sans);
+  font-size: clamp(1rem, 1.4vw, 1.08rem);
+  line-height: 1.78;
+}
+
+.error-display__status {
+  max-width: 30rem;
+  margin: 1.05rem auto 0;
+  color: var(--color-muted);
+  font-family: var(--font-sans);
+  font-size: 0.95rem;
+  line-height: 1.7;
+}
+
+.error-display__status-link {
+  color: inherit;
+  font-weight: 600;
+}
+
+.error-display__retry {
+  appearance: none;
+  margin-top: 1.6rem;
+  min-height: 3.35rem;
+  padding: 0.9rem 1.35rem;
+  border: 1px solid var(--cta-primary-border);
+  background: var(--cta-primary-background);
+  color: var(--cta-primary-text);
+  font-family: var(--font-sans);
+  font-size: 0.88rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition:
+    transform var(--transition-medium),
+    background-color var(--transition-medium),
+    color var(--transition-medium),
+    border-color var(--transition-medium),
+    box-shadow var(--transition-medium);
+}
+
+.error-display__retry:hover,
+.error-display__retry:focus-visible {
+  background: var(--cta-primary-background-hover);
+  color: var(--cta-primary-text);
+  transform: translateY(-1px);
+}
+
+.error-display__retry:focus-visible {
+  outline: none;
+  box-shadow: var(--cta-primary-focus-ring);
+}
+
+@media (max-width: 768px) {
+  .error-display {
+    padding-block: 1.25rem;
+  }
+
+  .error-display__shell {
+    padding: 1.5rem 1.2rem;
+  }
+
+  .error-display__title {
+    max-width: 12ch;
+    margin-inline: auto;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .error-display__retry {
+    transition: none !important;
+    transform: none !important;
+  }
+}

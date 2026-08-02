@@ -60,12 +60,15 @@ Google Fonts import:
 
 ## Logos
 
-Stored in `brand/logos/` (pulled from the national site — confirm usage rights with the national org before public launch):
+The chapter lockup reads **"TAMID at NYU"** ("TAMID" bold navy, "at" lighter gray, "NYU" sky blue) beside the recognizable TAMID **"T" monogram** (sky-blue top bar + navy bracket). It is **vector-sourced** — hand-authored SVG with the wordmark converted to outline **paths** (no font dependency) — and rasterized to hi-res transparent PNGs, so it stays sharp at any size. Source SVGs live in `brand/logos/`:
 
 | File | Description | Use on |
 |------|-------------|--------|
-| `tamid-logo-dark.png` | Wordmark + mark, dark text (465×59) | Light backgrounds — header, light sections |
-| `tamid-logo-white.png` | White wordmark (transparent, 464×58) | Navy/dark backgrounds — footer, hero overlays |
+| `tamid-at-nyu-dark.svg` / `.png` | Full lockup, navy text (vector; PNG 1800×297) | Light backgrounds — header, light sections |
+| `tamid-at-nyu-white.svg` / `.png` | Full lockup, white text + sky accent (vector; PNG 1800×297) | Navy/dark backgrounds — footer, hero overlays |
+| `tamid-at-nyu-icon-dark.svg` / `-white.svg` | Icon-only "T" monogram (square, 900×900 PNG) | Favicon / square / social avatar |
+
+Legacy `tamid-logo-dark.png` / `tamid-logo-white.png` are the low-res national **"TAMID GROUP"** wordmark and are superseded by the above.
 
 Logo mark color: sky blue `#41B5E8`. Maintain clear space ≥ the height of the "T" around the logo; never recolor the mark outside the palette.
 
@@ -102,7 +105,8 @@ Logo mark color: sky blue `#41B5E8`. Maintain clear space ≥ the height of the 
 ---
 *Placeholders still needed from the chapter: official NYU-chapter logo lockup (if different from national), chapter contact email, real domain, and social handles.*
 
-## TODO — logo assets
+## Logo assets — installed variants
 
-- **Icon-only / no-text mark still needed.** The national logo available is a horizontal wordmark only (`tamid-logo-dark.png` 465×59, `tamid-logo-white.png`). There is NO icon-only variant, so the `public/tamid/tamid-logo-clear-no-text.png` "no-text" slot currently holds the full wordmark. Source or commission a proper standalone mark (sky-blue `#41B5E8`) for favicon/square/social-avatar use.
-- `public/tamid/` filenames are preserved from the SJBA template so code references still resolve; only the bytes were swapped. `*white*`/`*inverted*` variants = white wordmark (for navy/dark backgrounds); all others = dark wordmark (for light backgrounds). `tamid-logo-purple.png` keeps its legacy filename but now holds the dark navy/sky wordmark.
+- **Vector-sourced, sharp everywhere.** The `public/tamid/*.png` files are now high-res (1800×297, and 900×900 for the icon) rasterizations of the hand-authored SVGs in `brand/logos/`, replacing the old blurry 465×59 national wordmark. Re-export with `cairosvg <svg> -o <png> --output-width 1800`.
+- **An icon-only "T" monogram mark now exists** (`tamid-at-nyu-icon-{dark,white}.svg`, 900×900 PNG). It fills the `public/tamid/tamid-logo-clear-no-text.png` no-text slot for favicon/square/social-avatar use.
+- `public/tamid/` filenames are preserved from the SJBA template so code references still resolve; only the bytes were swapped. `*white*`/`*inverted*` variants = white lockup (for navy/dark backgrounds); `*no-text* = icon-only mark; all others = dark lockup (for light backgrounds). `tamid-logo-purple.png` keeps its legacy filename but now holds the dark navy/sky lockup.

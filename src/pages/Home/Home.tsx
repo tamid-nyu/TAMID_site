@@ -22,12 +22,7 @@ import {
 import './Home.css';
 
 const LAST_DISMISSED_DATE_STORAGE_KEY = 'homeNextEventPopup:lastDismissedDate';
-const HERO_GALLERY_IMAGES = [
-  '/home-gallery/tamid-gallery-1.JPG',
-  '/home-gallery/tamid-gallery-2.JPG',
-  '/home-gallery/tamid-gallery-3.JPG',
-  '/home-gallery/tamid-gallery-4.JPG',
-] as const;
+const HERO_GALLERY_IMAGES = ['/home-gallery/tamid-gallery-1.JPG'] as const;
 const HERO_GALLERY_PLACEHOLDER = '/home-gallery/tamid-gallery-1-placeholder.jpg';
 const HOME_PAGE_SPEAKER_LOGOS = [
   { name: 'Goldman Sachs', src: '/speaker-logos/goldman-sachs-logo.png' },

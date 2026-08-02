@@ -18,6 +18,7 @@
   gap: 0.7rem;
   font-family: var(--font-sans);
   font-weight: 600;
+  border-radius: var(--cta-primary-radius, 0.5rem);
   text-transform: uppercase;
   text-decoration: none;
   transition:
@@ -109,7 +110,7 @@
 }
 
 .link-button-secondary__status-dot--closed {
-  background: rgba(251, 248, 243, 0.56);
+  background: rgba(250, 252, 254, 0.56);
 }
 
 @media (max-width: 768px) {

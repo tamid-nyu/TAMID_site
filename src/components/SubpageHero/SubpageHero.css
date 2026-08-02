@@ -31,12 +31,12 @@
   background:
     linear-gradient(
       90deg,
-      rgba(23, 18, 32, 0.88) 0%,
-      rgba(23, 18, 32, 0.74) 35%,
-      rgba(23, 18, 32, 0.42) 64%,
-      rgba(23, 18, 32, 0.58) 100%
+      rgba(18, 39, 75, 0.88) 0%,
+      rgba(18, 39, 75, 0.74) 35%,
+      rgba(18, 39, 75, 0.42) 64%,
+      rgba(18, 39, 75, 0.58) 100%
     ),
-    linear-gradient(180deg, rgba(23, 18, 32, 0.04) 0%, rgba(23, 18, 32, 0.62) 100%);
+    linear-gradient(180deg, rgba(18, 39, 75, 0.04) 0%, rgba(18, 39, 75, 0.62) 100%);
   z-index: 2;
 }
 
@@ -82,7 +82,7 @@
   font-weight: 600;
   letter-spacing: 0.18em;
   text-transform: uppercase;
-  color: rgba(251, 248, 243, 0.72);
+  color: rgba(250, 252, 254, 0.72);
 }
 
 .subpage-hero__title {
@@ -100,7 +100,7 @@
   margin: 2rem 0 0.5rem;
   font-size: clamp(1.03rem, 1.95vw, 1.18rem);
   line-height: 1.8;
-  color: rgba(251, 248, 243, 0.82);
+  color: rgba(250, 252, 254, 0.82);
 }
 
 .subpage-hero__actions {

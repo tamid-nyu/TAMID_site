@@ -12,7 +12,7 @@
   width: 1.6rem;
   height: 1.6rem;
   border-radius: 50%;
-  border: 2px solid rgba(23, 18, 32, 0.14);
+  border: 2px solid rgba(18, 39, 75, 0.14);
   border-left: 2px solid var(--color-ink);
   animation: spin 1s linear infinite;
   margin-bottom: 0;

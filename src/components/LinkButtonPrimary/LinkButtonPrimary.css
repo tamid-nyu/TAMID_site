@@ -6,6 +6,7 @@
   border: 1px solid var(--cta-primary-border);
   background: var(--cta-primary-background);
   color: var(--cta-primary-text);
+  border-radius: var(--cta-primary-radius, 0.5rem);
   box-shadow: none;
   font-family: var(--font-sans);
   font-weight: 600;

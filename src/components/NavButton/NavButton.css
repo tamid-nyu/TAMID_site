@@ -60,6 +60,7 @@
 .nav-button--primary {
   padding: 0.92rem 1.35rem;
   border: 1px solid var(--cta-primary-border);
+  border-radius: var(--cta-primary-radius, 0.5rem);
   color: var(--cta-primary-text);
   background: var(--cta-primary-background);
   box-shadow: none;

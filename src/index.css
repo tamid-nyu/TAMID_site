@@ -18,10 +18,11 @@
   --color-gray-400: #e1e1e1;
   --color-gray-600: #808080;
 
-  /* Fonts: Roboto (headings/UI), Open Sans (body), Roboto Slab (optional accent) */
-  --font-display: 'Roboto', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  /* Fonts: Lora (serif headings/display), Roboto (UI), Open Sans (body) */
+  --font-display: 'Lora', Georgia, 'Times New Roman', serif;
+  --font-ui: 'Roboto', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
   --font-sans: 'Open Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-  --font-accent: 'Roboto Slab', Georgia, serif;
+  --font-accent: 'Lora', Georgia, serif;
 
   /* Semantic tokens (retargeted from SJBA purple -> TAMID navy/sky) */
   --color-brand: var(--color-navy);
@@ -107,8 +108,8 @@ h6 {
   font-family: var(--font-display);
   color: var(--color-ink);
   font-weight: 700;
-  line-height: 1.1;
-  letter-spacing: -0.02em;
+  line-height: 1.15;
+  letter-spacing: -0.005em;
 }
 
 a {

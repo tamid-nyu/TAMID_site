@@ -68,7 +68,7 @@
   font-family: var(--font-sans);
   font-size: clamp(1.02rem, 1.55vw, 1.12rem);
   line-height: 1.85;
-  color: rgba(32, 25, 46, 0.86);
+  color: rgba(24, 39, 75, 0.86);
 }
 
 .our-mission-stories {

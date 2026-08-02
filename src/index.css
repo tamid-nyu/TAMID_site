@@ -5,37 +5,52 @@
 */
 
 :root {
-  --font-display:
-    'Iowan Old Style', 'Palatino Linotype', 'Book Antiqua', Garamond, 'Times New Roman', serif;
-  --font-sans: 'Avenir Next', Avenir, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif;
-  --color-brand: #4c0d7f;
-  --color-brand-deep: #20192e;
-  --color-ink: #171220;
-  --color-muted: #5c556d;
-  --color-accent: #c4a86a;
-  --color-surface: #f7f2e9;
-  --color-canvas: #fbf8f3;
+  /* TAMID brand palette (canonical source: brand/STYLE.md) */
+  --color-navy: #18274b;
+  --color-sky: #41b5e8;
+  --color-blue-mid: #219cd3;
+  --color-blue-deep: #0f94cf;
+  --color-blue-tint: #f5fbfe;
+  --color-gray-100: #f5f5f5;
+  --color-gray-200: #f2f2f2;
+  --color-gray-300: #ebeaea;
+  --color-gray-400: #e1e1e1;
+  --color-gray-600: #808080;
+
+  /* Fonts: Roboto (headings/UI), Open Sans (body), Roboto Slab (optional accent) */
+  --font-display: 'Roboto', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  --font-sans: 'Open Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  --font-accent: 'Roboto Slab', Georgia, serif;
+
+  /* Semantic tokens (retargeted from SJBA purple -> TAMID navy/sky) */
+  --color-brand: var(--color-navy);
+  --color-brand-deep: var(--color-navy);
+  --color-ink: var(--color-navy);
+  --color-muted: var(--color-gray-600);
+  --color-accent: var(--color-sky);
+  --color-surface: var(--color-gray-100);
+  --color-canvas: var(--color-white);
   --color-white: #ffffff;
-  --border-subtle: rgba(76, 13, 127, 0.18);
+  --border-subtle: rgba(24, 39, 75, 0.18);
   --surface-highlight: rgba(255, 255, 255, 0.5);
   --surface-gradient-editorial: linear-gradient(
     180deg,
     rgba(255, 255, 255, 0.78) 0%,
-    rgba(247, 242, 233, 0.84) 100%
+    rgba(245, 251, 254, 0.84) 100%
   );
   --page-gutter: clamp(1.4rem, 6vw, 15vw);
   --content-max-width: 78rem;
   --header-compact-height: 5rem;
   --header-offset: var(--header-compact-height);
   --radius-soft: 1.5rem;
-  --shadow-soft: 0 20px 45px rgba(32, 25, 46, 0.08);
-  --shadow-panel: 0 10px 24px rgba(32, 25, 46, 0.08);
+  --shadow-soft: 0 20px 45px rgba(24, 39, 75, 0.08);
+  --shadow-panel: 0 10px 24px rgba(24, 39, 75, 0.08);
   --transition-medium: 220ms ease;
-  --cta-primary-text: #fbf8f3;
-  --cta-primary-border: rgba(32, 25, 46, 0.28);
+  --cta-primary-text: #ffffff;
+  --cta-primary-border: rgba(24, 39, 75, 0.28);
   --cta-primary-background: var(--color-brand);
-  --cta-primary-background-hover: #5b178f;
-  --cta-primary-focus-ring: 0 0 0 4px rgba(76, 13, 127, 0.12);
+  --cta-primary-background-hover: #219cd3;
+  --cta-primary-focus-ring: 0 0 0 4px rgba(24, 39, 75, 0.12);
   font-family: var(--font-sans);
   line-height: 1.5;
   font-weight: 400;
@@ -99,7 +114,7 @@ button {
 }
 
 button:hover {
-  border-color: rgba(76, 13, 127, 0.24);
+  border-color: rgba(24, 39, 75, 0.24);
 }
 
 button:focus,

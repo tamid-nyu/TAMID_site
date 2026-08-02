@@ -48,7 +48,7 @@
   width: min(36vw, 28rem);
   height: min(36vw, 28rem);
   border-radius: 50%;
-  background: radial-gradient(circle, rgba(196, 168, 106, 0.24) 0%, rgba(196, 168, 106, 0) 72%);
+  background: radial-gradient(circle, rgba(65, 181, 232, 0.24) 0%, rgba(65, 181, 232, 0) 72%);
   transform: translate(20%, 12%);
   z-index: 2;
   pointer-events: none;
@@ -251,7 +251,7 @@
 
 .nav-dot.active {
   background: var(--color-accent);
-  border-color: rgba(196, 168, 106, 0.9);
+  border-color: rgba(65, 181, 232, 0.9);
   transform: scale(1.1);
 }
 
@@ -276,7 +276,7 @@
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: clamp(1.5rem, 3vw, 2.5rem);
-  border-bottom: 1px solid rgba(76, 13, 127, 0.12);
+  border-bottom: 1px solid rgba(24, 39, 75, 0.12);
 }
 
 .proof-item {

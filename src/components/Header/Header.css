@@ -10,8 +10,8 @@
   --header-dark-text: var(--color-ink);
   --header-light-text: rgba(255, 251, 244, 0.96);
   --header-divider-light: rgba(255, 255, 255, 0.18);
-  --header-divider-dark: rgba(76, 13, 127, 0.14);
-  --header-focus-ring: 0 0 0 3px rgba(196, 168, 106, 0.3);
+  --header-divider-dark: rgba(24, 39, 75, 0.14);
+  --header-focus-ring: 0 0 0 3px rgba(65, 181, 232, 0.3);
   --header-menu-shadow: 0 24px 60px rgba(23, 18, 32, 0.18);
   position: fixed;
   inset: 0 0 auto;

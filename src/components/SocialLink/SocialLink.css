@@ -2,8 +2,8 @@
   --social-link-gap: 1rem;
   --social-link-padding-block: 0.95rem;
   --social-link-padding-inline: 0;
-  --social-link-divider: rgba(76, 13, 127, 0.1);
-  --social-link-divider-hover: rgba(76, 13, 127, 0.16);
+  --social-link-divider: rgba(24, 39, 75, 0.1);
+  --social-link-divider-hover: rgba(24, 39, 75, 0.16);
   --social-link-icon-size: 3rem;
   --social-link-text-gap: 0.18rem;
   --social-link-name-size: 1.08rem;
@@ -36,7 +36,7 @@
 }
 
 .social-link:focus-visible {
-  outline: 2px solid rgba(76, 13, 127, 0.22);
+  outline: 2px solid rgba(24, 39, 75, 0.22);
   outline-offset: 0.3rem;
   border-radius: 0.2rem;
 }
@@ -100,13 +100,13 @@
 .social-link:hover .social-name,
 .social-link:focus-visible .social-name {
   color: var(--color-brand-deep);
-  text-decoration-color: rgba(76, 13, 127, 0.38);
+  text-decoration-color: rgba(24, 39, 75, 0.38);
   text-underline-offset: 0.22em;
 }
 
 .social-link:hover .social-handle,
 .social-link:focus-visible .social-handle {
   color: var(--color-brand);
-  text-decoration-color: rgba(76, 13, 127, 0.34);
+  text-decoration-color: rgba(24, 39, 75, 0.34);
   text-underline-offset: 0.22em;
 }

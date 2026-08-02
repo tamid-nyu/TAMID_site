@@ -75,7 +75,7 @@
 .contact-channel__link {
   width: fit-content;
   text-decoration: underline;
-  text-decoration-color: rgba(76, 13, 127, 0.24);
+  text-decoration-color: rgba(24, 39, 75, 0.24);
   text-underline-offset: 0.22em;
   transition:
     color var(--transition-medium),
@@ -86,12 +86,12 @@
 .contact-channel__link:hover,
 .contact-channel__link:focus-visible {
   color: var(--color-brand);
-  text-decoration-color: rgba(76, 13, 127, 0.46);
+  text-decoration-color: rgba(24, 39, 75, 0.46);
   text-underline-offset: 0.28em;
 }
 
 .contact-channel__link:focus-visible {
-  outline: 2px solid rgba(76, 13, 127, 0.22);
+  outline: 2px solid rgba(24, 39, 75, 0.22);
   outline-offset: 0.24rem;
   border-radius: 0.2rem;
 }
@@ -171,11 +171,11 @@
   height: 1px;
   background: linear-gradient(
     90deg,
-    rgba(76, 13, 127, 0),
-    rgba(76, 13, 127, 0.28) 18%,
-    rgba(196, 168, 106, 0.34) 50%,
-    rgba(76, 13, 127, 0.18) 82%,
-    rgba(76, 13, 127, 0)
+    rgba(24, 39, 75, 0),
+    rgba(24, 39, 75, 0.28) 18%,
+    rgba(65, 181, 232, 0.34) 50%,
+    rgba(24, 39, 75, 0.18) 82%,
+    rgba(24, 39, 75, 0)
   );
 }
 
@@ -254,7 +254,7 @@
   min-height: 2.7rem;
   padding: 0.7rem 0.85rem;
   border: none;
-  border-bottom: 2px solid rgba(76, 13, 127, 0.16);
+  border-bottom: 2px solid rgba(24, 39, 75, 0.16);
   border-radius: 0;
   background: rgba(255, 255, 255, 0.66);
   color: var(--color-ink);
@@ -274,8 +274,8 @@
 }
 
 .contact-form-input:focus {
-  border-bottom-color: rgba(76, 13, 127, 0.56);
-  box-shadow: 0 0 0 4px rgba(76, 13, 127, 0.08);
+  border-bottom-color: rgba(24, 39, 75, 0.56);
+  box-shadow: 0 0 0 4px rgba(24, 39, 75, 0.08);
   transform: translateY(-1px);
 }
 
@@ -301,7 +301,7 @@
 }
 
 .input-error:focus {
-  box-shadow: 0 0 0 4px rgba(76, 13, 127, 0.08) !important;
+  box-shadow: 0 0 0 4px rgba(24, 39, 75, 0.08) !important;
 }
 
 .contact-form__actions {

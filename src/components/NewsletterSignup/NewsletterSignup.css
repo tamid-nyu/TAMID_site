@@ -71,7 +71,7 @@
   display: grid;
   gap: 0.7rem;
   padding-top: 0.8rem;
-  border-top: 1px solid rgba(76, 13, 127, 0.1);
+  border-top: 1px solid rgba(24, 39, 75, 0.1);
 }
 
 .newsletter-form {
@@ -104,7 +104,7 @@
   min-height: 2.7rem;
   padding: 0.7rem 0.85rem;
   border: none;
-  border-bottom: 2px solid rgba(76, 13, 127, 0.16);
+  border-bottom: 2px solid rgba(24, 39, 75, 0.16);
   background: rgba(255, 255, 255, 0.66);
   font-family: var(--font-sans);
   font-size: 0.9rem;
@@ -117,8 +117,8 @@
 }
 
 .form-input:focus {
-  border-bottom-color: rgba(76, 13, 127, 0.56);
-  box-shadow: 0 0 0 4px rgba(76, 13, 127, 0.08);
+  border-bottom-color: rgba(24, 39, 75, 0.56);
+  box-shadow: 0 0 0 4px rgba(24, 39, 75, 0.08);
   transform: translateY(-1px);
 }
 
@@ -202,7 +202,7 @@
     padding-top: 0;
     padding-left: 1.5rem;
     border-top: none;
-    border-left: 1px solid rgba(76, 13, 127, 0.1);
+    border-left: 1px solid rgba(24, 39, 75, 0.1);
   }
 }
 
@@ -230,7 +230,7 @@
 
   .newsletter-proof span {
     border-left: none;
-    border-top: 1px solid rgba(76, 13, 127, 0.08);
+    border-top: 1px solid rgba(24, 39, 75, 0.08);
   }
 
   .form-row {

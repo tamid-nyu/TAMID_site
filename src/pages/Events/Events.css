@@ -1,7 +1,7 @@
 .page-container.events-page {
-  --events-outline: rgba(76, 13, 127, 0.16);
-  --events-outline-strong: rgba(76, 13, 127, 0.28);
-  --events-warm-wash: rgba(196, 168, 106, 0.18);
+  --events-outline: rgba(24, 39, 75, 0.16);
+  --events-outline-strong: rgba(24, 39, 75, 0.28);
+  --events-warm-wash: rgba(65, 181, 232, 0.18);
   --events-paper: rgba(255, 255, 255, 0.82);
   padding-bottom: clamp(1.75rem, 4vw, 3rem);
 }
@@ -68,11 +68,11 @@
   height: 1px;
   background: linear-gradient(
     90deg,
-    rgba(76, 13, 127, 0),
-    rgba(76, 13, 127, 0.24) 18%,
-    rgba(196, 168, 106, 0.34) 50%,
-    rgba(76, 13, 127, 0.18) 82%,
-    rgba(76, 13, 127, 0)
+    rgba(24, 39, 75, 0),
+    rgba(24, 39, 75, 0.24) 18%,
+    rgba(65, 181, 232, 0.34) 50%,
+    rgba(24, 39, 75, 0.18) 82%,
+    rgba(24, 39, 75, 0)
   );
 }
 
@@ -80,7 +80,7 @@
   position: relative;
   padding: clamp(1.15rem, 2.5vw, 1.65rem);
   border: none;
-  border-bottom: 1px solid rgba(76, 13, 127, 0.14);
+  border-bottom: 1px solid rgba(24, 39, 75, 0.14);
   box-shadow: none;
   background: var(--color-white);
 }
@@ -141,7 +141,7 @@
   gap: 0.75rem;
   min-height: 2.8rem;
   padding: 0.2rem 0 0.35rem;
-  border-bottom: 1px solid rgba(76, 13, 127, 0.14);
+  border-bottom: 1px solid rgba(24, 39, 75, 0.14);
   background: transparent;
   transition: border-color var(--transition-medium);
 }
@@ -162,13 +162,13 @@
     color var(--transition-medium),
     opacity var(--transition-medium);
   touch-action: manipulation;
-  -webkit-tap-highlight-color: rgba(76, 13, 127, 0.12);
+  -webkit-tap-highlight-color: rgba(24, 39, 75, 0.12);
   appearance: none;
 }
 
 .events-search__field:hover,
 .events-search__field:focus-within {
-  border-color: rgba(76, 13, 127, 0.28);
+  border-color: rgba(24, 39, 75, 0.28);
 }
 
 .events-search__input::placeholder {
@@ -187,7 +187,7 @@
 .event-card__flyer-button,
 .events-flyer-modal__close {
   touch-action: manipulation;
-  -webkit-tap-highlight-color: rgba(76, 13, 127, 0.12);
+  -webkit-tap-highlight-color: rgba(24, 39, 75, 0.12);
 }
 
 .events-search__clear {
@@ -212,7 +212,7 @@
 }
 
 .events-search__clear:focus-visible {
-  outline: 2px solid rgba(76, 13, 127, 0.22);
+  outline: 2px solid rgba(24, 39, 75, 0.22);
   outline-offset: 0.22rem;
 }
 
@@ -295,7 +295,7 @@
 
 .events-semesters__link:focus-visible {
   outline: none;
-  box-shadow: 0 0 0 3px rgba(196, 168, 106, 0.3);
+  box-shadow: 0 0 0 3px rgba(65, 181, 232, 0.3);
   border-radius: 0.4rem;
 }
 
@@ -357,7 +357,7 @@
 .event-card__flyer-button:focus-visible,
 .events-flyer-modal__close:focus-visible {
   outline: none;
-  box-shadow: 0 0 0 4px rgba(76, 13, 127, 0.12);
+  box-shadow: 0 0 0 4px rgba(24, 39, 75, 0.12);
 }
 
 .events-upcoming,
@@ -399,11 +399,11 @@
   height: 1px;
   background: linear-gradient(
     90deg,
-    rgba(76, 13, 127, 0),
-    rgba(76, 13, 127, 0.26) 15%,
-    rgba(196, 168, 106, 0.42) 52%,
-    rgba(76, 13, 127, 0.2) 84%,
-    rgba(76, 13, 127, 0)
+    rgba(24, 39, 75, 0),
+    rgba(24, 39, 75, 0.26) 15%,
+    rgba(65, 181, 232, 0.42) 52%,
+    rgba(24, 39, 75, 0.2) 84%,
+    rgba(24, 39, 75, 0)
   );
 }
 
@@ -416,7 +416,7 @@
 }
 
 .events-overview__panel .events-section__eyebrow {
-  color: rgba(76, 13, 127, 0.86);
+  color: rgba(24, 39, 75, 0.86);
 }
 
 .events-archive__list {
@@ -428,7 +428,7 @@
   position: relative;
   display: grid;
   gap: 1.2rem;
-  border-top: 1px solid rgba(76, 13, 127, 0.14);
+  border-top: 1px solid rgba(24, 39, 75, 0.14);
   padding-top: clamp(1.25rem, 2vw, 1.6rem);
   scroll-margin-top: calc(var(--header-offset) + clamp(1rem, 3vw, 2rem));
 }
@@ -465,7 +465,7 @@
 }
 
 .event-card--archive:not(:last-child) {
-  border-bottom: 1px solid rgba(76, 13, 127, 0.12);
+  border-bottom: 1px solid rgba(24, 39, 75, 0.12);
 }
 
 .events-archive__list .event-card--archive + .event-card--archive {
@@ -496,17 +496,16 @@
   aspect-ratio: 4 / 5;
   overflow: hidden;
   background:
-    linear-gradient(145deg, rgba(76, 13, 127, 0.08), rgba(196, 168, 106, 0.14)),
-    var(--color-surface);
+    linear-gradient(145deg, rgba(24, 39, 75, 0.08), rgba(65, 181, 232, 0.14)), var(--color-surface);
 }
 
 .event-card__flyer-button {
-  border: 1px solid rgba(76, 13, 127, 0.14);
+  border: 1px solid rgba(24, 39, 75, 0.14);
   padding: 0;
   cursor: zoom-in;
   box-shadow:
     inset 0 1px 0 rgba(255, 255, 255, 0.5),
-    0 16px 30px rgba(32, 25, 46, 0.08);
+    0 16px 30px rgba(24, 39, 75, 0.08);
   transition:
     transform var(--transition-medium),
     box-shadow var(--transition-medium),
@@ -516,10 +515,10 @@
 .event-card__flyer-button:hover,
 .event-card__flyer-button:focus-visible {
   transform: translateY(-1px);
-  border-color: rgba(76, 13, 127, 0.3);
+  border-color: rgba(24, 39, 75, 0.3);
   box-shadow:
     inset 0 1px 0 rgba(255, 255, 255, 0.56),
-    0 20px 38px rgba(32, 25, 46, 0.12);
+    0 20px 38px rgba(24, 39, 75, 0.12);
 }
 
 .event-card__flyer-image {
@@ -547,10 +546,10 @@
 }
 
 .event-card__flyer--placeholder {
-  border: 1px solid rgba(76, 13, 127, 0.12);
+  border: 1px solid rgba(24, 39, 75, 0.12);
   box-shadow:
     inset 0 1px 0 rgba(255, 255, 255, 0.54),
-    0 12px 24px rgba(32, 25, 46, 0.06);
+    0 12px 24px rgba(24, 39, 75, 0.06);
 }
 
 .event-card__flyer-placeholder {
@@ -636,12 +635,12 @@
 }
 
 .event-card__semester {
-  background: rgba(76, 13, 127, 0.08);
+  background: rgba(24, 39, 75, 0.08);
   color: var(--color-brand-deep);
 }
 
 .event-card__company {
-  background: rgba(196, 168, 106, 0.18);
+  background: rgba(65, 181, 232, 0.18);
   color: var(--color-brand-deep);
 }
 
@@ -709,7 +708,7 @@
   gap: 0.9rem 1.1rem;
   min-width: 0;
   padding-top: 0.9rem;
-  border-top: 1px solid rgba(76, 13, 127, 0.1);
+  border-top: 1px solid rgba(24, 39, 75, 0.1);
 }
 
 .event-card__detail {
@@ -889,7 +888,7 @@
   gap: 0.65rem;
   margin-top: clamp(1.25rem, 2vw, 1.75rem);
   padding-top: clamp(1rem, 2vw, 1.35rem);
-  border-top: 1px solid rgba(76, 13, 127, 0.14);
+  border-top: 1px solid rgba(24, 39, 75, 0.14);
 }
 
 .events-archive__load-error {
@@ -915,7 +914,7 @@
   min-height: 12rem;
   padding: 1.2rem;
   background: linear-gradient(180deg, rgba(255, 255, 255, 0.68) 0%, rgba(247, 242, 233, 0.88) 100%);
-  border: 1px solid rgba(76, 13, 127, 0.12);
+  border: 1px solid rgba(24, 39, 75, 0.12);
 }
 
 .events-status--compact {
@@ -1164,21 +1163,21 @@
   .events-upcoming .event-card,
   .events-archive__list .event-card--archive {
     padding: 1rem;
-    border: 1px solid rgba(76, 13, 127, 0.12);
+    border: 1px solid rgba(24, 39, 75, 0.12);
     background: rgba(255, 255, 255, 0.78);
     box-shadow:
       inset 0 1px 0 rgba(255, 255, 255, 0.66),
-      0 10px 22px rgba(32, 25, 46, 0.05);
+      0 10px 22px rgba(24, 39, 75, 0.05);
   }
 
   .events-archive__list .event-card:first-child {
     padding-top: 1rem;
-    border-top: 1px solid rgba(76, 13, 127, 0.12);
+    border-top: 1px solid rgba(24, 39, 75, 0.12);
   }
 
   .events-upcoming .event-card + .event-card,
   .events-archive__list .event-card--archive + .event-card--archive {
-    border-top: 1px solid rgba(76, 13, 127, 0.12);
+    border-top: 1px solid rgba(24, 39, 75, 0.12);
   }
 
   .event-card__flyer {

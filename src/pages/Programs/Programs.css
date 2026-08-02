@@ -62,7 +62,7 @@
   width: min(38rem, 56vw);
   height: min(38rem, 56vw);
   border-radius: 50%;
-  background: radial-gradient(circle, rgba(196, 168, 106, 0.24) 0%, rgba(196, 168, 106, 0) 72%);
+  background: radial-gradient(circle, rgba(65, 181, 232, 0.24) 0%, rgba(65, 181, 232, 0) 72%);
   z-index: 1;
 }
 
@@ -160,8 +160,8 @@
 }
 
 .programs-status-pill.open {
-  border-color: rgba(196, 168, 106, 0.34);
-  background: rgba(196, 168, 106, 0.16);
+  border-color: rgba(65, 181, 232, 0.34);
+  background: rgba(65, 181, 232, 0.16);
 }
 
 .programs-status-pill.closed {
@@ -219,7 +219,7 @@
 
 .programs-status-dot.open-dot {
   background: var(--color-accent);
-  box-shadow: 0 0 0 0 rgba(196, 168, 106, 0.4);
+  box-shadow: 0 0 0 0 rgba(65, 181, 232, 0.4);
   animation: programsPulse 1.9s ease-in-out infinite;
 }
 
@@ -230,12 +230,12 @@
 @keyframes programsPulse {
   0%,
   100% {
-    box-shadow: 0 0 0 0 rgba(196, 168, 106, 0.36);
+    box-shadow: 0 0 0 0 rgba(65, 181, 232, 0.36);
     opacity: 1;
   }
 
   50% {
-    box-shadow: 0 0 0 0.45rem rgba(196, 168, 106, 0);
+    box-shadow: 0 0 0 0.45rem rgba(65, 181, 232, 0);
     opacity: 0.8;
   }
 }
@@ -310,7 +310,7 @@
   margin: 0;
   font-size: clamp(0.96rem, 1.45vw, 1.08rem);
   line-height: 1.8;
-  color: rgba(32, 25, 46, 0.82);
+  color: rgba(24, 39, 75, 0.82);
   max-width: 100%;
   white-space: normal;
   overflow-wrap: anywhere;

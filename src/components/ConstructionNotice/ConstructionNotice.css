@@ -1,13 +1,13 @@
 /* Construction Notice Component Styles */
 
 .construction-container {
-  background: linear-gradient(135deg, rgba(76, 13, 127, 0.05), rgba(139, 92, 246, 0.08));
-  border: 1px solid rgba(76, 13, 127, 0.15);
+  background: linear-gradient(135deg, rgba(24, 39, 75, 0.05), rgba(65, 181, 232, 0.08));
+  border: 1px solid rgba(24, 39, 75, 0.15);
   padding: 3rem;
   text-align: center;
   margin: 4rem auto 0 auto;
   max-width: 800px;
-  box-shadow: 0 4px 20px rgba(76, 13, 127, 0.1);
+  box-shadow: 0 4px 20px rgba(24, 39, 75, 0.1);
 }
 
 .construction-container h2 {
@@ -43,15 +43,15 @@
   transition: all 0.3s ease;
   min-width: 160px;
   justify-content: center;
-  background: linear-gradient(135deg, #4c0d7f, #8b5cf6);
+  background: linear-gradient(135deg, #18274b, #41b5e8);
   color: white;
-  box-shadow: 0 4px 12px rgba(76, 13, 127, 0.2);
+  box-shadow: 0 4px 12px rgba(24, 39, 75, 0.2);
 }
 
 .construction-btn:hover {
   transform: translateY(-2px);
-  box-shadow: 0 6px 20px rgba(76, 13, 127, 0.3);
-  background: linear-gradient(135deg, #5a1a8a, #9f7aea);
+  box-shadow: 0 6px 20px rgba(24, 39, 75, 0.3);
+  background: linear-gradient(135deg, #219cd3, #41b5e8);
   text-decoration: none;
   color: white;
 }

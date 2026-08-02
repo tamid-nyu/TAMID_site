@@ -46,7 +46,7 @@
   width: min(38rem, 56vw);
   height: min(38rem, 56vw);
   border-radius: 50%;
-  background: radial-gradient(circle, rgba(196, 168, 106, 0.24) 0%, rgba(196, 168, 106, 0) 72%);
+  background: radial-gradient(circle, rgba(65, 181, 232, 0.24) 0%, rgba(65, 181, 232, 0) 72%);
   z-index: 1;
 }
 

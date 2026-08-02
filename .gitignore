@@ -30,4 +30,4 @@ coverage
 # Scripts
 scripts/*
 
-.vercel
+.vercel.github/workflows/ci.yml

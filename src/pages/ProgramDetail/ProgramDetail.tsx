@@ -25,7 +25,7 @@ const TRACK_CONTENT: Record<'fund' | 'consulting' | 'quant' | 'fellowship', Trac
     eyebrow: '',
     title: 'Investment Fund',
     lead: 'A student-run equity research track where members build long and short theses, own coverage, and pitch to the fund.',
-    backgroundImageSrc: '/mentorship-gallery/mentorship-gallery-1.jpeg?v=7',
+    backgroundImageSrc: '/mentorship-gallery/mentorship-gallery-1.jpeg?v=24',
     backgroundImageAlt: 'TAMID Group at NYU Investment Fund members',
     sections: [
       {
@@ -97,9 +97,9 @@ const TRACK_CONTENT: Record<'fund' | 'consulting' | 'quant' | 'fellowship', Trac
     eyebrow: '',
     title: 'Quant',
     lead: 'A quantitative and algorithmic strategy track built around data-driven research and systematic trading concepts.',
-    backgroundImageSrc: '/mentorship-gallery/quant-hero-v5.jpg',
+    backgroundImageSrc: '/mentorship-gallery/quant-hero-v5.jpg?v=2',
     backgroundImageAlt: 'TAMID Group at NYU Quant members',
-    imagePosition: 'center 32%',
+    imagePosition: 'center 45%',
     sections: [
       {
         heading: 'Quantitative and algorithmic strategy',

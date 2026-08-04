@@ -16,7 +16,7 @@ export const CallToAction = ({
   bodyText,
   primaryButtonText = 'Apply',
   primaryButtonHref = '/apply',
-  secondaryButtonText = 'Contact Us',
+  secondaryButtonText,
   secondaryButtonHref = '/contact',
 }: CallToActionProps) => {
   const animation = useScrollAnimation({
@@ -43,14 +43,16 @@ export const CallToAction = ({
             >
               {primaryButtonText}
             </InlineLink>
-            <InlineLink
-              className="call-to-action-link"
-              {...(isInternalPath(secondaryButtonHref)
-                ? { to: secondaryButtonHref }
-                : { href: secondaryButtonHref })}
-            >
-              {secondaryButtonText}
-            </InlineLink>
+            {secondaryButtonText && (
+              <InlineLink
+                className="call-to-action-link"
+                {...(isInternalPath(secondaryButtonHref)
+                  ? { to: secondaryButtonHref }
+                  : { href: secondaryButtonHref })}
+              >
+                {secondaryButtonText}
+              </InlineLink>
+            )}
           </div>
         </div>
       </div>

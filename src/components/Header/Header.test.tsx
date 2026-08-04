@@ -38,7 +38,7 @@ describe('Header', () => {
     expect(screen.getByRole('link', { name: /apply/i })).toHaveAttribute('href', '/apply');
     expect(screen.getByRole('link', { name: /contact/i })).toHaveAttribute('href', '/contact');
     expect(screen.getByRole('button', { name: /programs/i })).toBeInTheDocument();
-    expect(screen.getByRole('button', { name: /about/i })).toBeInTheDocument();
+    expect(screen.getByRole('button', { name: /team/i })).toBeInTheDocument();
   });
 
   it('toggles the mobile navigation state from the menu button', async () => {

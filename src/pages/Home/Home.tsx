@@ -253,8 +253,6 @@ export const Home = () => {
           bodyText="Each semester we select a cohort of top-performing undergraduate students. Applications open at the beginning of each semester. If you are somebody who embodies merit, excellence, and intelligence, we encourage you to apply!"
           primaryButtonText="Apply"
           primaryButtonHref="/apply"
-          secondaryButtonText="Explore Our Tracks"
-          secondaryButtonHref="/tracks"
         />
       </div>
 

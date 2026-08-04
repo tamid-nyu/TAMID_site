@@ -67,7 +67,7 @@ Logo (`public/tamid/`): official "TAMID GROUP / AT NYU" lockup — `tamid-logo-f
 - Do **NOT** rename the config key strings `mentorship_application_open` / `mentorship_application_url` (`src/constants.ts`, `src/types/SiteConfig.ts`) — backend WIRE contract, marked **INV3**.
 - `noUnusedLocals` is on — remove unused imports or `tsc -b` / build fails.
 - Much gallery/candid imagery is AI-generated or reference-based (home hero is AI; `mentorship-gallery/` and `events-gallery/` still contain template/SJBA-derived or generated photos per `README.md`). Treat as placeholder until real chapter photography lands.
-- Supabase project referenced in `.env.example` (`ivhsrdfhjxtrxvrwswuk`) is inherited from the template — needs a fresh TAMID project + keys.
+- Supabase project is **`ggpcovdlthmysfouulpq`** ("TAMID Website", org `aaronblatnoy's Org`), created 2026-08-04. URL `https://ggpcovdlthmysfouulpq.supabase.co`; publishable key `sb_publishable_xxEeeefJc2vejMZirUA0RA_9VKUs4RX`. The old `ivhsrdfhjxtrxvrwswuk` template ref is retired. The backend (`TAMID_site_backend`) owns migrations/schema/buckets.
 
 ## Human-TODOs (before launch)
 - Real domain, email (`tamid@nyu.edu`), and socials.

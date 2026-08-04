@@ -166,11 +166,15 @@ export const BoardMemberModal: React.FC<BoardMemberModalProps> = ({
                   </div>
                 </div>
                 <h3 className="modal-position">{member.position}</h3>
-                <div className="modal-meta">
-                  <p className="modal-details">
-                    {member.major} <span aria-hidden="true">•</span> {member.year}
-                  </p>
-                </div>
+                {(member.major || member.year) && (
+                  <div className="modal-meta">
+                    <p className="modal-details">
+                      {member.major}
+                      {member.major && member.year && <span aria-hidden="true"> • </span>}
+                      {member.year}
+                    </p>
+                  </div>
+                )}
               </div>
             </div>
           </div>
@@ -179,17 +183,19 @@ export const BoardMemberModal: React.FC<BoardMemberModalProps> = ({
           <div ref={bodyRef} className="modal-body" onScroll={updateScrollIndicator}>
             <div className="modal-content-layout">
               <div className="modal-text-section">
-                <div className="modal-section">
-                  <h4>About</h4>
-                  <p>
-                    {member.bio.split('\n').map((line, index, array) => (
-                      <span key={index}>
-                        {line}
-                        {index < array.length - 1 && <br />}
-                      </span>
-                    ))}
-                  </p>
-                </div>
+                {member.bio ? (
+                  <div className="modal-section">
+                    <h4>About</h4>
+                    <p>
+                      {member.bio.split('\n').map((line, index, array) => (
+                        <span key={index}>
+                          {line}
+                          {index < array.length - 1 && <br />}
+                        </span>
+                      ))}
+                    </p>
+                  </div>
+                ) : null}
               </div>
 
               <div className="modal-side-column">
@@ -216,10 +222,12 @@ export const BoardMemberModal: React.FC<BoardMemberModalProps> = ({
             </div>
 
             <div className="modal-info-grid">
-              <div className="modal-section">
-                <h4>Hometown</h4>
-                <p>{member.hometown}</p>
-              </div>
+              {member.hometown && (
+                <div className="modal-section">
+                  <h4>Hometown</h4>
+                  <p>{member.hometown}</p>
+                </div>
+              )}
               <div className="modal-section">
                 <h4>Email</h4>
                 <p>{member.email}</p>

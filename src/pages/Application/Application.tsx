@@ -74,6 +74,7 @@ export const Application = () => {
           visible={heroAnim.isVisible}
           backgroundImageSrc="/events-gallery/events-gallery-1.jpeg"
           backgroundImageAlt="TAMID Group at NYU members"
+          imagePosition="center 20%"
           title="Apply"
           lead="Each semester we select a cohort of top-performing undergraduate students for our Investment Fund, Consulting, and Quant tracks."
         />

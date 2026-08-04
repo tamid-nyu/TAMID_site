@@ -72,8 +72,8 @@ export const Application = () => {
         <SubpageHero
           ref={heroAnim.elementRef}
           visible={heroAnim.isVisible}
-          backgroundImageSrc="/central-park.jpg"
-          backgroundImageAlt="Central Park and the Manhattan skyline in New York City"
+          backgroundImageSrc="/nyc-summer-summit.jpg"
+          backgroundImageAlt="TAMID Group at NYU members at the NYC Summer Summit"
           imagePosition="center"
           title="Apply"
           lead="Each semester we select a cohort of top-performing undergraduate students for our Investment Fund, Consulting, and Quant tracks."

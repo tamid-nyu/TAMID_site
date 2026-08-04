@@ -36,12 +36,6 @@ const TRACK_CONTENT: Record<'fund' | 'consulting' | 'quant' | 'fellowship', Trac
         ],
       },
       {
-        heading: 'Seeking Alpha partnership',
-        paragraphs: [
-          'Through a partnership with Seeking Alpha, members publish and share their research on a platform read by investors, getting exposure to how professional analysts frame and defend a call.',
-        ],
-      },
-      {
         heading: 'National simulated-fund competition',
         paragraphs: [
           'The Investment Fund participates in a national, simulated-fund competition alongside TAMID chapters at other universities. Members translate their research into positions, track performance, and compete on the strength of their ideas rather than on any real capital.',

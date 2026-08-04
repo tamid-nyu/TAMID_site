@@ -53,7 +53,7 @@ const TRACK_CARDS = [
     label: 'Investment Fund',
     title: 'Investment Fund',
     description:
-      'A student-run equity research desk. Analysts own sector coverage, build long and short theses, publish through a Seeking Alpha partnership, and compete in a national simulated-fund competition.',
+      'A student-run equity research desk. Analysts own sector coverage, build long and short theses, and compete in a national simulated-fund competition.',
     href: '/tracks/fund',
   },
   {

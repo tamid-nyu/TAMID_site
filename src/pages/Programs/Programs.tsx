@@ -94,8 +94,7 @@ const TRACK_PILLARS = [
   {
     eyebrow: 'Investment Fund',
     title: 'Investment Fund',
-    description:
-      'Equity research through a Seeking Alpha partnership and a national simulated-fund competition.',
+    description: 'Equity research and a national simulated-fund competition.',
     image: '/mentorship-gallery/mentorship-gallery-1.jpeg',
     alt: 'TAMID Group at NYU Investment Fund track',
   },

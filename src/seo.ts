@@ -40,7 +40,7 @@ export const PUBLIC_SEO_ROUTES: SeoRoute[] = [
     path: '/tracks/fund',
     title: `Investment Fund | ${SITE_SHORT_NAME}`,
     description:
-      'TAMID Group at NYU’s student-run Investment Fund: equity research through a Seeking Alpha partnership and a national simulated-fund competition where members build and pitch long/short theses.',
+      'TAMID Group at NYU’s student-run Investment Fund: equity research and a national simulated-fund competition where members build and pitch long/short theses.',
     image: `${SITE_URL}/mentorship-gallery/mentorship-gallery-1.jpeg?v=19`,
     imageAlt: 'TAMID Group at NYU Investment Fund members',
   },

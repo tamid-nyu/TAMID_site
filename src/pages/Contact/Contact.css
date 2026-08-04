@@ -35,7 +35,6 @@
   line-height: 0.94;
   letter-spacing: -0.045em;
   color: var(--color-ink);
-  white-space: nowrap;
 }
 
 .contact-intro__copy {

@@ -14,10 +14,10 @@ interface CallToActionProps {
 export const CallToAction = ({
   title,
   bodyText,
-  primaryButtonText = 'Get Involved',
-  primaryButtonHref = '/contact',
-  secondaryButtonText = 'Attend Our Events',
-  secondaryButtonHref = '/events',
+  primaryButtonText = 'Apply',
+  primaryButtonHref = '/apply',
+  secondaryButtonText = 'Contact Us',
+  secondaryButtonHref = '/contact',
 }: CallToActionProps) => {
   const animation = useScrollAnimation({
     threshold: 0.1,

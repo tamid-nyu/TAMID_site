@@ -23,14 +23,6 @@ export const PUBLIC_SEO_ROUTES: SeoRoute[] = [
     imageAlt: 'TAMID Group at NYU logo',
   },
   {
-    path: '/our-mission',
-    title: `Our Mission | ${SITE_SHORT_NAME}`,
-    description:
-      'Learn how TAMID Group at NYU develops students’ professional skills through hands-on work with the Israeli economy across four programs: Education, Consulting, Investment Fund, and Israel Fellowship.',
-    image: `${SITE_URL}/mission-gallery/stern-building.jpg`,
-    imageAlt: 'NYU building',
-  },
-  {
     path: '/our-board',
     title: `Executive Board | ${SITE_SHORT_NAME}`,
     description: 'Meet the student leaders powering TAMID Group at NYU.',
@@ -45,20 +37,52 @@ export const PUBLIC_SEO_ROUTES: SeoRoute[] = [
     imageAlt: 'TAMID Group at NYU members at an event',
   },
   {
-    path: '/programs',
-    title: `Programs | ${SITE_SHORT_NAME}`,
+    path: '/tracks',
+    title: `Tracks | ${SITE_SHORT_NAME}`,
     description:
-      'Explore TAMID Group at NYU’s four programs: Education, Consulting, Investment Fund, and Israel Fellowship.',
-    image: `${SITE_URL}/mentorship-gallery/mentorship-gallery-3.jpeg`,
-    imageAlt: 'TAMID Group at NYU program participants',
+      'Explore TAMID Group at NYU’s three tracks: Investment Fund, Consulting, and Quant.',
+    image: `${SITE_URL}/mentorship-gallery/quant-hero-v5.jpg`,
+    imageAlt: 'TAMID Group at NYU track participants',
   },
   {
-    path: '/events',
-    title: `Events | ${SITE_SHORT_NAME}`,
+    path: '/tracks/fund',
+    title: `Investment Fund | ${SITE_SHORT_NAME}`,
     description:
-      'Explore upcoming TAMID Group at NYU speaker sessions and professional networking events.',
+      'TAMID Group at NYU’s student-run Investment Fund: equity research through a Seeking Alpha partnership and a national simulated-fund competition where members build and pitch long/short theses.',
+    image: `${SITE_URL}/mentorship-gallery/mentorship-gallery-1.jpeg?v=7`,
+    imageAlt: 'TAMID Group at NYU Investment Fund members',
+  },
+  {
+    path: '/tracks/consulting',
+    title: `Consulting | ${SITE_SHORT_NAME}`,
+    description:
+      'TAMID Group at NYU’s Consulting track: semester-long, pro-bono engagements with Israeli startups spanning market research, competitive analysis, US market-entry strategy, and go-to-market.',
+    image: `${SITE_URL}/mentorship-gallery/mentorship-gallery-2.jpeg?v=3`,
+    imageAlt: 'TAMID Group at NYU Consulting members',
+  },
+  {
+    path: '/tracks/quant',
+    title: `Quant | ${SITE_SHORT_NAME}`,
+    description:
+      'TAMID Group at NYU’s Quant track: quantitative and algorithmic strategy through data-driven research, signal and backtest development, and Python-based modeling.',
+    image: `${SITE_URL}/mentorship-gallery/quant-hero-v5.jpg`,
+    imageAlt: 'TAMID Group at NYU Quant members',
+  },
+  {
+    path: '/tracks/fellowship',
+    title: `Israel Fellowship | ${SITE_SHORT_NAME}`,
+    description:
+      'TAMID Group at NYU’s Israel Fellowship: a summer program placing members inside Israeli companies and startups for hands-on, immersive work experience.',
+    image: `${SITE_URL}/mentorship-gallery/fellowship-hero-telaviv.jpg`,
+    imageAlt: 'Tel Aviv skyline at dusk along the Mediterranean coast',
+  },
+  {
+    path: '/apply',
+    title: `Apply | ${SITE_SHORT_NAME}`,
+    description:
+      'Apply to TAMID Group at NYU. Each semester we select a cohort of top-performing undergraduates for the Investment Fund, Consulting, and Quant tracks. Applications open at the start of each term.',
     image: `${SITE_URL}/events-gallery/events-gallery-1.jpeg`,
-    imageAlt: 'TAMID Group at NYU members at an event',
+    imageAlt: 'TAMID Group at NYU members',
   },
   {
     path: '/contact',

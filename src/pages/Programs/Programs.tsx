@@ -90,36 +90,29 @@ const getCachedApplicationConfig = () => {
   return null;
 };
 
-const PROGRAM_PILLARS = [
-  {
-    eyebrow: 'Education',
-    title: 'Education',
-    description:
-      'An experiential business curriculum paired with exposure to the Israeli startup ecosystem.',
-    image: '/mentorship-gallery/mentorship-gallery-1.jpeg',
-    alt: 'TAMID Group at NYU Education program',
-  },
-  {
-    eyebrow: 'Consulting',
-    title: 'Consulting',
-    description: 'Pro-bono consulting for Israeli startups.',
-    image: '/mentorship-gallery/mentorship-gallery-2.jpeg',
-    alt: 'TAMID Group at NYU Consulting program',
-  },
+const TRACK_PILLARS = [
   {
     eyebrow: 'Investment Fund',
     title: 'Investment Fund',
     description:
       'Equity research through a Seeking Alpha partnership and a national simulated-fund competition.',
     image: '/mentorship-gallery/mentorship-gallery-1.jpeg',
-    alt: 'TAMID Group at NYU Investment Fund program',
+    alt: 'TAMID Group at NYU Investment Fund track',
   },
   {
-    eyebrow: 'Israel Fellowship',
-    title: 'Israel Fellowship',
-    description: 'A summer program in Israel.',
+    eyebrow: 'Consulting',
+    title: 'Consulting',
+    description: 'Pro-bono consulting for Israeli startups.',
     image: '/mentorship-gallery/mentorship-gallery-2.jpeg',
-    alt: 'TAMID Group at NYU Israel Fellowship program',
+    alt: 'TAMID Group at NYU Consulting track',
+  },
+  {
+    eyebrow: 'Quant',
+    title: 'Quant',
+    description:
+      'Quantitative and algorithmic strategy through data-driven research and Python-based modeling.',
+    image: '/mentorship-gallery/mentorship-gallery-3.jpeg',
+    alt: 'TAMID Group at NYU Quant track',
   },
 ];
 
@@ -128,7 +121,7 @@ const PROCESS_STEPS = [
     number: '01',
     title: 'Apply',
     description:
-      "Fill out the application form where you'll select which program(s) you're interested in and share your background, interests, and goals.",
+      "Fill out the application form where you'll select which track(s) you're interested in and share your background, interests, and goals.",
   },
   {
     number: '02',
@@ -139,7 +132,7 @@ const PROCESS_STEPS = [
   {
     number: '03',
     title: 'Match',
-    description: 'Members are placed thoughtfully to maximize value across our four programs.',
+    description: 'Members are placed thoughtfully to maximize value across our three tracks.',
   },
 ];
 
@@ -165,7 +158,7 @@ export const Programs = () => {
     const resolveApplicationConfig = async (): Promise<ApplicationConfig> => {
       if (!applicationConfigPromise) {
         // NOTE: 'mentorship_application_open' / 'mentorship_application_url' are
-        // backend WIRE-contract config key literals — do NOT rename them (INV3).
+        // backend WIRE-contract config key literals: do NOT rename them (INV3).
         applicationConfigPromise = dataService.siteConfig
           .getByKeys(['mentorship_application_open', 'mentorship_application_url'])
           .then((config) => ({
@@ -237,9 +230,9 @@ export const Programs = () => {
           ref={heroAnim.elementRef}
           visible={heroAnim.isVisible}
           backgroundImageSrc="/mentorship-gallery/mentorship-gallery-3.jpeg"
-          eyebrow="Programs"
-          title="Programs"
-          lead="TAMID Group at NYU runs four programs — Education, Consulting, Investment Fund, and Israel Fellowship — that build professional skills through hands-on work with the Israeli economy."
+          eyebrow="Tracks"
+          title="Tracks"
+          lead="TAMID Group at NYU runs three tracks (Investment Fund, Consulting, and Quant) that build professional skills through hands-on work with the Israeli economy."
           actions={
             <>
               <LinkButtonSecondary
@@ -284,10 +277,10 @@ export const Programs = () => {
         >
           <div className="programs-overview-grid">
             <div className="programs-overview-intro">
-              <span className="programs-section-label">Programs Overview</span>
-              <h2>One club, four programs.</h2>
+              <span className="programs-section-label">Tracks Overview</span>
+              <h2>One club, three tracks.</h2>
               <p className="programs-overview-lead">
-                TAMID Group at NYU offers four programs, each giving members a different, hands-on
+                TAMID Group at NYU offers three tracks, each giving members a different, hands-on
                 way to engage with the Israeli economy and build professional skills.
               </p>
             </div>
@@ -298,7 +291,7 @@ export const Programs = () => {
           ref={tracksAnim.elementRef}
           className="programs-tracks"
           visible={tracksAnim.isVisible}
-          items={PROGRAM_PILLARS}
+          items={TRACK_PILLARS}
         />
 
         <section
@@ -326,7 +319,7 @@ export const Programs = () => {
                   <InlineLink href={applicationUrl} target="_blank" rel="noopener noreferrer">
                     Apply
                   </InlineLink>{' '}
-                  to join a TAMID program.
+                  to join a TAMID track.
                 </>
               ) : (
                 'Applications are closed for the current cycle.'

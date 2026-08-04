@@ -6,11 +6,6 @@
     <priority>1.0</priority>
   </url>
   <url>
-    <loc>https://nyu-tamid.org/our-mission</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
     <loc>https://nyu-tamid.org/our-board</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
@@ -21,12 +16,32 @@
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://nyu-tamid.org/programs</loc>
+    <loc>https://nyu-tamid.org/tracks</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://nyu-tamid.org/events</loc>
+    <loc>https://nyu-tamid.org/tracks/fund</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://nyu-tamid.org/tracks/consulting</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://nyu-tamid.org/tracks/quant</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://nyu-tamid.org/tracks/fellowship</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://nyu-tamid.org/apply</loc>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>

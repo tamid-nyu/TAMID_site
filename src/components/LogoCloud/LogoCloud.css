@@ -27,29 +27,11 @@
 }
 
 .logo-cloud::before {
-  top: 0;
-  background: linear-gradient(
-    90deg,
-    transparent 0%,
-    rgba(24, 39, 75, 0.18) 14%,
-    rgba(65, 181, 232, 0.42) 50%,
-    rgba(24, 39, 75, 0.18) 86%,
-    transparent 100%
-  );
-  box-shadow: 0 0 32px rgba(65, 181, 232, 0.2);
+  display: none;
 }
 
 .logo-cloud::after {
-  bottom: 0;
-  background: linear-gradient(
-    90deg,
-    transparent 0%,
-    rgba(24, 39, 75, 0.12) 16%,
-    rgba(65, 181, 232, 0.34) 50%,
-    rgba(24, 39, 75, 0.12) 84%,
-    transparent 100%
-  );
-  box-shadow: 0 0 26px rgba(65, 181, 232, 0.14);
+  display: none;
 }
 
 .logo-cloud__frame {
@@ -192,7 +174,7 @@
   -webkit-user-drag: none;
   -webkit-user-select: none;
   user-select: none;
-  filter: grayscale(1) saturate(0) opacity(0.62);
+  filter: none;
   transition:
     filter var(--transition-medium),
     transform var(--transition-medium);
@@ -280,7 +262,7 @@
   }
 
   .logo-cloud__logo:hover .logo-cloud__image {
-    filter: grayscale(1) saturate(0) opacity(0.62);
+    filter: none;
     transform: none;
   }
 

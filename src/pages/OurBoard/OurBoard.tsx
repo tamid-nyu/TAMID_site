@@ -288,10 +288,10 @@ export const OurBoard = () => {
         <CallToAction
           title="Interested in Joining Our Board?"
           bodyText="TAMID Group at NYU is always looking for passionate students who want to build professional skills and lead. Board positions become available each academic year through our application process."
-          primaryButtonText="Get Involved"
-          primaryButtonHref="/contact"
-          secondaryButtonText="Attend TAMID Events"
-          secondaryButtonHref="/events"
+          primaryButtonText="Apply"
+          primaryButtonHref="/apply"
+          secondaryButtonText="Get in Touch"
+          secondaryButtonHref="/contact"
         />
       </div>
 

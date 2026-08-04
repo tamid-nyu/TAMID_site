@@ -114,6 +114,7 @@
   line-height: 0.92;
   letter-spacing: -0.045em;
   text-wrap: balance;
+  color: var(--color-white);
 }
 
 .programs-lead {

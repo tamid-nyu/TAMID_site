@@ -4,11 +4,11 @@ import { Toaster } from 'react-hot-toast';
 import { Header, ScrollToTop, Seo } from '@components';
 import {
   Home,
-  OurMission,
+  Application,
   OurBoard,
   OurMembers,
   Programs,
-  Events,
+  ProgramDetail,
   Contact,
   NotFound,
 } from './pages';
@@ -68,11 +68,11 @@ export const AppContent = () => (
       <main className="main-content">
         <Routes>
           <Route path="/" element={<Home />} />
-          <Route path="/our-mission" element={<OurMission />} />
           <Route path="/our-board" element={<OurBoard />} />
           <Route path="/our-members" element={<OurMembers />} />
-          <Route path="/programs" element={<Programs />} />
-          <Route path="/events" element={<Events />} />
+          <Route path="/tracks" element={<Programs />} />
+          <Route path="/tracks/:slug" element={<ProgramDetail />} />
+          <Route path="/apply" element={<Application />} />
           <Route path="/contact" element={<Contact />} />
           <Route path="*" element={<NotFound />} />
         </Routes>

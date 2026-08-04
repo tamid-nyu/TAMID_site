@@ -19,7 +19,7 @@ Public marketing site for **TAMID Group at NYU**.
 - Deploy target: **Vercel** (`vercel.json`).
 
 ## Structure
-- `src/pages/*` — Home, OurMission, OurBoard, OurMembers, Events, Contact, Programs (overview), ProgramDetail (`/programs/:slug`), NotFound. Barrel: `src/pages/index.ts`.
+- `src/pages/*` — Home, OurMission, OurBoard, OurMembers, Events, Contact, Programs (Tracks overview, at `/tracks`), ProgramDetail (track detail, `/tracks/:slug`), NotFound. Barrel: `src/pages/index.ts`. (Component/folder names keep the legacy `Programs`/`ProgramDetail` labels; all routes + user-facing copy say "Tracks".)
 - `src/components/*` — Header (with Dropdown nav + NavButton), SubpageHero, LogoGallery, Footer, Seo, ScrollToTop, etc.
 - `src/seo.ts` — per-route SEO metadata + JSON-LD. `SITE_URL = https://nyu-tamid.org`.
 - `src/index.css` — global design tokens in `:root` (see Brand).
@@ -28,13 +28,13 @@ Public marketing site for **TAMID Group at NYU**.
 - `public/` — static assets (`tamid/`, `home-gallery/`, `events-gallery/`, `mentorship-gallery/`).
 
 ## Routes (`src/App.tsx`)
-`/`, `/our-mission`, `/our-board`, `/our-members`, `/programs`, `/programs/:slug`, `/events`, `/contact`, `*` (NotFound).
+`/`, `/our-mission`, `/our-board`, `/our-members`, `/tracks`, `/tracks/:slug`, `/events`, `/contact`, `*` (NotFound).
 
 ## Nav / IA (`src/components/Header/Header.tsx`)
-Top nav: **Events** · **Programs** (dropdown) · **About** (dropdown) · **Contact** (primary CTA).
-- Programs dropdown: Investment Fund `/programs/fund`, Consulting `/programs/consulting`, Quant `/programs/quant`, Fellowship `/programs/fellowship`.
+Top nav: **Events** · **Tracks** (dropdown) · **About** (dropdown) · **Contact** (primary CTA).
+- Tracks dropdown: Investment Fund `/tracks/fund`, Consulting `/tracks/consulting`, Quant `/tracks/quant`.
 - About dropdown: The TAMID Mission `/our-mission`, Executive Board `/our-board`, General Members `/our-members`.
-- Program detail pages are driven by the `PROGRAM_CONTENT` map (keys `fund | consulting | quant | fellowship`) in `src/pages/ProgramDetail/ProgramDetail.tsx`.
+- Track detail pages are driven by the `TRACK_CONTENT` map (keys `fund | consulting | quant`) in `src/pages/ProgramDetail/ProgramDetail.tsx`.
 
 ## Brand (canonical: `brand/STYLE.md`; tokens in `src/index.css :root`)
 Colors:

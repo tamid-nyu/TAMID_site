@@ -28,15 +28,12 @@
   content: '';
   position: absolute;
   inset: 0;
-  background:
-    linear-gradient(
-      90deg,
-      rgba(18, 39, 75, 0.82) 0%,
-      rgba(18, 39, 75, 0.68) 34%,
-      rgba(18, 39, 75, 0.38) 58%,
-      rgba(18, 39, 75, 0.58) 100%
-    ),
-    linear-gradient(180deg, rgba(18, 39, 75, 0.18) 0%, rgba(18, 39, 75, 0.5) 100%);
+  background: linear-gradient(
+    180deg,
+    rgba(18, 39, 75, 0.42) 0%,
+    rgba(18, 39, 75, 0.5) 55%,
+    rgba(18, 39, 75, 0.6) 100%
+  );
   z-index: 3;
   pointer-events: none;
 }
@@ -102,21 +99,53 @@
   padding-bottom: clamp(2rem, 5vw, 3.5rem);
   display: flex;
   align-items: center;
+  justify-content: center;
 }
 
 .hero-copy {
-  max-width: min(38rem, 100%);
+  max-width: min(52rem, 100%);
+  margin-inline: auto;
+  text-align: center;
+}
+
+.hero-eyebrow {
+  display: block;
+  margin-bottom: 1.1rem;
+  font-family: var(--font-ui, var(--font-sans));
+  font-size: clamp(0.85rem, 1.4vw, 1rem);
+  font-weight: 700;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: rgba(236, 244, 252, 0.82);
 }
 
 .main-title {
   margin: 0;
   font-family: var(--font-display);
-  font-size: clamp(2.7rem, 5.2vw, 5.8rem);
+  font-size: clamp(2.7rem, 5.2vw, 5.4rem);
   font-weight: 700;
-  line-height: 0.95;
-  letter-spacing: -0.04em;
+  line-height: 1;
+  letter-spacing: -0.02em;
   color: var(--color-white);
   text-wrap: balance;
+}
+
+.hero-triad {
+  margin: 1.1rem 0 0;
+  font-family: var(--font-sans);
+  font-size: clamp(1rem, 1.7vw, 1.28rem);
+  font-weight: 700;
+  line-height: 1.4;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: rgba(236, 244, 252, 0.84);
+  text-wrap: balance;
+}
+
+.triad-sep {
+  color: inherit;
+  font-weight: 400;
+  padding: 0 0.25em;
 }
 
 .title-line-1,
@@ -136,8 +165,8 @@
 }
 
 .hero-description {
-  max-width: 34rem;
-  margin: 1.5rem 0 0;
+  max-width: 40rem;
+  margin: 1.6rem auto 0;
   font-size: clamp(1rem, 1.8vw, 1.18rem);
   line-height: 1.75;
   color: rgba(236, 244, 252, 0.84);
@@ -648,4 +677,275 @@
     animation: none !important;
     transition: none !important;
   }
+}
+
+/* Home: three-track columns (replaces the tracks zigzag story) */
+.home-tracks {
+  position: relative;
+  width: min(100%, var(--content-max-width));
+  margin: clamp(2rem, 4vw, 3.5rem) auto 0;
+  padding-block: clamp(3rem, 6vw, 5rem);
+  padding-inline: var(--page-gutter);
+  opacity: 0;
+  transform: translateY(1.5rem);
+  transition:
+    opacity 560ms ease,
+    transform 560ms ease;
+}
+
+.home-tracks::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  left: 50%;
+  width: 100vw;
+  transform: translateX(-50%);
+  background: linear-gradient(
+    180deg,
+    var(--color-white) 0%,
+    var(--color-blue-tint) 45%,
+    #e3f1fb 100%
+  );
+  z-index: -1;
+}
+
+.home-tracks.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.home-tracks__header {
+  max-width: none;
+  margin-bottom: clamp(2rem, 4vw, 3rem);
+}
+
+.home-tracks__eyebrow {
+  display: inline-block;
+  font-family: var(--font-sans);
+  font-size: 0.76rem;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--color-blue-deep);
+}
+
+.home-tracks__header h2 {
+  margin: 0;
+  font-family: var(--font-display);
+  font-size: clamp(2rem, 3.6vw, 2.9rem);
+  font-weight: 700;
+  line-height: 1.04;
+  letter-spacing: -0.03em;
+  color: var(--color-navy);
+  white-space: nowrap;
+}
+
+.home-tracks__grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: clamp(1.4rem, 2.4vw, 2.25rem);
+}
+
+.home-track-card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  padding: clamp(2rem, 2.8vw, 2.75rem);
+  border: 1px solid rgba(255, 255, 255, 0.9);
+  border-radius: 1rem;
+  background: var(--color-white);
+  text-decoration: none;
+  overflow: hidden;
+  box-shadow: 0 18px 38px -24px rgba(18, 39, 75, 0.4);
+  transition:
+    transform 220ms ease,
+    box-shadow 220ms ease,
+    border-color 220ms ease;
+}
+
+.home-track-card:hover {
+  transform: translateY(-6px);
+  border-color: var(--color-sky);
+  box-shadow: 0 26px 50px -24px rgba(18, 39, 75, 0.55);
+}
+
+.home-track-card__label {
+  font-family: var(--font-sans);
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--color-blue-deep);
+}
+
+.home-track-card__title {
+  margin: 0;
+  font-family: var(--font-display);
+  font-size: clamp(1.65rem, 2.5vw, 2rem);
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  color: var(--color-navy);
+}
+
+.home-track-card__body {
+  margin: 1rem 0 0;
+  font-size: 1.05rem;
+  line-height: 1.7;
+  color: var(--color-gray-600);
+}
+
+.home-track-card__cta {
+  margin-top: auto;
+  padding-top: 1.5rem;
+  font-family: var(--font-sans);
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--color-blue-deep);
+}
+
+@media (max-width: 900px) {
+  .home-tracks__grid {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+
+  .home-tracks__header h2 {
+    white-space: normal;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .home-tracks {
+    transition: none !important;
+    transform: none !important;
+  }
+  .home-track-card:hover {
+    transform: none;
+  }
+}
+
+/* Home: Israel focus band (Tel Aviv beach photo bg, blends out of the tracks band) */
+.home-israel {
+  position: relative;
+  margin: 0 auto;
+  width: min(100%, var(--content-max-width));
+  padding-block: clamp(6rem, 14vw, 11rem);
+  padding-inline: var(--page-gutter);
+  color: var(--color-white);
+  opacity: 0;
+  transform: translateY(1.5rem);
+  transition:
+    opacity 560ms ease,
+    transform 560ms ease;
+}
+
+.home-israel.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.home-israel::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  left: 50%;
+  width: 100vw;
+  transform: translateX(-50%);
+  background-image:
+    linear-gradient(
+      180deg,
+      #e3f1fb 0%,
+      rgba(227, 241, 251, 0.85) 8%,
+      rgba(227, 241, 251, 0) 34%,
+      rgba(255, 255, 255, 0) 66%,
+      rgba(255, 255, 255, 0.5) 88%,
+      var(--color-white) 100%
+    ),
+    linear-gradient(
+      90deg,
+      rgba(9, 26, 54, 0.5) 0%,
+      rgba(9, 26, 54, 0.2) 50%,
+      rgba(9, 26, 54, 0) 74%
+    ),
+    url('/mission-gallery/telaviv-beach.jpg?v=6');
+  background-size: cover, cover, cover;
+  background-position:
+    center,
+    center,
+    center 38%;
+  z-index: -1;
+}
+
+.home-israel__copy {
+  max-width: 36rem;
+}
+
+.home-israel__eyebrow {
+  display: inline-block;
+  font-family: var(--font-sans);
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.85);
+}
+
+.home-israel__copy h2 {
+  margin: 0.9rem 0 0;
+  font-family: var(--font-display);
+  font-size: clamp(2.1rem, 4vw, 3.2rem);
+  font-weight: 700;
+  line-height: 1.02;
+  letter-spacing: -0.03em;
+  color: var(--color-white);
+}
+
+.home-israel__copy p {
+  margin: 1.4rem 0 0;
+  font-size: clamp(1.02rem, 1.6vw, 1.15rem);
+  line-height: 1.75;
+  color: rgba(255, 255, 255, 0.92);
+}
+
+@media (max-width: 640px) {
+  .home-israel::before {
+    background-image:
+      linear-gradient(
+        180deg,
+        #e3f1fb 0%,
+        rgba(227, 241, 251, 0) 14%,
+        rgba(255, 255, 255, 0) 82%,
+        var(--color-white) 100%
+      ),
+      linear-gradient(180deg, rgba(9, 26, 54, 0.35) 0%, rgba(9, 26, 54, 0.72) 100%),
+      url('/mission-gallery/telaviv-beach.jpg?v=6');
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .home-israel {
+    transition: none !important;
+    transform: none !important;
+  }
+}
+
+.home-israel__link {
+  display: inline-block;
+  margin-top: 1.6rem;
+  font-family: var(--font-sans);
+  font-size: 1rem;
+  font-weight: 700;
+  letter-spacing: 0.01em;
+  color: var(--color-white);
+  text-decoration: none;
+  border-bottom: 2px solid rgba(255, 255, 255, 0.55);
+  padding-bottom: 0.15rem;
+  transition:
+    border-color 200ms ease,
+    opacity 200ms ease;
+}
+
+.home-israel__link:hover {
+  border-color: var(--color-white);
+  opacity: 0.92;
 }

@@ -1,27 +1,12 @@
-import { startTransition, useState, useEffect, useMemo } from 'react';
+import { startTransition, useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 
-import { dataService } from '@api';
-import type { Event } from '@types';
-import { useCurrentTime, useProgressiveImage, useScrollAnimation } from '@hooks';
-import {
-  Footer,
-  FloatingPopup,
-  LinkButtonPrimary,
-  LinkButtonSecondary,
-  LogoGallery,
-  NewsletterSignup,
-} from '@components';
-import {
-  getEventThumbnailUrl,
-  formatEventDateOnly,
-  formatEventTimeOnly,
-  getCurrentSiteDateKey,
-} from '@utils';
+import { useProgressiveImage, useScrollAnimation } from '@hooks';
+import { CallToAction, Footer, LogoCloud, LogoGallery, type Logo } from '@components';
 
 import './Home.css';
+import '../OurMission/OurMission.css';
 
-const LAST_DISMISSED_DATE_STORAGE_KEY = 'homeNextEventPopup:lastDismissedDate';
 const HERO_GALLERY_IMAGES = ['/home-gallery/tamid-gallery-1.JPG'] as const;
 const HERO_GALLERY_PLACEHOLDER = '/home-gallery/tamid-gallery-1-placeholder.jpg';
 const HOME_PAGE_SPEAKER_LOGOS = [
@@ -49,27 +34,49 @@ const HOME_PAGE_SPEAKER_LOGOS = [
   { name: 'UBS', src: '/speaker-logos/UBS-logo.png' },
   { name: 'Warby Parker', src: '/speaker-logos/warby-parker.png' },
 ];
-const HOME_PROOF_POINTS = [
+const ALUMNI_LOGOS: Logo[] = [
+  { name: 'Capital One', src: '/alumni-logos/capital-one-logo.png' },
+  { name: 'Deutsche Bank', src: '/alumni-logos/deutsche-bank-logo.png' },
+  { name: 'FTI Consulting', src: '/alumni-logos/fti-consluting-logo.png' },
+  { name: 'Goldman Sachs', src: '/alumni-logos/goldman-sachs-logo.png' },
+  { name: 'JPMorgan Chase', src: '/alumni-logos/jpmorgan-logo.png' },
+  { name: 'Lazard', src: '/alumni-logos/lazard-logo.svg' },
+  { name: 'Lincoln International', src: '/alumni-logos/lincoln-international-logo.png' },
+  { name: 'Morgan Stanley', src: '/alumni-logos/morgan-stanley-logo.jpg' },
+  { name: 'Palantir', src: '/alumni-logos/palantir-logo.png' },
+  { name: 'UBS', src: '/alumni-logos/ubs-logo.png' },
+  { name: 'Wells Fargo', src: '/alumni-logos/wells-fargo-logo.png' },
+] as const;
+
+const TRACK_CARDS = [
   {
-    label: 'Consulting & Investing',
-    title: 'Hands-on work, real experience.',
-    copy: 'Members consult for Israeli startups and run equity research through our Investment Fund, building practical skills on real engagements — not just in the classroom.',
+    key: 'fund',
+    label: 'Investment Fund',
+    title: 'Investment Fund',
+    description:
+      'A student-run equity research desk. Analysts own sector coverage, build long and short theses, publish through a Seeking Alpha partnership, and compete in a national simulated-fund competition.',
+    href: '/tracks/fund',
   },
   {
-    label: 'Career Building',
-    title: 'Jumpstart your career.',
-    copy: 'Explore career paths, build skills through our four programs, and unlock opportunities. Our members go on to leading firms across the business world.',
+    key: 'consulting',
+    label: 'Consulting',
+    title: 'Consulting',
+    description:
+      'Small teams take on semester-long, pro-bono engagements with early-stage Israeli startups, spanning market research, competitive analysis, US market-entry, and go-to-market strategy.',
+    href: '/tracks/consulting',
   },
   {
-    label: 'Open to All',
-    title: 'Apolitical, areligious, open to all.',
-    copy: 'TAMID Group at NYU is a nonprofit student organization open to any undergraduate interested in professional development, regardless of background or identity.',
+    key: 'quant',
+    label: 'Quant',
+    title: 'Quant',
+    description:
+      'A quantitative and algorithmic strategy track. Members work the full research lifecycle, sourcing data, generating signals, and backtesting systematic ideas with Python-based modeling.',
+    href: '/tracks/quant',
   },
 ] as const;
 
 const HomeHero = () => {
   const heroAnimation = useScrollAnimation({ threshold: 0.2 });
-  const speakersAnimation = useScrollAnimation({ threshold: 0.3 });
 
   const [currentImage, setCurrentImage] = useState(1);
   const [loadedGalleryImages, setLoadedGalleryImages] = useState<number[]>([1, 2]);
@@ -78,9 +85,10 @@ const HomeHero = () => {
     useProgressiveImage(HERO_GALLERY_PLACEHOLDER, firstHeroImageSrc);
 
   useEffect(() => {
+    if (HERO_GALLERY_IMAGES.length <= 1) return;
     const interval = setInterval(() => {
       startTransition(() => {
-        setCurrentImage((prev) => (prev >= 4 ? 1 : prev + 1));
+        setCurrentImage((prev) => (prev >= HERO_GALLERY_IMAGES.length ? 1 : prev + 1));
       });
     }, 5000);
 
@@ -143,45 +151,35 @@ const HomeHero = () => {
       <div className="hero-shell">
         <div className="hero-content">
           <div className="hero-copy">
-            <h1 className="main-title">
-              <span className="title-line-1">Bridging NYU</span>
-              <span className="title-connector">and the</span>
-              <span className="title-line-2">Israeli economy</span>
-            </h1>
+            <h1 className="main-title">TAMID at NYU</h1>
+            <p className="hero-triad">
+              Consult <span className="triad-sep">·</span> Invest{' '}
+              <span className="triad-sep">·</span> Intern Abroad
+            </p>
             <p className="hero-description">
               TAMID Group at NYU develops undergraduates’ professional skills through hands-on work
-              with the Israeli economy across four programs: Education, Consulting, Investment Fund,
-              and Israel Fellowship.
+              with the Israeli economy across four programs: Investment Fund, Consulting, Quant, and
+              Israel Fellowship.
             </p>
 
-            <div
-              ref={speakersAnimation.elementRef}
-              className={`link-section scale-in ${speakersAnimation.isVisible ? 'visible' : ''}`}
-            >
-              <LinkButtonPrimary variant="home" to="/events">
-                Explore Speakers
-              </LinkButtonPrimary>
-              <LinkButtonSecondary variant="home" to="/our-mission" showArrow>
-                The TAMID Mission
-              </LinkButtonSecondary>
-            </div>
+            {HERO_GALLERY_IMAGES.length > 1 && (
+              <div className="gallery-navigation" aria-label="Hero gallery navigation">
+                {HERO_GALLERY_IMAGES.map((imageSrc, index) => {
+                  const imageNumber = index + 1;
 
-            <div className="gallery-navigation" aria-label="Hero gallery navigation">
-              {HERO_GALLERY_IMAGES.map((imageSrc, index) => {
-                const imageNumber = index + 1;
-
-                return (
-                  <button
-                    key={imageSrc}
-                    type="button"
-                    className={`nav-dot ${currentImage === imageNumber ? 'active' : ''}`}
-                    data-target={imageNumber}
-                    onClick={() => handleDotClick(imageNumber)}
-                    aria-label={`Show hero image ${imageNumber}`}
-                  />
-                );
-              })}
-            </div>
+                  return (
+                    <button
+                      key={imageSrc}
+                      type="button"
+                      className={`nav-dot ${currentImage === imageNumber ? 'active' : ''}`}
+                      data-target={imageNumber}
+                      onClick={() => handleDotClick(imageNumber)}
+                      aria-label={`Show hero image ${imageNumber}`}
+                    />
+                  );
+                })}
+              </div>
+            )}
           </div>
         </div>
 
@@ -196,156 +194,74 @@ const HomeHero = () => {
   );
 };
 
-const HomeNextEventPopup = () => {
-  const [nextEvent, setNextEvent] = useState<Event | null>(null);
-  const [lastDismissedDate, setLastDismissedDate] = useState<string | null>(null);
-  const [isDismissalStateReady, setIsDismissalStateReady] = useState(false);
-  const now = useCurrentTime();
-
-  const nextEventThumbnail = useMemo(() => {
-    if (!nextEvent?.flyerFile) return undefined;
-    return getEventThumbnailUrl(nextEvent.flyerFile, nextEvent.updatedAt);
-  }, [nextEvent]);
-  const currentDateKey = useMemo(() => getCurrentSiteDateKey(now), [now]);
-  const nextEventDateLabel = useMemo(() => {
-    if (!nextEvent) return '';
-    return formatEventDateOnly(nextEvent.startTime);
-  }, [nextEvent]);
-  const nextEventTimeLabel = useMemo(() => {
-    if (!nextEvent) return '';
-    return formatEventTimeOnly(nextEvent.startTime, nextEvent.endTime);
-  }, [nextEvent]);
-
-  useEffect(() => {
-    try {
-      const persistedLastDismissedDate = localStorage.getItem(LAST_DISMISSED_DATE_STORAGE_KEY);
-      setLastDismissedDate(persistedLastDismissedDate);
-    } catch (error) {
-      console.error('Unable to access popup dismissal state:', error);
-    } finally {
-      setIsDismissalStateReady(true);
-    }
-  }, []);
-
-  useEffect(() => {
-    let isCancelled = false;
-
-    const fetchNextEvent = async () => {
-      try {
-        const events = await dataService.events.getUpcoming(1);
-        if (!isCancelled) {
-          startTransition(() => {
-            setNextEvent(events[0] ?? null);
-          });
-        }
-      } catch (error) {
-        console.error('Failed to fetch events for home popup:', error);
-      }
-    };
-
-    void fetchNextEvent();
-
-    return () => {
-      isCancelled = true;
-    };
-  }, []);
-
-  const handlePopupClose = () => {
-    setLastDismissedDate(currentDateKey);
-    try {
-      localStorage.setItem(LAST_DISMISSED_DATE_STORAGE_KEY, currentDateKey);
-    } catch (error) {
-      console.error('Unable to persist popup dismissal state:', error);
-    }
-  };
-
-  return (
-    <FloatingPopup
-      isOpen={Boolean(isDismissalStateReady && nextEvent && lastDismissedDate !== currentDateKey)}
-      onClose={handlePopupClose}
-      eyebrow="Upcoming Event"
-      title={nextEvent?.title ?? ''}
-      subtitle={nextEvent?.company ?? undefined}
-      thumbnailSrc={nextEventThumbnail}
-      thumbnailAlt={nextEvent ? `${nextEvent.title} flyer thumbnail` : 'Event flyer thumbnail'}
-      ariaLabel="Next upcoming event"
-    >
-      {nextEvent && (
-        <div className="home-next-event-popup-meta">
-          <div className="home-next-event-popup-details">
-            <p className="home-next-event-popup-row">
-              <img src="/icons/calendar.svg" alt="" className="home-next-event-popup-icon" />
-              <span className="home-next-event-popup-value">{nextEventDateLabel}</span>
-            </p>
-            <p className="home-next-event-popup-row">
-              <img src="/icons/clock.svg" alt="" className="home-next-event-popup-icon" />
-              <span className="home-next-event-popup-value">{nextEventTimeLabel}</span>
-            </p>
-            <p className="home-next-event-popup-row">
-              <img src="/icons/location-pin.svg" alt="" className="home-next-event-popup-icon" />
-              <span className="home-next-event-popup-value">
-                {nextEvent.location ?? 'Location TBA'}
-              </span>
-            </p>
-          </div>
-          <Link
-            to={`/events#event-${encodeURIComponent(nextEvent.id)}`}
-            className="home-next-event-popup-cta home-next-event-popup-cta-inline"
-            onClick={handlePopupClose}
-          >
-            <span>View Details</span>
-            <img
-              src="/icons/arrow-top-right.png"
-              alt=""
-              className="home-next-event-popup-cta-arrow"
-            />
-          </Link>
-        </div>
-      )}
-    </FloatingPopup>
-  );
-};
-
 export const Home = () => {
+  const storiesAnimation = useScrollAnimation({ threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+  const logoCloudAnimation = useScrollAnimation({
+    threshold: 0.1,
+    rootMargin: '0px 0px -40px 0px',
+  });
+
   return (
     <div className="page-container">
       <HomeHero />
 
-      <section className="home-section proof-section" aria-label="TAMID professional value">
-        {HOME_PROOF_POINTS.map((item) => (
-          <article key={item.label} className="proof-item">
-            <span className="proof-label">{item.label}</span>
-            <h2 className="proof-title">{item.title}</h2>
-            <p className="proof-copy">{item.copy}</p>
-          </article>
-        ))}
-      </section>
-
-      <section className="home-section split-content-container">
-        <div className="content-section">
-          <div className="text-container">
-            <h2 className="section-title">Where innovation meets experience</h2>
-            <div className="section-content">
-              <p>
-                Israel’s economy is home to one of the world’s most dynamic startup ecosystems, and
-                TAMID Group at NYU gives students a direct line into it. Members consult for Israeli
-                startups, research public companies, and learn how real businesses are built,
-                funded, and scaled.
-              </p>
-              <p>
-                Through our four programs — Education, Consulting, Investment Fund, and Israel
-                Fellowship — we turn classroom concepts into hands-on experience. Members build
-                practical skills, work alongside founders and companies, and prepare for careers in
-                finance, consulting, technology, and beyond.
-              </p>
-            </div>
+      <div className="our-mission-page">
+        <section
+          ref={storiesAnimation.elementRef}
+          className={`home-tracks ${storiesAnimation.isVisible ? 'visible' : ''}`}
+        >
+          <div className="home-tracks__header">
+            <h2>Three tracks, one hands-on experience.</h2>
           </div>
+
+          <div className="home-tracks__grid">
+            {TRACK_CARDS.map((track) => (
+              <Link key={track.key} to={track.href} className="home-track-card">
+                <h3 className="home-track-card__title">{track.title}</h3>
+                <p className="home-track-card__body">{track.description}</p>
+                <span className="home-track-card__cta">Explore the track &rarr;</span>
+              </Link>
+            ))}
+          </div>
+        </section>
+
+        <section
+          ref={storiesAnimation.elementRef}
+          className={`home-israel ${storiesAnimation.isVisible ? 'visible' : ''}`}
+        >
+          <div className="home-israel__copy">
+            <h2>Learning through the Israeli economy.</h2>
+            <p>
+              We develop undergraduates’ professional skills through hands-on work with the Israeli
+              economy, from consulting for early-stage startups to pitching public companies that do
+              business in Israel. Members gain practical experience, work directly with founders and
+              companies, and build relationships that carry into their careers.
+            </p>
+            <Link to="/tracks/fellowship" className="home-israel__link">
+              Explore the Israel Fellowship &rarr;
+            </Link>
+          </div>
+        </section>
+
+        <div ref={logoCloudAnimation.elementRef} className="our-mission-logo-cloud">
+          <LogoCloud
+            visible={logoCloudAnimation.isVisible}
+            logos={ALUMNI_LOGOS}
+            title="Where Our Members End Up"
+            body="Our members move into leading firms across finance, consulting, technology, and investing, carrying forward the skills they build at TAMID."
+          />
         </div>
 
-        <NewsletterSignup />
-      </section>
+        <CallToAction
+          title="Join TAMID"
+          bodyText="Each semester we select a cohort of top-performing undergraduate students. Applications open at the beginning of each semester. If you are somebody who embodies merit, excellence, and intelligence, we encourage you to apply!"
+          primaryButtonText="Apply"
+          primaryButtonHref="/apply"
+          secondaryButtonText="Explore Our Tracks"
+          secondaryButtonHref="/tracks"
+        />
+      </div>
 
-      <HomeNextEventPopup />
       <Footer />
     </div>
   );

@@ -1,9 +1,11 @@
 .header {
   --header-nav-gap: clamp(1.5rem, 2.5vw, 2.5rem);
+  /* Transparent overlay: a soft top-down scrim (fading fully to 0) keeps the
+     white logo and nav legible over the hero without reading as a flat band. */
   --header-overlay-background: linear-gradient(
     180deg,
-    rgba(18, 39, 75, 0.58) 0%,
-    rgba(18, 39, 75, 0.26) 62%,
+    rgba(18, 39, 75, 0.32) 0%,
+    rgba(18, 39, 75, 0.1) 55%,
     rgba(18, 39, 75, 0) 100%
   );
   --header-settled-background: rgba(255, 255, 255, 0.94);
@@ -30,8 +32,12 @@
 .header--overlay {
   color: var(--header-light-text);
   background: var(--header-overlay-background);
-  border-bottom-color: var(--header-divider-light);
-  backdrop-filter: blur(10px);
+  border-bottom-color: transparent;
+  text-shadow: 0 1px 12px rgba(18, 39, 75, 0.45);
+}
+
+.header--overlay .logo-image--overlay {
+  filter: drop-shadow(0 2px 10px rgba(18, 39, 75, 0.35));
 }
 
 .header--settled,
@@ -77,7 +83,16 @@
 
 .logo-image--overlay {
   display: block;
-  height: clamp(2.8rem, 4vw, 3.9rem);
+  height: clamp(1.7rem, 2.2vw, 2.1rem);
+  /* The logo art stacks "AT NYU" beneath the wordmark, so the wordmark's
+     optical center sits ~29% from the top. Nudge down so the wordmark aligns
+     with the nav link text baseline. Percentage scales with the logo height. */
+  transform: translateY(30%);
+}
+
+.logo-image--fixed {
+  display: block;
+  height: clamp(2.3rem, 3vw, 3rem);
 }
 
 .logo-image--settled,
@@ -93,7 +108,8 @@
 .header--settled .logo-image--settled,
 .header.menu-open .logo-image--settled {
   display: block;
-  height: clamp(2.8rem, 4vw, 3.9rem);
+  height: clamp(1.7rem, 2.2vw, 2.1rem);
+  transform: translateY(30%);
 }
 
 .mobile-menu-button {
@@ -182,7 +198,8 @@
   }
 
   .logo-image--overlay,
-  .logo-image--settled {
+  .logo-image--settled,
+  .logo-image--fixed {
     display: none !important;
   }
 

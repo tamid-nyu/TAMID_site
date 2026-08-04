@@ -44,18 +44,17 @@ export const Footer = () => {
 
           <div className="footer-links">
             <div className="footer-column">
-              <h3>Programs</h3>
-              <Link to="/programs">Programs</Link>
+              <h3>Tracks</h3>
+              <Link to="/tracks">Tracks</Link>
             </div>
 
             <div className="footer-column">
-              <h3>Events</h3>
-              <Link to="/events">Events & Speakers</Link>
+              <h3>Apply</h3>
+              <Link to="/apply">Apply</Link>
             </div>
 
             <div className="footer-column">
               <h3>About Us</h3>
-              <Link to="/our-mission">The TAMID Mission</Link>
               <Link to="/our-board">Executive Board</Link>
               <Link to="/our-members">General Members</Link>
             </div>

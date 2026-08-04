@@ -7,14 +7,22 @@ import './Header.css';
 const SETTLED_SCROLL_THRESHOLD = 36;
 const OVERLAY_HEADER_ROUTES = new Set([
   '/',
-  '/programs',
-  '/our-mission',
+  '/tracks',
+  '/tracks/fund',
+  '/tracks/consulting',
+  '/tracks/quant',
+  '/tracks/fellowship',
   '/our-members',
   '/our-board',
-  '/events',
+  '/apply',
 ]);
+const TRACKS_DROPDOWN_ITEMS = [
+  { label: 'Investment Fund', to: '/tracks/fund' },
+  { label: 'Consulting', to: '/tracks/consulting' },
+  { label: 'Quant', to: '/tracks/quant' },
+  { label: 'Fellowship', to: '/tracks/fellowship' },
+];
 const ABOUT_DROPDOWN_ITEMS = [
-  { label: 'The TAMID Mission', to: '/our-mission' },
   { label: 'Executive Board', to: '/our-board' },
   { label: 'General Members', to: '/our-members' },
 ];
@@ -27,9 +35,7 @@ export const Header = () => {
 
   const usesOverlayHeader = OVERLAY_HEADER_ROUTES.has(location.pathname);
   const isSettled = !usesOverlayHeader || isScrolled || isMenuOpen;
-  const mobileLogoSrc = isSettled
-    ? '/tamid/tamid-logo-clear-no-text.png'
-    : '/tamid/tamid-logo-clear-inverted.png';
+  const mobileLogoSrc = '/tamid/tamid-logo-clear-no-text.png';
 
   useEffect(() => {
     const syncScrollState = () => {
@@ -78,7 +84,7 @@ export const Header = () => {
         <div className="logo">
           <Link to="/" onClick={closeMenu} className="logo-link" aria-label="TAMID home">
             <img
-              src="/tamid/tamid-logo-full-inverted.png"
+              src="/tamid/tamid-logo-full-white.png"
               alt="TAMID Group at NYU Logo"
               className="logo-image logo-image--overlay"
             />
@@ -107,12 +113,16 @@ export const Header = () => {
         </button>
 
         <div className={`nav-buttons ${isMenuOpen ? 'active' : ''}`} id="primary-navigation">
-          <NavButton to="/events" onClick={closeMenu}>
-            Events
+          <NavButton to="/apply" onClick={closeMenu}>
+            Apply
           </NavButton>
-          <NavButton to="/programs" onClick={closeMenu}>
-            Programs
-          </NavButton>
+          <Dropdown
+            label="Programs"
+            items={TRACKS_DROPDOWN_ITEMS}
+            activeRoutes={TRACKS_DROPDOWN_ITEMS.map((item) => item.to)}
+            menuId="tracks-dropdown-menu"
+            onClose={closeMenu}
+          />
           <Dropdown
             label="About"
             items={ABOUT_DROPDOWN_ITEMS}

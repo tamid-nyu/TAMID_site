@@ -35,7 +35,8 @@
   width: auto;
   height: auto;
   object-fit: contain;
-  filter: grayscale(1) saturate(0) opacity(0.52);
+  filter: none;
+  opacity: 0.95;
   transition:
     filter var(--transition-medium),
     transform var(--transition-medium),
@@ -44,7 +45,8 @@
 
 .logo-item:hover .company-logo,
 .logo-item:focus-within .company-logo {
-  filter: grayscale(0) saturate(1) opacity(1);
+  filter: none;
+  opacity: 1;
   transform: translateY(-1px);
 }
 

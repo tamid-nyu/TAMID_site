@@ -307,7 +307,7 @@ export const OurMembers = () => {
                                       {member.email}
                                     </a>
                                   ) : (
-                                    <span className="no-email">—</span>
+                                    <span className="no-email">-</span>
                                   )}
                                 </td>
                               </tr>
@@ -336,8 +336,8 @@ export const OurMembers = () => {
 
         <CallToAction
           title="Want to become a member?"
-          primaryButtonText="Browse Upcoming Events"
-          primaryButtonHref="/events"
+          primaryButtonText="Apply"
+          primaryButtonHref="/apply"
           secondaryButtonText="Contact Us"
           secondaryButtonHref="/contact"
         />

@@ -37,14 +37,6 @@ export const PUBLIC_SEO_ROUTES: SeoRoute[] = [
     imageAlt: 'The Washington Square Arch at NYU',
   },
   {
-    path: '/tracks',
-    title: `Tracks | ${SITE_SHORT_NAME}`,
-    description:
-      'Explore TAMID Group at NYU’s three tracks: Investment Fund, Consulting, and Quant.',
-    image: `${SITE_URL}/mentorship-gallery/quant-hero-v5.jpg?v=2`,
-    imageAlt: 'TAMID Group at NYU track participants',
-  },
-  {
     path: '/tracks/fund',
     title: `Investment Fund | ${SITE_SHORT_NAME}`,
     description:

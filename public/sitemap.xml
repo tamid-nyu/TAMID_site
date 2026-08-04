@@ -16,11 +16,6 @@
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://nyu-tamid.org/tracks</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
     <loc>https://nyu-tamid.org/tracks/fund</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>

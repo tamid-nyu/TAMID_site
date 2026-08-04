@@ -7,7 +7,6 @@ import './Header.css';
 const SETTLED_SCROLL_THRESHOLD = 36;
 const OVERLAY_HEADER_ROUTES = new Set([
   '/',
-  '/tracks',
   '/tracks/fund',
   '/tracks/consulting',
   '/tracks/quant',

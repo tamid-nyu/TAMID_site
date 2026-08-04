@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import { Footer, LinkButtonPrimary, LinkButtonSecondary, SubpageHero } from '@components';
+import { Footer, LinkButtonPrimary, SubpageHero } from '@components';
 import { dataService } from '@api';
 import { MENTORSHIP_APPLICATION_CONFIG_DEFAULTS } from '@constants';
 import { useScrollAnimation } from '@hooks';
@@ -107,7 +107,6 @@ export const Application = () => {
                     Start your application
                   </LinkButtonPrimary>
                 ) : null}
-                <LinkButtonSecondary to="/tracks">Explore the tracks</LinkButtonSecondary>
               </div>
             </section>
           ) : null}
@@ -117,14 +116,12 @@ export const Application = () => {
               <h2>Applications are closed for now.</h2>
               <p>
                 We run one application cycle each semester, and the current cycle is closed. The
-                next cycle opens at the beginning of the term. In the meantime, explore our tracks
-                to learn about the work we do.
+                next cycle opens at the beginning of the term. Check back then to apply.
               </p>
               <div className="application-actions">
-                <LinkButtonPrimary variant="subpage" to="/tracks">
-                  Explore the tracks
+                <LinkButtonPrimary variant="subpage" to="/contact">
+                  Get in touch
                 </LinkButtonPrimary>
-                <LinkButtonSecondary to="/contact">Get in touch</LinkButtonSecondary>
               </div>
             </section>
           ) : null}

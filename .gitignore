@@ -30,3 +30,6 @@ coverage
 # Scripts
 scripts/*
 
+
+# Public production build config (client-side values only: backend API URL).
+!.env.production

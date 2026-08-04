@@ -26,22 +26,22 @@ export const PUBLIC_SEO_ROUTES: SeoRoute[] = [
     path: '/our-board',
     title: `Executive Board | ${SITE_SHORT_NAME}`,
     description: 'Meet the student leaders powering TAMID Group at NYU.',
-    image: `${SITE_URL}/board-gallery/board-gallery-1.jpg`,
-    imageAlt: 'TAMID Group at NYU executive board members gathered at an event',
+    image: `${SITE_URL}/board-gallery/nyu-stern.jpg?v=3`,
+    imageAlt: 'The NYU Stern School of Business building',
   },
   {
     path: '/our-members',
     title: `General Members | ${SITE_SHORT_NAME}`,
     description: "Meet TAMID Group at NYU's members.",
-    image: `${SITE_URL}/members-gallery/members-gallery-1.jpeg`,
-    imageAlt: 'TAMID Group at NYU members at an event',
+    image: `${SITE_URL}/members-gallery/washington-square-arch.jpg?v=4`,
+    imageAlt: 'The Washington Square Arch at NYU',
   },
   {
     path: '/tracks',
     title: `Tracks | ${SITE_SHORT_NAME}`,
     description:
       'Explore TAMID Group at NYU’s three tracks: Investment Fund, Consulting, and Quant.',
-    image: `${SITE_URL}/mentorship-gallery/quant-hero-v5.jpg`,
+    image: `${SITE_URL}/mentorship-gallery/quant-hero-v5.jpg?v=2`,
     imageAlt: 'TAMID Group at NYU track participants',
   },
   {
@@ -49,7 +49,7 @@ export const PUBLIC_SEO_ROUTES: SeoRoute[] = [
     title: `Investment Fund | ${SITE_SHORT_NAME}`,
     description:
       'TAMID Group at NYU’s student-run Investment Fund: equity research through a Seeking Alpha partnership and a national simulated-fund competition where members build and pitch long/short theses.',
-    image: `${SITE_URL}/mentorship-gallery/mentorship-gallery-1.jpeg?v=7`,
+    image: `${SITE_URL}/mentorship-gallery/mentorship-gallery-1.jpeg?v=19`,
     imageAlt: 'TAMID Group at NYU Investment Fund members',
   },
   {
@@ -65,7 +65,7 @@ export const PUBLIC_SEO_ROUTES: SeoRoute[] = [
     title: `Quant | ${SITE_SHORT_NAME}`,
     description:
       'TAMID Group at NYU’s Quant track: quantitative and algorithmic strategy through data-driven research, signal and backtest development, and Python-based modeling.',
-    image: `${SITE_URL}/mentorship-gallery/quant-hero-v5.jpg`,
+    image: `${SITE_URL}/mentorship-gallery/quant-hero-v5.jpg?v=2`,
     imageAlt: 'TAMID Group at NYU Quant members',
   },
   {

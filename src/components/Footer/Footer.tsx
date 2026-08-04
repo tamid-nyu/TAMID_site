@@ -44,23 +44,22 @@ export const Footer = () => {
 
           <div className="footer-links">
             <div className="footer-column">
-              <h3>Tracks</h3>
-              <Link to="/tracks">Tracks</Link>
+              <h3>Programs</h3>
+              <Link to="/tracks/fund">Investment Fund</Link>
+              <Link to="/tracks/consulting">Consulting</Link>
+              <Link to="/tracks/quant">Quant</Link>
+              <Link to="/tracks/fellowship">Israel Fellowship</Link>
             </div>
 
             <div className="footer-column">
-              <h3>Apply</h3>
-              <Link to="/apply">Apply</Link>
-            </div>
-
-            <div className="footer-column">
-              <h3>About Us</h3>
+              <h3>Team</h3>
               <Link to="/our-board">Executive Board</Link>
               <Link to="/our-members">General Members</Link>
             </div>
 
             <div className="footer-column">
               <h3>Connect</h3>
+              <Link to="/apply">Apply</Link>
               <Link to="/contact">Contact</Link>
             </div>
           </div>

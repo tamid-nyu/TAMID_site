@@ -147,9 +147,9 @@ export const OurMembers = () => {
         <SubpageHero
           ref={heroAnimation.elementRef}
           visible={heroAnimation.isVisible}
-          backgroundImageSrc="/members-gallery/members-gallery-1.jpeg"
-          backgroundImageAlt="TAMID Group at NYU members at an event"
-          imagePosition="center 42%"
+          backgroundImageSrc="/members-gallery/washington-square-arch.jpg?v=4"
+          backgroundImageAlt="The Washington Square Arch at NYU"
+          imagePosition="center 40%"
           title="General Members"
           lead="Membership reflects sustained involvement in TAMID Group at NYU. Every event remains open to all students, while recognition is reserved for those who show up consistently across the semester."
         />

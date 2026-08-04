@@ -124,7 +124,7 @@ export const Header = () => {
             onClose={closeMenu}
           />
           <Dropdown
-            label="About"
+            label="Team"
             items={ABOUT_DROPDOWN_ITEMS}
             activeRoutes={ABOUT_DROPDOWN_ITEMS.map((item) => item.to)}
             menuId="about-dropdown-menu"

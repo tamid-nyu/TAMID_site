@@ -1,14 +1,13 @@
 import { startTransition, useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 
-import { useProgressiveImage, useScrollAnimation } from '@hooks';
+import { useScrollAnimation } from '@hooks';
 import { CallToAction, Footer, LogoCloud, LogoGallery, type Logo } from '@components';
 
 import './Home.css';
 import '../OurMission/OurMission.css';
 
 const HERO_GALLERY_IMAGES = ['/home-gallery/tamid-gallery-1.JPG'] as const;
-const HERO_GALLERY_PLACEHOLDER = '/home-gallery/tamid-gallery-1-placeholder.jpg';
 const HOME_PAGE_SPEAKER_LOGOS = [
   { name: 'Goldman Sachs', src: '/speaker-logos/goldman-sachs-logo.png' },
   { name: 'JPMorgan Chase', src: '/speaker-logos/jpmorgan-logo.jpg' },
@@ -81,8 +80,6 @@ const HomeHero = () => {
   const [currentImage, setCurrentImage] = useState(1);
   const [loadedGalleryImages, setLoadedGalleryImages] = useState<number[]>([1, 2]);
   const firstHeroImageSrc = HERO_GALLERY_IMAGES[0];
-  const { currentSrc: progressiveHeroImageSrc, isFullLoaded: isHeroImageLoaded } =
-    useProgressiveImage(HERO_GALLERY_PLACEHOLDER, firstHeroImageSrc);
 
   useEffect(() => {
     if (HERO_GALLERY_IMAGES.length <= 1) return;
@@ -120,7 +117,7 @@ const HomeHero = () => {
             const isActiveImage = currentImage === imageNumber;
             const isPriorityImage = imageNumber === 1;
             const displaySrc = isPriorityImage
-              ? (progressiveHeroImageSrc ?? HERO_GALLERY_PLACEHOLDER)
+              ? firstHeroImageSrc
               : shouldLoadImage
                 ? imageSrc
                 : undefined;
@@ -138,7 +135,6 @@ const HomeHero = () => {
                     loading={isPriorityImage ? 'eager' : 'lazy'}
                     decoding="async"
                     fetchPriority={isPriorityImage ? 'high' : 'low'}
-                    className={imageNumber === 1 && !isHeroImageLoaded ? 'is-placeholder' : ''}
                   />
                 ) : null}
               </div>

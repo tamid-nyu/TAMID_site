@@ -166,9 +166,9 @@ export const OurBoard = () => {
         <SubpageHero
           ref={heroAnimation.elementRef}
           visible={heroAnimation.isVisible}
-          backgroundImageSrc="/board-gallery/board-gallery-1.jpg"
-          backgroundImageAlt="TAMID Group at NYU members gathered at an event"
-          imagePosition="center 42%"
+          backgroundImageSrc="/board-gallery/nyu-stern.jpg?v=3"
+          backgroundImageAlt="The NYU Stern School of Business building"
+          imagePosition="center 80%"
           title="Executive Board"
           lead="Meet the students leading TAMID Group at NYU this academic year."
         />

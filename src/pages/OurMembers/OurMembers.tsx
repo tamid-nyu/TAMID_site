@@ -15,10 +15,6 @@ import './OurMembers.css';
 
 export const OurMembers = () => {
   const heroAnimation = useScrollAnimation({ threshold: 0.18 });
-  const overviewAnimation = useScrollAnimation({
-    threshold: 0.12,
-    rootMargin: '0px 0px -40px 0px',
-  });
   const directoryAnimation = useScrollAnimation({
     threshold: 0.08,
     rootMargin: '0px 0px -40px 0px',
@@ -153,60 +149,6 @@ export const OurMembers = () => {
           title="General Members"
           lead="Membership reflects sustained involvement in TAMID Group at NYU. Every event remains open to all students, while recognition is reserved for those who show up consistently across the semester."
         />
-
-        <section
-          ref={overviewAnimation.elementRef}
-          className={`members-overview ${overviewAnimation.isVisible ? 'visible' : ''}`}
-        >
-          <div className="members-overview__intro">
-            <span className="members-section-label">Membership Criteria</span>
-            <h2>Recognition is earned through steady participation.</h2>
-            <p className="members-overview__lead">
-              Official membership acknowledges students who consistently invest in TAMID's
-              programming, conversations, and broader community life.
-            </p>
-          </div>
-
-          <div className="members-overview__detail">
-            <div className="members-requirements">
-              <h3 className="members-requirements__title">Membership requirements</h3>
-
-              <div className="members-criteria-list" aria-label="Membership requirements">
-                <article className="members-criteria-item">
-                  <p className="members-criteria-item__value" aria-label="4 events required">
-                    <span className="members-criteria-item__count">4</span>
-                    <span className="members-criteria-item__unit">events</span>
-                  </p>
-                  <div className="members-criteria-item__intro">
-                    <p className="members-criteria-item__label">For returning members</p>
-                    <p className="members-criteria-item__body">
-                      Continue your engagement and keep active status.
-                    </p>
-                  </div>
-                </article>
-
-                <article className="members-criteria-item">
-                  <p className="members-criteria-item__value" aria-label="5 events required">
-                    <span className="members-criteria-item__count">5</span>
-                    <span className="members-criteria-item__unit">events</span>
-                  </p>
-                  <div className="members-criteria-item__intro">
-                    <p className="members-criteria-item__label">For new members</p>
-                    <p className="members-criteria-item__body">
-                      Build your initial semester of involvement.
-                    </p>
-                  </div>
-                </article>
-              </div>
-            </div>
-
-            <p className="members-overview__body">
-              Membership recognition helps TAMID direct funding and priority access toward students
-              who actively contribute to resume reviews, mock interviews, speaker programming, and
-              the club's long-term professional community.
-            </p>
-          </div>
-        </section>
 
         <section
           ref={directoryAnimation.elementRef}

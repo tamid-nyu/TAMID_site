@@ -115,7 +115,7 @@ const TRACK_CONTENT: Record<'fund' | 'consulting' | 'quant' | 'fellowship', Trac
       {
         heading: 'AI-native, agentic tooling',
         paragraphs: [
-          'Artificial Intelligence is foundational to the track, so members build practical, transferable skills using agentic tools and LLM-powered workflows while learning quantitative methods. No prior tech background is required, only curiosity and a willingness to work through the data.',
+          'Artificial intelligence is foundational to the track, so members build practical, transferable skills using agentic tools and LLM-powered workflows while learning quantitative methods. No prior tech background is required, only curiosity and a willingness to work through the data.',
         ],
       },
     ],

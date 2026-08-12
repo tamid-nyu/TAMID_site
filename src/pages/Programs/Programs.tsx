@@ -109,7 +109,7 @@ const TRACK_PILLARS = [
     eyebrow: 'Quant',
     title: 'Quant',
     description:
-      'Quantitative and algorithmic strategy through data-driven research and AI-driven, agentic tooling.',
+      'Quantitative and algorithmic strategy through data-driven research and AI-native, agentic tooling.',
     image: '/mentorship-gallery/mentorship-gallery-3.jpeg',
     alt: 'TAMID Group at NYU Quant track',
   },

@@ -69,7 +69,7 @@ const TRACK_CARDS = [
     label: 'Quant',
     title: 'Quant',
     description:
-      'A quantitative and algorithmic strategy track. Members work the full research lifecycle, sourcing data, generating signals, and backtesting systematic ideas with Python-based modeling.',
+      'A quantitative and algorithmic strategy track. Members work the full research lifecycle, sourcing data, generating signals, and backtesting systematic ideas with AI-driven, agentic tooling.',
     href: '/tracks/quant',
   },
 ] as const;

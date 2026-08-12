@@ -113,9 +113,9 @@ const TRACK_CONTENT: Record<'fund' | 'consulting' | 'quant' | 'fellowship', Trac
         ],
       },
       {
-        heading: 'Python-based modeling',
+        heading: 'AI-driven, agentic tooling',
         paragraphs: [
-          'The track is Python-based, so members build practical, transferable programming and modeling skills while learning quantitative methods. No prior finance background is required, only curiosity and a willingness to work through the data.',
+          'The track is AI-centric, so members build practical, transferable skills using agentic tools and LLM-powered workflows while learning quantitative methods. No prior finance background is required, only curiosity and a willingness to work through the data.',
         ],
       },
     ],

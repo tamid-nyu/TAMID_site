@@ -90,32 +90,32 @@ const TRACK_CONTENT: Record<'fund' | 'consulting' | 'quant' | 'fellowship', Trac
   quant: {
     eyebrow: '',
     title: 'Quant',
-    lead: 'A quantitative and algorithmic strategy track built around data-driven research and systematic trading concepts.',
+    lead: 'An AI-centric track where members build agentic tools and LLM-powered workflows to research markets and automate real analytical work.',
     backgroundImageSrc: '/mentorship-gallery/quant-hero-v5.jpg?v=2',
     backgroundImageAlt: 'TAMID Group at NYU Quant members',
     imagePosition: 'center 45%',
     sections: [
       {
-        heading: 'Quantitative and algorithmic strategy',
+        heading: 'AI and agentic strategy',
         paragraphs: [
-          'The Quant track introduces members to the concepts behind systematic and algorithmic trading. Members explore how quantitative researchers turn data into testable ideas and how those ideas become rules-based strategies.',
-          'The emphasis is on rigor and process: forming a hypothesis, testing it against data, and being honest about what the results do and do not show.',
+          'The Quant track centers on applied AI: how large language models and autonomous agents can research markets, reason over data, and take action. Members explore where these tools genuinely add an edge and where human judgment still has to lead.',
+          'The emphasis is on building things that work: framing a problem, wiring up an agent or model to attack it, and being honest about what the output can and cannot be trusted to do.',
         ],
       },
       {
-        heading: 'Data-driven research and backtesting',
-        paragraphs: ['Members work through the research lifecycle used by quantitative teams:'],
+        heading: 'Building agentic workflows',
+        paragraphs: ['Members work hands-on through the lifecycle of an AI-driven research tool:'],
         bullets: [
-          'Sourcing and cleaning data for analysis',
-          'Signal generation and hypothesis testing',
-          'Backtest development and evaluation',
-          'Reasoning about systematic trading concepts and risk',
+          'Designing agents that gather, clean, and structure market data',
+          'Prompt engineering and orchestrating multi-step LLM workflows',
+          'Connecting models to tools, APIs, and live data sources',
+          'Evaluating outputs for reliability, bias, and risk',
         ],
       },
       {
-        heading: 'Python-based modeling',
+        heading: 'Practical, transferable AI skills',
         paragraphs: [
-          'The track is Python-based, so members build practical, transferable programming and modeling skills while learning quantitative methods. No prior finance background is required, only curiosity and a willingness to work through the data.',
+          'The track is project-based, so members leave with real, portfolio-ready experience building with modern AI tooling. No prior finance or engineering background is required, only curiosity and a willingness to build.',
         ],
       },
     ],

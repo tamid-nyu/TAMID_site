@@ -11,7 +11,7 @@ interface ErrorDisplayProps {
 export const ErrorDisplay = ({ error, onRetry, showStatusLink = true }: ErrorDisplayProps) => {
   const normalizedError = error.toLowerCase();
   const containsStatusReference =
-    normalizedError.includes('status.nyu-tamid.org') ||
+    normalizedError.includes('status.nyutamid.org') ||
     normalizedError.includes('tamid service status') ||
     normalizedError.includes('service status') ||
     normalizedError.includes('platform status');

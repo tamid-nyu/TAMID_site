@@ -31,10 +31,10 @@ export const Footer = () => {
                   alt="LinkedIn"
                 />
                 <SocialLink
-                  href="https://www.instagram.com/nyutamid/"
+                  href="https://www.instagram.com/tamidnyu/"
                   platform="instagram"
                   name="Instagram"
-                  handle="@nyutamid"
+                  handle="@tamidnyu"
                   iconSrc="/icons/instagram-logo.png"
                   alt="Instagram"
                 />

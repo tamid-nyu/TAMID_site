@@ -1,4 +1,4 @@
-export const SITE_URL = 'https://nyu-tamid.org';
+export const SITE_URL = 'https://nyutamid.org';
 export const SITE_NAME = 'TAMID Group at NYU';
 export const SITE_SHORT_NAME = 'TAMID';
 export const SITE_DESCRIPTION =
@@ -127,7 +127,7 @@ export const getOrganizationJsonLd = () => ({
     postalCode: '10012',
     addressCountry: 'US',
   },
-  sameAs: ['https://www.linkedin.com/company/tamidgroup/', 'https://www.instagram.com/nyutamid/'],
+  sameAs: ['https://www.linkedin.com/company/tamidgroup/', 'https://www.instagram.com/tamidnyu/'],
 });
 
 export const getWebsiteJsonLd = () => ({

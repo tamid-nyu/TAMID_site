@@ -44,10 +44,10 @@ const SOCIAL_LINKS: ContactSocialLink[] = [
     alt: 'LinkedIn',
   },
   {
-    href: 'https://www.instagram.com/nyutamid/',
+    href: 'https://www.instagram.com/tamidnyu/',
     platform: 'instagram' as const,
     name: 'Instagram',
-    handle: '@nyutamid',
+    handle: '@tamidnyu',
     iconSrc: '/icons/instagram-logo.png',
     alt: 'Instagram',
   },

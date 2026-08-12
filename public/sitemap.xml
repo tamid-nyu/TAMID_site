@@ -1,47 +1,47 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://nyu-tamid.org/</loc>
+    <loc>https://nyutamid.org/</loc>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
-    <loc>https://nyu-tamid.org/our-board</loc>
+    <loc>https://nyutamid.org/our-board</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://nyu-tamid.org/our-members</loc>
+    <loc>https://nyutamid.org/our-members</loc>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://nyu-tamid.org/tracks/fund</loc>
+    <loc>https://nyutamid.org/tracks/fund</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://nyu-tamid.org/tracks/consulting</loc>
+    <loc>https://nyutamid.org/tracks/consulting</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://nyu-tamid.org/tracks/quant</loc>
+    <loc>https://nyutamid.org/tracks/quant</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://nyu-tamid.org/tracks/fellowship</loc>
+    <loc>https://nyutamid.org/tracks/fellowship</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://nyu-tamid.org/apply</loc>
+    <loc>https://nyutamid.org/apply</loc>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://nyu-tamid.org/contact</loc>
+    <loc>https://nyutamid.org/contact</loc>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>

@@ -1,7 +1,6 @@
 import { Link } from 'react-router-dom';
 import { useScrollAnimation } from '@hooks';
 import { SocialLink } from '@components';
-import { STATUS_PAGE_URL } from '@constants';
 import './Footer.css';
 
 export const Footer = () => {
@@ -83,14 +82,6 @@ export const Footer = () => {
               <br />
               All rights reserved.
             </p>
-            <a
-              className="footer-status-link"
-              href={STATUS_PAGE_URL}
-              target="_blank"
-              rel="noreferrer"
-            >
-              Service Status
-            </a>
           </div>
         </div>
       </div>

@@ -4,8 +4,6 @@ export const BACKEND_URL = import.meta.env.VITE_BACKEND_URL || DEFAULT_BACKEND_U
 export const BOARD_IMAGES_BUCKET = import.meta.env.VITE_BOARD_IMAGES_BUCKET as string;
 export const EVENT_FLYERS_BUCKET = import.meta.env.VITE_EVENT_FLYERS_BUCKET as string;
 
-export const STATUS_PAGE_URL = 'https://status.nyutamid.org';
-
 // INV3: 'mentorship_application_open' / 'mentorship_application_url' are backend
 // WIRE-contract config KEY string literals. The Programs page is a rebrand of the
 // old Mentorship page, but these key strings MUST stay byte-identical because the

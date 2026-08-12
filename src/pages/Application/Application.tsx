@@ -58,14 +58,6 @@ export const Application = () => {
     };
   }, []);
 
-  const statusLabel = !isStatusReady
-    ? 'Checking application status'
-    : isApplicationOpen
-      ? 'Applications are open'
-      : 'Applications are currently closed';
-
-  const statusTone = !isStatusReady ? 'loading' : isApplicationOpen ? 'open' : 'closed';
-
   return (
     <>
       <div className="page-container application-page">
@@ -83,11 +75,6 @@ export const Application = () => {
           ref={bodyAnim.elementRef}
           className={`application-body ${bodyAnim.isVisible ? 'visible' : ''}`}
         >
-          <div className={`application-status application-status--${statusTone}`}>
-            <span className="application-status__dot" aria-hidden="true" />
-            <span className="application-status__label">{statusLabel}</span>
-          </div>
-
           {isStatusReady && isApplicationOpen ? (
             <section className="application-panel">
               <h2>The application is open.</h2>

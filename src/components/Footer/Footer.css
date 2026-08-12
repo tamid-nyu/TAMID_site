@@ -197,32 +197,6 @@
   text-align: right;
 }
 
-.footer-status-link {
-  font-family: var(--font-sans);
-  font-size: 0.72rem;
-  font-weight: 600;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
-  color: rgba(24, 39, 75, 0.82);
-  text-decoration: none;
-  transition:
-    color var(--transition-medium),
-    text-decoration-color var(--transition-medium),
-    text-underline-offset var(--transition-medium);
-}
-
-.footer-status-link:hover {
-  color: var(--color-ink);
-  text-decoration: underline;
-  text-underline-offset: 0.22em;
-}
-
-.footer-status-link:focus-visible {
-  outline: 2px solid rgba(24, 39, 75, 0.28);
-  outline-offset: 3px;
-  border-radius: 0.25rem;
-}
-
 @media (max-width: 980px) {
   .footer-content {
     grid-template-columns: 1fr;

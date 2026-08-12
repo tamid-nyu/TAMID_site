@@ -71,10 +71,9 @@ export const Footer = () => {
             <p>
               TAMID Group at NYU
               <br />
-              {/* TODO(human): TAMID physical address placeholder */}
-              [Address placeholder]
+              44 West 4th Street
               <br />
-              New York, NY USA
+              New York, NY 10012
             </p>
           </div>
 

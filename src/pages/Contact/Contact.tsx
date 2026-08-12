@@ -39,7 +39,7 @@ const SOCIAL_LINKS: ContactSocialLink[] = [
     href: 'https://www.linkedin.com/company/tamid-at-nyu',
     platform: 'linkedin' as const,
     name: 'LinkedIn',
-    handle: '@tamid',
+    handle: '@tamid-at-nyu',
     iconSrc: '/icons/linkedin-logo.png',
     alt: 'LinkedIn',
   },

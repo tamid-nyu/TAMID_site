@@ -127,7 +127,7 @@ export const getOrganizationJsonLd = () => ({
     postalCode: '10012',
     addressCountry: 'US',
   },
-  sameAs: ['https://www.linkedin.com/company/tamidgroup/', 'https://www.instagram.com/tamidnyu/'],
+  sameAs: ['https://www.linkedin.com/company/tamid-at-nyu/', 'https://www.instagram.com/tamidnyu/'],
 });
 
 export const getWebsiteJsonLd = () => ({

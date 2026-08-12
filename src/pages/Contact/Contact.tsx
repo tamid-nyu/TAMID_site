@@ -36,7 +36,7 @@ const CONTACT_CHANNELS: ContactChannel[] = [
 
 const SOCIAL_LINKS: ContactSocialLink[] = [
   {
-    href: 'https://www.linkedin.com/company/tamidgroup/',
+    href: 'https://www.linkedin.com/company/tamid-at-nyu/',
     platform: 'linkedin' as const,
     name: 'LinkedIn',
     handle: '@tamid',

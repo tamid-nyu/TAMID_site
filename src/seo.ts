@@ -56,7 +56,7 @@ export const PUBLIC_SEO_ROUTES: SeoRoute[] = [
     path: '/tracks/quant',
     title: `Quant | ${SITE_SHORT_NAME}`,
     description:
-      'TAMID Group at NYU’s Quant track: an AI-centric, project-based program where members build agentic tools and LLM-powered workflows to research markets and automate real analytical work.',
+      'TAMID Group at NYU’s Quant track: quantitative and algorithmic strategy through data-driven research, signal and backtest development, and Python-based modeling.',
     image: `${SITE_URL}/mentorship-gallery/quant-hero-v5.jpg?v=2`,
     imageAlt: 'TAMID Group at NYU Quant members',
   },

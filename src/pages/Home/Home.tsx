@@ -69,7 +69,7 @@ const TRACK_CARDS = [
     label: 'Quant',
     title: 'Quant',
     description:
-      'An AI-centric track. Members build agentic tools and LLM-powered workflows to research markets, connect models to live data, and automate real analytical work.',
+      'A quantitative and algorithmic strategy track. Members work the full research lifecycle, sourcing data, generating signals, and backtesting systematic ideas with Python-based modeling.',
     href: '/tracks/quant',
   },
 ] as const;

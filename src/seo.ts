@@ -1,4 +1,4 @@
-export const SITE_URL = 'https://nyutamid.org';
+export const SITE_URL = 'https://www.nyutamid.org';
 export const SITE_NAME = 'TAMID Group at NYU';
 export const SITE_SHORT_NAME = 'TAMID';
 export const SITE_DESCRIPTION =

@@ -23,7 +23,7 @@ export const Footer = () => {
             <div className="footer-social">
               <div className="footer-social-links">
                 <SocialLink
-                  href="https://www.linkedin.com/company/tamid-at-nyu/"
+                  href="https://www.linkedin.com/company/tamid-at-nyu"
                   platform="linkedin"
                   name="LinkedIn"
                   handle="@tamid"

@@ -686,11 +686,6 @@
   margin: clamp(2rem, 4vw, 3.5rem) auto 0;
   padding-block: clamp(3rem, 6vw, 5rem);
   padding-inline: var(--page-gutter);
-  opacity: 0;
-  transform: translateY(1.5rem);
-  transition:
-    opacity 560ms ease,
-    transform 560ms ease;
 }
 
 .home-tracks::before {

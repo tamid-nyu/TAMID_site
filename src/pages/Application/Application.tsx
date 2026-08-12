@@ -135,8 +135,10 @@ export const Application = () => {
             <div className="application-detail">
               <h3>Timing</h3>
               <p>
-                Applications open at the beginning of each semester. If you are somebody who
-                embodies merit, excellence, and intelligence, we encourage you to apply.
+                Applications open at the beginning of the semester and remain open for a week,
+                during which applicants have the opportunity to network with our members and learn
+                more about the organization. Shortlisted candidates will be invited to interview
+                throughout the following week and receive a final decision shortly after.
               </p>
             </div>
           </section>

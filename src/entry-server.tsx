@@ -1,9 +1,27 @@
 import { renderToString } from 'react-dom/server';
 import * as ReactRouterDom from 'react-router-dom';
 import { AppContent } from './App';
-import { getSeoForPath, PUBLIC_SEO_ROUTES } from './seo';
+import {
+  getCanonicalUrl,
+  getOrganizationJsonLd,
+  getPageJsonLd,
+  getSeoForPath,
+  getSocialImage,
+  getWebsiteJsonLd,
+  PUBLIC_SEO_ROUTES,
+  SITE_NAME,
+} from './seo';
 
-export { getSeoForPath, PUBLIC_SEO_ROUTES };
+export {
+  getCanonicalUrl,
+  getOrganizationJsonLd,
+  getPageJsonLd,
+  getSeoForPath,
+  getSocialImage,
+  getWebsiteJsonLd,
+  PUBLIC_SEO_ROUTES,
+  SITE_NAME,
+};
 
 const { StaticRouter } = ReactRouterDom;
 

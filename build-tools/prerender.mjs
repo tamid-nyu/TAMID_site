@@ -8,6 +8,18 @@ const projectRoot = path.resolve(__dirname, '..');
 const distDir = path.join(projectRoot, 'dist');
 const ssrEntryPath = path.join(projectRoot, '.prerender-ssr', 'entry-server.js');
 
+const {
+  render,
+  PUBLIC_SEO_ROUTES,
+  getSeoForPath,
+  getCanonicalUrl,
+  getSocialImage,
+  getOrganizationJsonLd,
+  getWebsiteJsonLd,
+  getPageJsonLd,
+  SITE_NAME,
+} = await import(ssrEntryPath);
+
 const escapeHtml = (value) =>
   String(value)
     .replaceAll('&', '&amp;')
@@ -18,53 +30,17 @@ const escapeHtml = (value) =>
 
 const normalizePath = (routePath) =>
   routePath === '/' ? routePath : routePath.replace(/\/+$/, '');
-const canonicalUrl = (routePath) => `https://nyu-tamid.org${routePath === '/' ? '/' : routePath}`;
-const socialImage = (route) =>
-  route.image ?? 'https://nyu-tamid.org/home-gallery/tamid-gallery-1.JPG';
+const canonicalUrl = (routePath) => getCanonicalUrl(routePath);
+const socialImage = (route) => getSocialImage(route);
 
-const organizationJsonLd = {
-  '@context': 'https://schema.org',
-  '@type': 'Organization',
-  name: 'TAMID Group at NYU',
-  alternateName: ['NYU TAMID', 'TAMID', 'TAMID Group at NYU'],
-  url: 'https://nyu-tamid.org',
-  logo: 'https://nyu-tamid.org/tamid/tamid-logo-full.png',
-  address: {
-    '@type': 'PostalAddress',
-    streetAddress: '44 West 4th Street',
-    addressLocality: 'New York',
-    addressRegion: 'NY',
-    postalCode: '10012',
-    addressCountry: 'US',
-  },
-  sameAs: ['https://www.linkedin.com/company/tamidgroup/', 'https://www.instagram.com/nyutamid/'],
-};
-
-const websiteJsonLd = {
-  '@context': 'https://schema.org',
-  '@type': 'WebSite',
-  name: 'TAMID Group at NYU',
-  alternateName: ['NYU TAMID', 'TAMID', 'TAMID Group at NYU'],
-  url: 'https://nyu-tamid.org/',
-};
-
-const buildPageJsonLd = (route) => ({
-  '@context': 'https://schema.org',
-  '@type': 'WebPage',
-  name: route.title,
-  description: route.description,
-  url: canonicalUrl(route.path),
-  isPartOf: {
-    '@type': 'WebSite',
-    name: 'TAMID Group at NYU',
-    url: 'https://nyu-tamid.org/',
-  },
-});
+const organizationJsonLd = getOrganizationJsonLd();
+const websiteJsonLd = getWebsiteJsonLd();
+const buildPageJsonLd = (route) => getPageJsonLd(route);
 
 const buildHead = (route) => {
   const url = canonicalUrl(route.path);
   const image = socialImage(route);
-  const imageAlt = route.imageAlt ?? 'TAMID Group at NYU';
+  const imageAlt = route.imageAlt ?? SITE_NAME;
   const robots = route.noindex ? 'noindex, nofollow' : 'index, follow';
 
   return [
@@ -72,7 +48,7 @@ const buildHead = (route) => {
     `<meta name="description" content="${escapeHtml(route.description)}" />`,
     `<meta name="robots" content="${robots}" />`,
     `<link rel="canonical" href="${escapeHtml(url)}" />`,
-    '<meta property="og:site_name" content="TAMID Group at NYU" />',
+    `<meta property="og:site_name" content="${escapeHtml(SITE_NAME)}" />`,
     `<meta property="og:type" content="${route.type ?? 'website'}" />`,
     `<meta property="og:url" content="${escapeHtml(url)}" />`,
     `<meta property="og:title" content="${escapeHtml(route.title)}" />`,
@@ -157,7 +133,6 @@ const writeHtml = async (routePath, html) => {
 
 try {
   const template = await fs.readFile(path.join(distDir, 'index.html'), 'utf-8');
-  const { render, PUBLIC_SEO_ROUTES, getSeoForPath } = await import(ssrEntryPath);
   const routes = [...PUBLIC_SEO_ROUTES, { ...getSeoForPath('/404'), path: '/404' }];
 
   for (const route of routes) {

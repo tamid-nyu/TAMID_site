@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://nyutamid.org/sitemap.xml
+Sitemap: https://www.nyutamid.org/sitemap.xml

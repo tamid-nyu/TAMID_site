@@ -1,6 +1,9 @@
 export const SITE_URL = 'https://www.nyutamid.org';
 export const SITE_NAME = 'TAMID Group at NYU';
 export const SITE_SHORT_NAME = 'TAMID';
+// Page-title suffix. Keep 'NYU' in it: nearly all search traffic for this site is
+// branded ("TAMID NYU", "NYU TAMID"), so the campus name must appear in every title.
+export const TITLE_SUFFIX = 'TAMID at NYU';
 export const SITE_DESCRIPTION =
   'TAMID Group at NYU is a nonprofit, apolitical, and areligious student organization that develops undergraduates’ professional skills through hands-on work with the Israeli economy.';
 export const DEFAULT_SOCIAL_IMAGE = `${SITE_URL}/home-gallery/tamid-gallery-1.JPG`;
@@ -24,21 +27,21 @@ export const PUBLIC_SEO_ROUTES: SeoRoute[] = [
   },
   {
     path: '/our-board',
-    title: `Executive Board | ${SITE_SHORT_NAME}`,
+    title: `Executive Board | ${TITLE_SUFFIX}`,
     description: 'Meet the student leaders powering TAMID Group at NYU.',
     image: `${SITE_URL}/board-gallery/nyu-stern.jpg?v=3`,
     imageAlt: 'The NYU Stern School of Business building',
   },
   {
     path: '/our-members',
-    title: `General Members | ${SITE_SHORT_NAME}`,
+    title: `General Members | ${TITLE_SUFFIX}`,
     description: "Meet TAMID Group at NYU's members.",
     image: `${SITE_URL}/members-gallery/washington-square-arch.jpg?v=4`,
     imageAlt: 'The Washington Square Arch at NYU',
   },
   {
     path: '/tracks/fund',
-    title: `Investment Fund | ${SITE_SHORT_NAME}`,
+    title: `Investment Fund | ${TITLE_SUFFIX}`,
     description:
       'TAMID Group at NYU’s student-run Investment Fund: equity research and a national simulated-fund competition where members build and pitch long/short theses.',
     image: `${SITE_URL}/mentorship-gallery/mentorship-gallery-1.jpeg?v=19`,
@@ -46,7 +49,7 @@ export const PUBLIC_SEO_ROUTES: SeoRoute[] = [
   },
   {
     path: '/tracks/consulting',
-    title: `Consulting | ${SITE_SHORT_NAME}`,
+    title: `Consulting | ${TITLE_SUFFIX}`,
     description:
       'TAMID Group at NYU’s Consulting track: semester-long, pro-bono engagements with Israeli startups spanning market research, competitive analysis, US market-entry strategy, and go-to-market.',
     image: `${SITE_URL}/mentorship-gallery/mentorship-gallery-2.jpeg?v=3`,
@@ -54,7 +57,7 @@ export const PUBLIC_SEO_ROUTES: SeoRoute[] = [
   },
   {
     path: '/tracks/quant',
-    title: `Quant | ${SITE_SHORT_NAME}`,
+    title: `Quant | ${TITLE_SUFFIX}`,
     description:
       'TAMID Group at NYU’s Quant track: quantitative and algorithmic strategy through data-driven research, signal and backtest development, and AI-native, agentic tooling.',
     image: `${SITE_URL}/mentorship-gallery/quant-hero-v5.jpg?v=2`,
@@ -62,7 +65,7 @@ export const PUBLIC_SEO_ROUTES: SeoRoute[] = [
   },
   {
     path: '/tracks/fellowship',
-    title: `Israel Fellowship | ${SITE_SHORT_NAME}`,
+    title: `Israel Fellowship | ${TITLE_SUFFIX}`,
     description:
       'TAMID Group at NYU’s Israel Fellowship: a summer program placing members inside Israeli companies and startups for hands-on, immersive work experience.',
     image: `${SITE_URL}/mentorship-gallery/fellowship-hero-telaviv.jpg`,
@@ -70,7 +73,7 @@ export const PUBLIC_SEO_ROUTES: SeoRoute[] = [
   },
   {
     path: '/apply',
-    title: `Apply | ${SITE_SHORT_NAME}`,
+    title: `Apply | ${TITLE_SUFFIX}`,
     description:
       'Apply to TAMID Group at NYU. Each semester we select a cohort of top-performing undergraduates for the Investment Fund, Consulting, and Quant tracks. Applications open at the start of each term.',
     image: `${SITE_URL}/events-gallery/events-gallery-1.jpeg`,
@@ -78,7 +81,7 @@ export const PUBLIC_SEO_ROUTES: SeoRoute[] = [
   },
   {
     path: '/contact',
-    title: `Contact | ${SITE_SHORT_NAME}`,
+    title: `Contact | ${TITLE_SUFFIX}`,
     description: 'Contact TAMID Group at NYU.',
     imageAlt: 'TAMID Group at NYU logo',
   },
@@ -86,7 +89,7 @@ export const PUBLIC_SEO_ROUTES: SeoRoute[] = [
 
 export const NOT_FOUND_SEO: SeoRoute = {
   path: '/404',
-  title: `Page Not Found | ${SITE_SHORT_NAME}`,
+  title: `Page Not Found | ${TITLE_SUFFIX}`,
   description: 'The requested page could not be found.',
   imageAlt: 'TAMID Group at NYU logo',
   noindex: true,

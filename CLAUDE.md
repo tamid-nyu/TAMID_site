@@ -21,7 +21,7 @@ Public marketing site for **TAMID Group at NYU**.
 ## Structure
 - `src/pages/*` — Home, OurMission, OurBoard, OurMembers, Events, Contact, Programs (Tracks overview, at `/tracks`), ProgramDetail (track detail, `/tracks/:slug`), NotFound. Barrel: `src/pages/index.ts`. (Component/folder names keep the legacy `Programs`/`ProgramDetail` labels; all routes + user-facing copy say "Tracks".)
 - `src/components/*` — Header (with Dropdown nav + NavButton), SubpageHero, LogoGallery, Footer, Seo, ScrollToTop, etc.
-- `src/seo.ts` — per-route SEO metadata + JSON-LD. `SITE_URL = https://nyu-tamid.org`.
+- `src/seo.ts` — per-route SEO metadata + JSON-LD. `SITE_URL = https://www.nyutamid.org`. **Single source of truth**: `build-tools/prerender.mjs` imports these helpers via the SSR entry; never re-declare a domain, title suffix, or JSON-LD block there.
 - `src/index.css` — global design tokens in `:root` (see Brand).
 - `src/constants.ts`, `src/types/SiteConfig.ts` — site-config contract (see Gotchas).
 - `src/api/*` — data service (Supabase-backed buckets + backend `/v1`).
@@ -58,9 +58,9 @@ Logo (`public/tamid/`): official "TAMID GROUP / AT NYU" lockup — `tamid-logo-f
 ## Deploy / hosting
 - Org: **github.com/tamid-nyu** (public). Remote is HTTPS `https://github.com/tamid-nyu/TAMID_site.git`.
 - **Push via SSH** — the HTTPS token lacks the `workflow` scope needed for `.github/workflows/`. Use `git@github.com:tamid-nyu/TAMID_site.git` (or `git push origin HEAD`).
-- Hosting: **Vercel**. Domain placeholders `nyu-tamid.org` (+ `api.` / `admin.` / `status.`).
+- Hosting: **Vercel**. Live site is `www.nyutamid.org` (non-www 301s to www). The `api.` / `admin.` / `status.` subdomains under `nyu-tamid.org` are still unclaimed placeholders.
 - Backend data via Supabase buckets + a `/v1` API (`.env.example`). Copy `.env.example` -> `.env`.
-- `tamid@nyu.edu`, socials `linkedin.com/company/tamidgroup` and `@nyutamid` are **PLACEHOLDERS** (`src/seo.ts`).
+- `tamid@nyu.edu` is a **PLACEHOLDER** (`src/seo.ts`). Socials are real: `linkedin.com/company/tamid-at-nyu` (the NYU chapter, NOT national `tamidgroup`) and `instagram.com/tamidnyu`.
 
 ## Gotchas
 - Run `git status -u` before pushing — the working tree has many uncommitted changes; stage explicit paths only.

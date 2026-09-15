@@ -15,5 +15,16 @@ export const MENTORSHIP_APPLICATION_CONFIG_DEFAULTS: Record<
   mentorship_application_open: 'false',
   mentorship_application_url: '',
 };
+// Optional detail shown on the public /apply page while applications are open.
+// Plain strings, all optional; empty means "do not show". Managed from the admin
+// console Overview card alongside the two INV3 keys above.
+export const APPLICATION_CYCLE_CONFIG_DEFAULTS: Record<
+  'application_cycle_label' | 'application_deadline' | 'application_note',
+  string
+> = {
+  application_cycle_label: '',
+  application_deadline: '',
+  application_note: '',
+};
 export const MENTORSHIP_APPLICATION_CONFIG_TTL_MS = 60 * 60 * 1000;
 export const MENTORSHIP_APPLICATION_CONFIG_STORAGE_KEY = 'programs:mentorshipApplicationConfig';

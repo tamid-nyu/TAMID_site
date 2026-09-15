@@ -1,13 +1,25 @@
 import { useEffect, useState } from 'react';
 import { Footer, LinkButtonPrimary, SubpageHero } from '@components';
 import { dataService } from '@api';
-import { MENTORSHIP_APPLICATION_CONFIG_DEFAULTS } from '@constants';
+import {
+  APPLICATION_CYCLE_CONFIG_DEFAULTS,
+  MENTORSHIP_APPLICATION_CONFIG_DEFAULTS,
+} from '@constants';
 import { useScrollAnimation } from '@hooks';
 import './Application.css';
 
 type ApplicationConfig = {
   isApplicationOpen: boolean;
   applicationUrl: string;
+  cycleLabel: string;
+  deadline: string;
+  note: string;
+};
+
+const CYCLE_DEFAULTS = {
+  cycleLabel: APPLICATION_CYCLE_CONFIG_DEFAULTS.application_cycle_label,
+  deadline: APPLICATION_CYCLE_CONFIG_DEFAULTS.application_deadline,
+  note: APPLICATION_CYCLE_CONFIG_DEFAULTS.application_note,
 };
 
 export const Application = () => {
@@ -16,6 +28,7 @@ export const Application = () => {
 
   const [isApplicationOpen, setIsApplicationOpen] = useState<boolean | null>(null);
   const [applicationUrl, setApplicationUrl] = useState('');
+  const [cycle, setCycle] = useState(CYCLE_DEFAULTS);
   const isStatusReady = isApplicationOpen !== null;
 
   useEffect(() => {
@@ -27,6 +40,9 @@ export const Application = () => {
       const config = await dataService.siteConfig.getByKeys([
         'mentorship_application_open',
         'mentorship_application_url',
+        'application_cycle_label',
+        'application_deadline',
+        'application_note',
       ]);
       return {
         isApplicationOpen:
@@ -35,6 +51,9 @@ export const Application = () => {
         applicationUrl:
           config.mentorship_application_url ??
           MENTORSHIP_APPLICATION_CONFIG_DEFAULTS.mentorship_application_url,
+        cycleLabel: (config.application_cycle_label ?? CYCLE_DEFAULTS.cycleLabel).trim(),
+        deadline: (config.application_deadline ?? CYCLE_DEFAULTS.deadline).trim(),
+        note: (config.application_note ?? CYCLE_DEFAULTS.note).trim(),
       };
     };
 
@@ -43,6 +62,7 @@ export const Application = () => {
         if (!isActive) return;
         setIsApplicationOpen(config.isApplicationOpen);
         setApplicationUrl(config.applicationUrl);
+        setCycle({ cycleLabel: config.cycleLabel, deadline: config.deadline, note: config.note });
       })
       .catch((error) => {
         console.error('Failed to fetch application config:', error);
@@ -51,6 +71,7 @@ export const Application = () => {
           MENTORSHIP_APPLICATION_CONFIG_DEFAULTS.mentorship_application_open === 'true'
         );
         setApplicationUrl(MENTORSHIP_APPLICATION_CONFIG_DEFAULTS.mentorship_application_url);
+        setCycle(CYCLE_DEFAULTS);
       });
 
     return () => {
@@ -75,14 +96,33 @@ export const Application = () => {
           ref={bodyAnim.elementRef}
           className={`application-body ${bodyAnim.isVisible ? 'visible' : ''}`}
         >
+          {isStatusReady ? (
+            <span
+              className={`application-status ${
+                isApplicationOpen ? 'application-status--open' : 'application-status--closed'
+              }`}
+              role="status"
+            >
+              <span className="application-status__dot" aria-hidden="true" />
+              {isApplicationOpen ? 'Applications open' : 'Applications closed'}
+            </span>
+          ) : null}
+
           {isStatusReady && isApplicationOpen ? (
             <section className="application-panel">
-              <h2>The application is open.</h2>
+              <h2>
+                {cycle.cycleLabel
+                  ? `Applications for ${cycle.cycleLabel} are open.`
+                  : 'The application is open.'}
+              </h2>
               <p>
-                Applications for this cycle are open now. Complete the form to tell us about your
-                background, interests, and the track you want to join. Shortlisted applicants are
-                invited to a brief interview.
+                {cycle.deadline
+                  ? `Applications close ${cycle.deadline}. `
+                  : 'Applications for this cycle are open now. '}
+                Complete the form to tell us about your background, interests, and the track you
+                want to join. Shortlisted applicants are invited to a brief interview.
               </p>
+              {cycle.note ? <p className="application-note">{cycle.note}</p> : null}
               <div className="application-actions">
                 {applicationUrl ? (
                   <LinkButtonPrimary

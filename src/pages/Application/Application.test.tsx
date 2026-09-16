@@ -36,9 +36,8 @@ describe('Application page', () => {
     });
     renderPage();
 
-    expect(await screen.findByRole('status')).toHaveTextContent('Applications open');
     expect(
-      screen.getByRole('heading', { name: 'Applications for Fall 2026 are open.' })
+      await screen.findByRole('heading', { name: 'Applications for Fall 2026 are open.' })
     ).toBeInTheDocument();
     expect(screen.getByText(/Applications close Friday, September 26\./)).toBeInTheDocument();
     expect(screen.getByText('Info sessions run all week in KMC.')).toBeInTheDocument();
@@ -59,7 +58,9 @@ describe('Application page', () => {
     });
     renderPage();
 
-    expect(await screen.findByRole('status')).toHaveTextContent('Applications closed');
+    expect(
+      await screen.findByRole('heading', { name: 'Applications are closed for now.' })
+    ).toBeInTheDocument();
     expect(screen.getByRole('link', { name: 'Request a coffee chat' })).toBeInTheDocument();
     expect(screen.queryByRole('link', { name: 'Start your application' })).toBeNull();
   });
@@ -81,9 +82,8 @@ describe('Application page', () => {
     getByKeys.mockResolvedValueOnce({ mentorship_application_open: 'false' });
     renderPage();
 
-    expect(await screen.findByRole('status')).toHaveTextContent('Applications closed');
     expect(
-      screen.getByRole('heading', { name: 'Applications are closed for now.' })
+      await screen.findByRole('heading', { name: 'Applications are closed for now.' })
     ).toBeInTheDocument();
     expect(screen.queryByRole('link', { name: 'Start your application' })).toBeNull();
   });
@@ -93,7 +93,9 @@ describe('Application page', () => {
     const errorSpy = vi.spyOn(console, 'error').mockImplementation(() => {});
     renderPage();
 
-    expect(await screen.findByRole('status')).toHaveTextContent('Applications closed');
+    expect(
+      await screen.findByRole('heading', { name: 'Applications are closed for now.' })
+    ).toBeInTheDocument();
     errorSpy.mockRestore();
   });
 });

@@ -105,18 +105,6 @@ export const Application = () => {
           ref={bodyAnim.elementRef}
           className={`application-body ${bodyAnim.isVisible ? 'visible' : ''}`}
         >
-          {isStatusReady ? (
-            <span
-              className={`application-status ${
-                isApplicationOpen ? 'application-status--open' : 'application-status--closed'
-              }`}
-              role="status"
-            >
-              <span className="application-status__dot" aria-hidden="true" />
-              {isApplicationOpen ? 'Applications open' : 'Applications closed'}
-            </span>
-          ) : null}
-
           {isStatusReady && isApplicationOpen ? (
             <section className="application-panel">
               <h2>

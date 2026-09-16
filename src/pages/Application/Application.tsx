@@ -222,16 +222,6 @@ export const Application = () => {
                 </li>
               </ol>
             </div>
-
-            <div className="application-detail">
-              <h3>Timing</h3>
-              <p>
-                Applications open at the beginning of the semester and remain open for a week,
-                during which applicants have the opportunity to network with our members and learn
-                more about the organization. Shortlisted candidates will be invited to interview
-                throughout the following week and receive a final decision several days later.
-              </p>
-            </div>
           </section>
         </div>
       </div>

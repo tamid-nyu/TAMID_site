@@ -32,6 +32,7 @@ describe('Application page', () => {
       application_cycle_label: 'Fall 2026',
       application_deadline: 'Friday, September 26',
       application_note: 'Info sessions run all week in KMC.',
+      coffee_chat_url: 'https://forms.example/coffee',
     });
     renderPage();
 
@@ -45,6 +46,22 @@ describe('Application page', () => {
       'href',
       'https://forms.example/apply'
     );
+    expect(screen.getByRole('link', { name: 'Request a coffee chat' })).toHaveAttribute(
+      'href',
+      'https://forms.example/coffee'
+    );
+  });
+
+  it('still offers the coffee chat link while applications are closed', async () => {
+    getByKeys.mockResolvedValueOnce({
+      mentorship_application_open: 'false',
+      coffee_chat_url: 'https://forms.example/coffee',
+    });
+    renderPage();
+
+    expect(await screen.findByRole('status')).toHaveTextContent('Applications closed');
+    expect(screen.getByRole('link', { name: 'Request a coffee chat' })).toBeInTheDocument();
+    expect(screen.queryByRole('link', { name: 'Start your application' })).toBeNull();
   });
 
   it('falls back to generic open copy when the optional keys are empty', async () => {

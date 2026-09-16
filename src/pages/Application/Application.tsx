@@ -14,12 +14,14 @@ type ApplicationConfig = {
   cycleLabel: string;
   deadline: string;
   note: string;
+  coffeeChatUrl: string;
 };
 
 const CYCLE_DEFAULTS = {
   cycleLabel: APPLICATION_CYCLE_CONFIG_DEFAULTS.application_cycle_label,
   deadline: APPLICATION_CYCLE_CONFIG_DEFAULTS.application_deadline,
   note: APPLICATION_CYCLE_CONFIG_DEFAULTS.application_note,
+  coffeeChatUrl: APPLICATION_CYCLE_CONFIG_DEFAULTS.coffee_chat_url,
 };
 
 export const Application = () => {
@@ -43,6 +45,7 @@ export const Application = () => {
         'application_cycle_label',
         'application_deadline',
         'application_note',
+        'coffee_chat_url',
       ]);
       return {
         isApplicationOpen:
@@ -54,6 +57,7 @@ export const Application = () => {
         cycleLabel: (config.application_cycle_label ?? CYCLE_DEFAULTS.cycleLabel).trim(),
         deadline: (config.application_deadline ?? CYCLE_DEFAULTS.deadline).trim(),
         note: (config.application_note ?? CYCLE_DEFAULTS.note).trim(),
+        coffeeChatUrl: (config.coffee_chat_url ?? CYCLE_DEFAULTS.coffeeChatUrl).trim(),
       };
     };
 
@@ -62,7 +66,12 @@ export const Application = () => {
         if (!isActive) return;
         setIsApplicationOpen(config.isApplicationOpen);
         setApplicationUrl(config.applicationUrl);
-        setCycle({ cycleLabel: config.cycleLabel, deadline: config.deadline, note: config.note });
+        setCycle({
+          cycleLabel: config.cycleLabel,
+          deadline: config.deadline,
+          note: config.note,
+          coffeeChatUrl: config.coffeeChatUrl,
+        });
       })
       .catch((error) => {
         console.error('Failed to fetch application config:', error);
@@ -134,6 +143,16 @@ export const Application = () => {
                     Start your application
                   </LinkButtonPrimary>
                 ) : null}
+                {cycle.coffeeChatUrl ? (
+                  <LinkButtonPrimary
+                    variant="subpage"
+                    href={cycle.coffeeChatUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    Request a coffee chat
+                  </LinkButtonPrimary>
+                ) : null}
               </div>
             </section>
           ) : null}
@@ -146,6 +165,16 @@ export const Application = () => {
                 next cycle opens at the beginning of the term. Check back then to apply.
               </p>
               <div className="application-actions">
+                {cycle.coffeeChatUrl ? (
+                  <LinkButtonPrimary
+                    variant="subpage"
+                    href={cycle.coffeeChatUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    Request a coffee chat
+                  </LinkButtonPrimary>
+                ) : null}
                 <LinkButtonPrimary variant="subpage" to="/contact">
                   Get in touch
                 </LinkButtonPrimary>

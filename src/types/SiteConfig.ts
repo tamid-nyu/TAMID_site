@@ -10,4 +10,5 @@ export type SiteConfigKey =
   | 'mentorship_application_url'
   | 'application_cycle_label'
   | 'application_deadline'
-  | 'application_note';
+  | 'application_note'
+  | 'coffee_chat_url';

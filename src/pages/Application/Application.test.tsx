@@ -33,12 +33,22 @@ describe('Application page', () => {
       application_deadline: 'Friday, September 26',
       application_note: 'Info sessions run all week in KMC.',
       coffee_chat_url: 'https://forms.example/coffee',
+      recruitment_schedule:
+        'Info session | Tue 9/15, 7 PM | KMC 2-60\nApplications due | Thu 9/24, 11:59 PM\n\n | no title, dropped',
     });
     renderPage();
 
     expect(
       await screen.findByRole('heading', { name: 'Applications for Fall 2026 are open.' })
     ).toBeInTheDocument();
+    expect(screen.getByRole('heading', { name: 'Recruitment schedule' })).toBeInTheDocument();
+    const items = screen
+      .getAllByRole('listitem')
+      .filter((li) => li.closest('.application-schedule'));
+    expect(items).toHaveLength(2);
+    expect(items[0]).toHaveTextContent('Tue 9/15, 7 PM');
+    expect(items[0]).toHaveTextContent('Info session');
+    expect(items[0]).toHaveTextContent('KMC 2-60');
     expect(screen.getByText(/Applications close Friday, September 26\./)).toBeInTheDocument();
     expect(screen.getByText('Info sessions run all week in KMC.')).toBeInTheDocument();
     expect(screen.getByRole('link', { name: 'Start your application' })).toHaveAttribute(
@@ -55,6 +65,7 @@ describe('Application page', () => {
     getByKeys.mockResolvedValueOnce({
       mentorship_application_open: 'false',
       coffee_chat_url: 'https://forms.example/coffee',
+      recruitment_schedule: 'Info session | Tue 9/15',
     });
     renderPage();
 
@@ -63,6 +74,7 @@ describe('Application page', () => {
     ).toBeInTheDocument();
     expect(screen.getByRole('link', { name: 'Request a coffee chat' })).toBeInTheDocument();
     expect(screen.queryByRole('link', { name: 'Start your application' })).toBeNull();
+    expect(screen.queryByRole('heading', { name: 'Recruitment schedule' })).toBeNull();
   });
 
   it('falls back to generic open copy when the optional keys are empty', async () => {

@@ -11,4 +11,5 @@ export type SiteConfigKey =
   | 'application_cycle_label'
   | 'application_deadline'
   | 'application_note'
-  | 'coffee_chat_url';
+  | 'coffee_chat_url'
+  | 'recruitment_schedule';

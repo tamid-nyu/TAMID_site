@@ -19,13 +19,19 @@ export const MENTORSHIP_APPLICATION_CONFIG_DEFAULTS: Record<
 // Plain strings, all optional; empty means "do not show". Managed from the admin
 // console Overview card alongside the two INV3 keys above.
 export const APPLICATION_CYCLE_CONFIG_DEFAULTS: Record<
-  'application_cycle_label' | 'application_deadline' | 'application_note' | 'coffee_chat_url',
+  | 'application_cycle_label'
+  | 'application_deadline'
+  | 'application_note'
+  | 'coffee_chat_url'
+  | 'recruitment_schedule',
   string
 > = {
   application_cycle_label: '',
   application_deadline: '',
   application_note: '',
   coffee_chat_url: '',
+  // One event per line: "Title | When | Where". Where is optional.
+  recruitment_schedule: '',
 };
 export const MENTORSHIP_APPLICATION_CONFIG_TTL_MS = 60 * 60 * 1000;
 export const MENTORSHIP_APPLICATION_CONFIG_STORAGE_KEY = 'programs:mentorshipApplicationConfig';

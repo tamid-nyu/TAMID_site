@@ -15,13 +15,25 @@ type ApplicationConfig = {
   deadline: string;
   note: string;
   coffeeChatUrl: string;
+  schedule: ScheduleItem[];
 };
+
+type ScheduleItem = { title: string; when: string; where: string };
+
+// "Title | When | Where" per line; blank lines and lines without a title are dropped.
+export const parseSchedule = (raw: string): ScheduleItem[] =>
+  raw
+    .split('\n')
+    .map((line) => line.split('|').map((part) => part.trim()))
+    .filter((parts) => parts[0])
+    .map(([title, when = '', where = '']) => ({ title, when, where }));
 
 const CYCLE_DEFAULTS = {
   cycleLabel: APPLICATION_CYCLE_CONFIG_DEFAULTS.application_cycle_label,
   deadline: APPLICATION_CYCLE_CONFIG_DEFAULTS.application_deadline,
   note: APPLICATION_CYCLE_CONFIG_DEFAULTS.application_note,
   coffeeChatUrl: APPLICATION_CYCLE_CONFIG_DEFAULTS.coffee_chat_url,
+  schedule: parseSchedule(APPLICATION_CYCLE_CONFIG_DEFAULTS.recruitment_schedule),
 };
 
 export const Application = () => {
@@ -46,6 +58,7 @@ export const Application = () => {
         'application_deadline',
         'application_note',
         'coffee_chat_url',
+        'recruitment_schedule',
       ]);
       return {
         isApplicationOpen:
@@ -58,6 +71,9 @@ export const Application = () => {
         deadline: (config.application_deadline ?? CYCLE_DEFAULTS.deadline).trim(),
         note: (config.application_note ?? CYCLE_DEFAULTS.note).trim(),
         coffeeChatUrl: (config.coffee_chat_url ?? CYCLE_DEFAULTS.coffeeChatUrl).trim(),
+        schedule: parseSchedule(
+          config.recruitment_schedule ?? APPLICATION_CYCLE_CONFIG_DEFAULTS.recruitment_schedule
+        ),
       };
     };
 
@@ -71,6 +87,7 @@ export const Application = () => {
           deadline: config.deadline,
           note: config.note,
           coffeeChatUrl: config.coffeeChatUrl,
+          schedule: config.schedule,
         });
       })
       .catch((error) => {
@@ -167,6 +184,23 @@ export const Application = () => {
                   Get in touch
                 </LinkButtonPrimary>
               </div>
+            </section>
+          ) : null}
+
+          {isStatusReady && isApplicationOpen && cycle.schedule.length > 0 ? (
+            <section className="application-schedule" aria-labelledby="recruitment-schedule">
+              <h3 id="recruitment-schedule">Recruitment schedule</h3>
+              <ul>
+                {cycle.schedule.map((item) => (
+                  <li key={`${item.title}-${item.when}`}>
+                    <span className="application-schedule__when">{item.when}</span>
+                    <span className="application-schedule__title">{item.title}</span>
+                    {item.where ? (
+                      <span className="application-schedule__where">{item.where}</span>
+                    ) : null}
+                  </li>
+                ))}
+              </ul>
             </section>
           ) : null}
 

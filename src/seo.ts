@@ -33,6 +33,14 @@ export const PUBLIC_SEO_ROUTES: SeoRoute[] = [
     imageAlt: 'The NYU Stern School of Business building',
   },
   {
+    path: '/track-leadership',
+    title: `Track Leadership | ${TITLE_SUFFIX}`,
+    description:
+      'Meet the Senior Equity Analysts, Project Managers, and Assistant Project Managers who lead TAMID Group at NYU’s Investment Fund and Consulting teams.',
+    image: `${SITE_URL}/board-gallery/nyu-stern.jpg?v=3`,
+    imageAlt: 'The NYU Stern School of Business building',
+  },
+  {
     path: '/our-members',
     title: `General Members | ${TITLE_SUFFIX}`,
     description: "Meet TAMID Group at NYU's members.",

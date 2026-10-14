@@ -13,6 +13,7 @@ const OVERLAY_HEADER_ROUTES = new Set([
   '/tracks/fellowship',
   '/our-members',
   '/our-board',
+  '/track-leadership',
   '/apply',
 ]);
 const TRACKS_DROPDOWN_ITEMS = [
@@ -23,6 +24,7 @@ const TRACKS_DROPDOWN_ITEMS = [
 ];
 const ABOUT_DROPDOWN_ITEMS = [
   { label: 'Executive Board', to: '/our-board' },
+  { label: 'Track Leadership', to: '/track-leadership' },
   { label: 'General Members', to: '/our-members' },
 ];
 

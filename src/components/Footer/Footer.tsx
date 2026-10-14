@@ -53,6 +53,7 @@ export const Footer = () => {
             <div className="footer-column">
               <h3>Team</h3>
               <Link to="/our-board">Executive Board</Link>
+              <Link to="/track-leadership">Track Leadership</Link>
               <Link to="/our-members">General Members</Link>
             </div>
 

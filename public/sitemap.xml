@@ -11,6 +11,11 @@
     <priority>0.8</priority>
   </url>
   <url>
+    <loc>https://www.nyutamid.org/track-leadership</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
     <loc>https://www.nyutamid.org/our-members</loc>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>

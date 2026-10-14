@@ -2,7 +2,16 @@ import { useEffect, useState } from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import { Toaster } from 'react-hot-toast';
 import { Header, ScrollToTop, Seo } from '@components';
-import { Home, Application, OurBoard, OurMembers, ProgramDetail, Contact, NotFound } from './pages';
+import {
+  Home,
+  Application,
+  OurBoard,
+  OurMembers,
+  TrackLeadership,
+  ProgramDetail,
+  Contact,
+  NotFound,
+} from './pages';
 import './App.css';
 
 const ClientToaster = () => {
@@ -60,6 +69,7 @@ export const AppContent = () => (
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/our-board" element={<OurBoard />} />
+          <Route path="/track-leadership" element={<TrackLeadership />} />
           <Route path="/our-members" element={<OurMembers />} />
           <Route path="/tracks/:slug" element={<ProgramDetail />} />
           <Route path="/apply" element={<Application />} />

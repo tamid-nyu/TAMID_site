@@ -36,7 +36,7 @@ export const PUBLIC_SEO_ROUTES: SeoRoute[] = [
     path: '/track-leadership',
     title: `Track Leadership | ${TITLE_SUFFIX}`,
     description:
-      'Meet the Senior Equity Analysts, Project Managers, and Assistant Project Managers who lead TAMID Group at NYU’s Investment Fund and Consulting teams.',
+      'Meet the directors, Senior Equity Analysts, and Project Managers who lead TAMID Group at NYU’s Investment Fund, Consulting, and Quant teams.',
     image: `${SITE_URL}/board-gallery/nyu-stern.jpg?v=3`,
     imageAlt: 'The NYU Stern School of Business building',
   },

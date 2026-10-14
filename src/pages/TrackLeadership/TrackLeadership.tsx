@@ -17,7 +17,7 @@ interface TrackLeader {
 interface TrackLeadershipGroup {
   track: string;
   trackHref: string;
-  directorPosition: string; // matched against the admin panel's Board positions
+  directorPositions: string[]; // matched against the admin panel's Board positions, shown in this order
   summary: string;
   leaders: TrackLeader[];
 }
@@ -27,7 +27,7 @@ const TRACK_LEADERSHIP: TrackLeadershipGroup[] = [
   {
     track: 'Investment Fund',
     trackHref: '/tracks/fund',
-    directorPosition: 'Director of Fund',
+    directorPositions: ['Director of Fund'],
     summary:
       'Senior Equity Analysts lead the Fund’s research teams, guiding members through coverage, valuation, and pitches.',
     leaders: [
@@ -61,7 +61,7 @@ const TRACK_LEADERSHIP: TrackLeadershipGroup[] = [
   {
     track: 'Consulting',
     trackHref: '/tracks/consulting',
-    directorPosition: 'Director of Consulting',
+    directorPositions: ['Director of Consulting'],
     summary:
       'Project Managers and Assistant Project Managers run each client engagement, from scoping through final recommendations.',
     leaders: [
@@ -74,6 +74,21 @@ const TRACK_LEADERSHIP: TrackLeadershipGroup[] = [
         photo: 'sasha-liberman.jpg',
       },
       { name: 'Anaysha Khandelwal', role: 'Assistant Project Manager', classYear: 2028 },
+    ],
+  },
+  {
+    track: 'Quant',
+    trackHref: '/tracks/quant',
+    directorPositions: ['Director of Quant', 'Director of Quant Education'],
+    summary:
+      'Quant leadership guides members through data-driven research and systematic strategy development, from signals to backtests.',
+    leaders: [
+      {
+        name: 'Vartan Yildiz',
+        role: 'Senior Quant Analyst',
+        classYear: 2028,
+        photo: 'vartan-yildiz.jpg',
+      },
     ],
   },
 ];
@@ -120,7 +135,7 @@ export const TrackLeadership = () => {
           backgroundImageAlt="The NYU Stern School of Business building"
           imagePosition="center 35%"
           title="Track Leadership"
-          lead="The students who lead our Investment Fund and Consulting teams day to day."
+          lead="The students who lead our Investment Fund, Consulting, and Quant teams day to day."
         />
 
         <section
@@ -129,7 +144,9 @@ export const TrackLeadership = () => {
           aria-label="Track leadership by track"
         >
           {TRACK_LEADERSHIP.map((group) => {
-            const director = directorFor(group.directorPosition);
+            const directors = group.directorPositions
+              .map(directorFor)
+              .filter((member): member is BoardMember => Boolean(member));
             return (
               <div key={group.track} className="track-leadership__group">
                 <header className="track-leadership__header">
@@ -143,8 +160,11 @@ export const TrackLeadership = () => {
                   </Link>
                 </header>
 
-                {director && (
-                  <div className="track-director-card">
+                {directors.map((director, index) => (
+                  <div
+                    key={director.id}
+                    className={`track-director-card ${index > 0 ? 'track-director-card--secondary' : ''}`}
+                  >
                     {director.headshotFile ? (
                       <img
                         src={getBoardMemberThumbnailUrl(
@@ -174,7 +194,7 @@ export const TrackLeadership = () => {
                       </Link>
                     </div>
                   </div>
-                )}
+                ))}
 
                 <ul className="track-leadership__grid">
                   {group.leaders.map((leader) => (

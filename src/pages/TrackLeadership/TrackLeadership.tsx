@@ -147,6 +147,8 @@ export const TrackLeadership = () => {
             const directors = group.directorPositions
               .map(directorFor)
               .filter((member): member is BoardMember => Boolean(member));
+            // The first director leads the section; any others (e.g. Director of Quant Education) form a second tier.
+            const [lead, ...deputies] = directors;
             return (
               <div key={group.track} className="track-leadership__group">
                 <header className="track-leadership__header">
@@ -160,18 +162,12 @@ export const TrackLeadership = () => {
                   </Link>
                 </header>
 
-                {directors.map((director, index) => (
-                  <div
-                    key={director.id}
-                    className={`track-director-card ${index > 0 ? 'track-director-card--secondary' : ''}`}
-                  >
-                    {director.headshotFile ? (
+                {lead && (
+                  <div className="track-director-card">
+                    {lead.headshotFile ? (
                       <img
-                        src={getBoardMemberThumbnailUrl(
-                          director.headshotFile,
-                          director.headshotUpdatedAt
-                        )}
-                        alt={`${director.fullName} headshot`}
+                        src={getBoardMemberThumbnailUrl(lead.headshotFile, lead.headshotUpdatedAt)}
+                        alt={`${lead.fullName} headshot`}
                         className="track-director-card__photo"
                       />
                     ) : (
@@ -179,14 +175,14 @@ export const TrackLeadership = () => {
                         className="track-director-card__photo track-director-card__photo--initials"
                         aria-hidden="true"
                       >
-                        {initials(director.fullName)}
+                        {initials(lead.fullName)}
                       </span>
                     )}
                     <div className="track-director-card__body">
-                      <p className="track-leader-card__role">{director.position}</p>
-                      <h3 className="track-director-card__name">{director.fullName}</h3>
+                      <p className="track-leader-card__role">{lead.position}</p>
+                      <h3 className="track-director-card__name">{lead.fullName}</h3>
                       <p className="track-leader-card__year">
-                        {[director.year, director.major].filter(Boolean).join(' · ')}
+                        {[lead.year, lead.major].filter(Boolean).join(' · ')}
                       </p>
                       <Link to="/our-board" className="track-director-card__link">
                         Executive Board profile
@@ -194,7 +190,41 @@ export const TrackLeadership = () => {
                       </Link>
                     </div>
                   </div>
-                ))}
+                )}
+
+                {deputies.length > 0 && (
+                  <ul className="track-leadership__grid track-leadership__grid--deputies">
+                    {deputies.map((deputy) => (
+                      <li key={deputy.id} className="track-leader-card track-leader-card--director">
+                        {deputy.headshotFile ? (
+                          <img
+                            src={getBoardMemberThumbnailUrl(
+                              deputy.headshotFile,
+                              deputy.headshotUpdatedAt
+                            )}
+                            alt={`${deputy.fullName} headshot`}
+                            className="track-leader-card__photo"
+                          />
+                        ) : (
+                          <span className="track-leader-card__monogram" aria-hidden="true">
+                            {initials(deputy.fullName)}
+                          </span>
+                        )}
+                        <div className="track-leader-card__body">
+                          <p className="track-leader-card__role">{deputy.position}</p>
+                          <h3 className="track-leader-card__name">{deputy.fullName}</h3>
+                          <p className="track-leader-card__year">
+                            {[deputy.year, deputy.major].filter(Boolean).join(' · ')}
+                          </p>
+                          <Link to="/our-board" className="track-leader-card__link">
+                            Board profile
+                            <ArrowIcon className="track-leadership__track-link-icon" />
+                          </Link>
+                        </div>
+                      </li>
+                    ))}
+                  </ul>
+                )}
 
                 <ul className="track-leadership__grid">
                   {group.leaders.map((leader) => (
@@ -226,7 +256,7 @@ export const TrackLeadership = () => {
 
         <CallToAction
           title="Questions About a Track?"
-          bodyText="Our Director of Fund and Director of Consulting oversee these teams. Meet them on the Executive Board page, or get in touch with us directly."
+          bodyText="Each track is overseen by its directors on our Executive Board. Meet them on the Board page, or get in touch with us directly."
           primaryButtonText="Meet the Board"
           primaryButtonHref="/our-board"
           secondaryButtonText="Get in Touch"

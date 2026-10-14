@@ -164,8 +164,8 @@
   align-items: center;
   justify-content: center;
   flex-shrink: 0;
-  width: 3.4rem;
-  height: 3.4rem;
+  width: 4.25rem;
+  height: 4.25rem;
   background: linear-gradient(135deg, rgba(24, 39, 75, 0.9), rgba(24, 39, 75, 0.88));
   color: var(--color-white);
   font-family: var(--font-sans);
@@ -176,8 +176,8 @@
 
 .track-leader-card__photo {
   flex-shrink: 0;
-  width: 3.4rem;
-  height: 3.4rem;
+  width: 4.25rem;
+  height: 4.25rem;
   object-fit: cover;
   object-position: center 20%;
   background: var(--color-blue-tint);

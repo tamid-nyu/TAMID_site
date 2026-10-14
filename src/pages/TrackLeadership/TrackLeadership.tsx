@@ -31,11 +31,31 @@ const TRACK_LEADERSHIP: TrackLeadershipGroup[] = [
     summary:
       'Senior Equity Analysts lead the Fund’s research teams, guiding members through coverage, valuation, and pitches.',
     leaders: [
-      { name: 'Logan Silverman', role: 'Senior Equity Analyst', classYear: 2028 },
-      { name: 'Jayson Schiller', role: 'Senior Equity Analyst', classYear: 2028 },
-      { name: 'Aaron Heumann', role: 'Senior Equity Analyst', classYear: 2029 },
-      { name: 'Ami Kent', role: 'Senior Equity Analyst', classYear: 2029 },
-      { name: 'Josh Zinkin', role: 'Senior Equity Analyst', classYear: 2029 },
+      {
+        name: 'Logan Silverman',
+        role: 'Senior Equity Analyst',
+        classYear: 2028,
+        photo: 'logan-silverman.jpg',
+      },
+      {
+        name: 'Jayson Schiller',
+        role: 'Senior Equity Analyst',
+        classYear: 2028,
+        photo: 'jayson-schiller.jpg',
+      },
+      {
+        name: 'Aaron Heumann',
+        role: 'Senior Equity Analyst',
+        classYear: 2029,
+        photo: 'aaron-heumann.jpg',
+      },
+      { name: 'Ami Kent', role: 'Senior Equity Analyst', classYear: 2029, photo: 'ami-kent.jpg' },
+      {
+        name: 'Josh Zinkin',
+        role: 'Senior Equity Analyst',
+        classYear: 2029,
+        photo: 'josh-zinkin.jpg',
+      },
     ],
   },
   {
@@ -45,9 +65,14 @@ const TRACK_LEADERSHIP: TrackLeadershipGroup[] = [
     summary:
       'Project Managers and Assistant Project Managers run each client engagement, from scoping through final recommendations.',
     leaders: [
-      { name: 'Henry Wang', role: 'Project Manager', classYear: 2028 },
+      { name: 'Henry Wang', role: 'Project Manager', classYear: 2028, photo: 'henry-wang.jpg' },
       { name: 'Uma Bisal', role: 'Project Manager', classYear: 2029 },
-      { name: 'Sasha Liberman', role: 'Assistant Project Manager', classYear: 2027 },
+      {
+        name: 'Sasha Liberman',
+        role: 'Assistant Project Manager',
+        classYear: 2027,
+        photo: 'sasha-liberman.jpg',
+      },
       { name: 'Anaysha Khandelwal', role: 'Assistant Project Manager', classYear: 2028 },
     ],
   },

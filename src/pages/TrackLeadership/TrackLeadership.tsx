@@ -1,17 +1,23 @@
+import { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { Footer, CallToAction, SubpageHero, ArrowIcon } from '@components';
 import { useScrollAnimation } from '@hooks';
+import { dataService } from '@api';
+import { getBoardMemberThumbnailUrl } from '@utils';
+import type { BoardMember } from '@types';
 import './TrackLeadership.css';
 
 interface TrackLeader {
   name: string;
   role: string;
   classYear: number;
+  photo?: string; // file in public/track-leadership/; initials show until one is added
 }
 
 interface TrackLeadershipGroup {
   track: string;
   trackHref: string;
+  directorPosition: string; // matched against the admin panel's Board positions
   summary: string;
   leaders: TrackLeader[];
 }
@@ -21,6 +27,7 @@ const TRACK_LEADERSHIP: TrackLeadershipGroup[] = [
   {
     track: 'Investment Fund',
     trackHref: '/tracks/fund',
+    directorPosition: 'Director of Fund',
     summary:
       'Senior Equity Analysts lead the Fund’s research teams, guiding members through coverage, valuation, and pitches.',
     leaders: [
@@ -34,6 +41,7 @@ const TRACK_LEADERSHIP: TrackLeadershipGroup[] = [
   {
     track: 'Consulting',
     trackHref: '/tracks/consulting',
+    directorPosition: 'Director of Consulting',
     summary:
       'Project Managers and Assistant Project Managers run each client engagement, from scoping through final recommendations.',
     leaders: [
@@ -44,6 +52,13 @@ const TRACK_LEADERSHIP: TrackLeadershipGroup[] = [
     ],
   },
 ];
+
+// Class standing from graduation year, like the Board page ("Junior"). The academic year ends in May.
+const standing = (classYear: number, today = new Date()) => {
+  const yearsLeft =
+    classYear - (today.getMonth() >= 6 ? today.getFullYear() + 1 : today.getFullYear());
+  return ['Senior', 'Junior', 'Sophomore', 'First-Year'][yearsLeft] ?? `Class of ${classYear}`;
+};
 
 const initials = (name: string) =>
   name
@@ -57,6 +72,18 @@ export const TrackLeadership = () => {
     threshold: 0.08,
     rootMargin: '0px 0px -40px 0px',
   });
+  const [board, setBoard] = useState<BoardMember[]>([]);
+
+  // Directors come from the admin panel's Board list, so their photo and details stay in sync.
+  useEffect(() => {
+    dataService.boardMembers
+      .getAll()
+      .then(setBoard)
+      .catch((err) => console.error('Failed to fetch board members:', err));
+  }, []);
+
+  const directorFor = (position: string) =>
+    board.find((member) => member.position.trim().toLowerCase() === position.toLowerCase());
 
   return (
     <>
@@ -76,35 +103,80 @@ export const TrackLeadership = () => {
           className={`track-leadership ${directoryAnimation.isVisible ? 'visible' : ''}`}
           aria-label="Track leadership by track"
         >
-          {TRACK_LEADERSHIP.map((group) => (
-            <div key={group.track} className="track-leadership__group">
-              <header className="track-leadership__header">
-                <div>
-                  <h2 className="track-leadership__track">{group.track}</h2>
-                  <p className="track-leadership__summary">{group.summary}</p>
-                </div>
-                <Link to={group.trackHref} className="track-leadership__track-link">
-                  About the track
-                  <ArrowIcon className="track-leadership__track-link-icon" />
-                </Link>
-              </header>
+          {TRACK_LEADERSHIP.map((group) => {
+            const director = directorFor(group.directorPosition);
+            return (
+              <div key={group.track} className="track-leadership__group">
+                <header className="track-leadership__header">
+                  <div>
+                    <h2 className="track-leadership__track">{group.track}</h2>
+                    <p className="track-leadership__summary">{group.summary}</p>
+                  </div>
+                  <Link to={group.trackHref} className="track-leadership__track-link">
+                    About the track
+                    <ArrowIcon className="track-leadership__track-link-icon" />
+                  </Link>
+                </header>
 
-              <ul className="track-leadership__grid">
-                {group.leaders.map((leader) => (
-                  <li key={leader.name} className="track-leader-card">
-                    <span className="track-leader-card__monogram" aria-hidden="true">
-                      {initials(leader.name)}
-                    </span>
-                    <div className="track-leader-card__body">
-                      <p className="track-leader-card__role">{leader.role}</p>
-                      <h3 className="track-leader-card__name">{leader.name}</h3>
-                      <p className="track-leader-card__year">Class of {leader.classYear}</p>
+                {director && (
+                  <div className="track-director-card">
+                    {director.headshotFile ? (
+                      <img
+                        src={getBoardMemberThumbnailUrl(
+                          director.headshotFile,
+                          director.headshotUpdatedAt
+                        )}
+                        alt={`${director.fullName} headshot`}
+                        className="track-director-card__photo"
+                      />
+                    ) : (
+                      <span
+                        className="track-director-card__photo track-director-card__photo--initials"
+                        aria-hidden="true"
+                      >
+                        {initials(director.fullName)}
+                      </span>
+                    )}
+                    <div className="track-director-card__body">
+                      <p className="track-leader-card__role">{director.position}</p>
+                      <h3 className="track-director-card__name">{director.fullName}</h3>
+                      <p className="track-leader-card__year">
+                        {[director.year, director.major].filter(Boolean).join(' · ')}
+                      </p>
+                      <Link to="/our-board" className="track-director-card__link">
+                        Executive Board profile
+                        <ArrowIcon className="track-leadership__track-link-icon" />
+                      </Link>
                     </div>
-                  </li>
-                ))}
-              </ul>
-            </div>
-          ))}
+                  </div>
+                )}
+
+                <ul className="track-leadership__grid">
+                  {group.leaders.map((leader) => (
+                    <li key={leader.name} className="track-leader-card">
+                      {leader.photo ? (
+                        <img
+                          src={`/track-leadership/${leader.photo}`}
+                          alt={`${leader.name} headshot`}
+                          className="track-leader-card__photo"
+                          loading="lazy"
+                        />
+                      ) : (
+                        <span className="track-leader-card__monogram" aria-hidden="true">
+                          {initials(leader.name)}
+                        </span>
+                      )}
+                      <div className="track-leader-card__body">
+                        <p className="track-leader-card__role">{leader.role}</p>
+                        <h3 className="track-leader-card__name">{leader.name}</h3>
+                        <p className="track-leader-card__year">{standing(leader.classYear)}</p>
+                      </div>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            );
+          })}
         </section>
 
         <CallToAction

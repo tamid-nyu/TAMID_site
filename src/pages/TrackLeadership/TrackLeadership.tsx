@@ -73,7 +73,12 @@ const TRACK_LEADERSHIP: TrackLeadershipGroup[] = [
         classYear: 2027,
         photo: 'sasha-liberman.jpg',
       },
-      { name: 'Anaysha Khandelwal', role: 'Assistant Project Manager', classYear: 2028 },
+      {
+        name: 'Anaysha Khandelwal',
+        role: 'Assistant Project Manager',
+        classYear: 2028,
+        photo: 'anaysha-khandelwal.jpg',
+      },
     ],
   },
   {
